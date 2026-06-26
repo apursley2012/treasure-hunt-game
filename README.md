@@ -11,6 +11,8 @@ Date: June 2026
 
 ### Deep Q-Learning Maze Project Rebuilt as a GitHub Pages Front-End Game
 
+![Treasure Hunt Game](./assets/images/treasure-hunt-logo.png)
+
 </div>
 
 ---
