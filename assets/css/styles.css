@@ -1733,3 +1733,63 @@ body:not(.app-body) .info-card {
     font-size: clamp(2rem, 10vw, 3.3rem) !important;
   }
 }
+
+/* Source / Original Project Links */
+.source-links {
+  width: min(1180px, calc(100% - 32px));
+  margin: 18px auto 34px;
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 22px;
+  background: rgba(0,0,0,0.36);
+}
+
+.source-links .source-label {
+  width: 100%;
+  text-align: center;
+  color: var(--muted, #b8ccd1);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.source-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--text, #ffffff);
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+}
+
+.source-links a.primary-source-link {
+  color: #051016;
+  background: var(--aqua, #a7ff00);
+  border-color: transparent;
+}
+
+.source-links a:hover {
+  transform: translateY(-1px);
+  border-color: var(--aqua, #a7ff00);
+}
+
+@media (max-width: 640px) {
+  .source-links {
+    align-items: stretch;
+  }
+
+  .source-links a {
+    width: 100%;
+  }
+}
+
