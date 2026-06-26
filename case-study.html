@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study | Treasure Hunt</title>
+  <link rel="icon" href="./assets/images/treasure-hunt-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body class="longform-body">
+  
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Treasure Hunt home">
+      <img class="brand-logo" src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt logo">
+      <span class="brand-text">
+        <span class="brand-title">Treasure<span>Hunt</span></span>
+        <span class="brand-subtitle">Player vs. intelligent agent</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Game</a>
+<a href="info.html">Info</a>
+<a href="case-study.html" class="active">Case Study</a>
+<a href="articles.html">Articles</a>
+<a href="reflection.html">Reflection</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="content-page case-study">
+    <p class="eyebrow">Case Study</p><h1>Turning a Deep Q-Learning Maze into a Browser-Based AI Demo</h1>
+    <section class="content-section content-card"><h2>Project Goal</h2><p>The goal was to make a notebook-based reinforcement-learning project easier to view, test, and share. The Python version showed the algorithm from a development perspective, but it required a local machine-learning environment. The finished browser demo keeps the important behavior intact while presenting the system as a polished, interactive application.</p></section>
+    <section class="content-section content-card"><h2>Original System</h2><p>The Python implementation used a maze environment class, an experience-replay class, and a Jupyter Notebook to train a pirate agent. The environment defined the grid, open cells, blocked cells, available moves, reward values, terminal win state, and terminal loss state. The experience-replay logic stored previous episodes so the model could learn from earlier state, action, reward, and next-state combinations.</p><p>The notebook built the training workflow around a deep Q-learning approach. The agent observed the current maze state, selected an action through epsilon-greedy decision-making, received a reward or penalty, stored the experience, and used repeated training samples to improve future decisions.</p></section>
+    <section class="content-section content-card"><h2>Implementation Highlights</h2><p>The most important logic was the training loop. It reset the maze from valid starting cells, chose actions through a balance of exploration and exploitation, tracked each episode, stored experiences, updated the model, and checked whether the agent could consistently reach the treasure from valid positions. The neural network predicted Q-values for possible actions based on the current maze state, allowing the agent to improve its route choices over time.</p><p>For the front-end version, I translated that logic into modular JavaScript. The browser demo separates the maze rules, Q-learning agent, and interface rendering so the project remains easy to inspect and update. The interface includes movement controls, keyboard support, reward tracking, training controls, win-rate metrics, path replay, and a live log of training progress.</p></section>
+    <section class="content-section content-card"><h2>Design Decisions</h2><ul><li><strong>Static deployment:</strong> The app uses browser-ready HTML, CSS, and JavaScript so it can run on GitHub Pages without a server.</li><li><strong>Preserved logic:</strong> The maze layout, valid actions, movement restrictions, and reward-based goal remain aligned with the Python version.</li><li><strong>Visual learning:</strong> Metrics and path animation make the agent’s improvement easier to understand than raw notebook output alone.</li><li><strong>Clean separation:</strong> App logic, training logic, styles, and supporting write-ups are split into separate files.</li><li><strong>No database:</strong> Training data is generated during each session and does not need to be saved between visits.</li></ul></section>
+    <section class="content-section content-card"><h2>Result</h2><p>The final project turns an AI training notebook into an accessible application. A visitor can play through the maze manually, train an agent, watch the learned route, and see how rewards and exploration shape the final path. It demonstrates algorithmic problem-solving, reinforcement-learning concepts, JavaScript architecture, front-end interaction design, and the ability to convert a technical project into something understandable without removing the original logic.</p></section>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Alysha Pursley</span>
+    <span>Static front-end demo built for GitHub Pages.</span>
+  </div>
+</footer>
+
+</body>
+</html>
