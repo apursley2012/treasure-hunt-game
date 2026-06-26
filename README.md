@@ -1,152 +1,194 @@
-# Booty on the Brain: A Deep Q-Learning Treasure Hunt Game
+<!--
+File: README.md
+Document Title: Treasure Hunt Browser Demo Report
+Author: Alysha Pursley, Software Developer
+Date: June 2026
+-->
 
-A front-end reinforcement-learning maze demo where a pirate agent learns how to reach treasure by exploring an 8×8 environment, collecting rewards, avoiding penalties, and improving its route through repeated training episodes.
+<div align="center">
 
-![Treasure Hunt Game mark](./assets/images/treasure-hunt-mark.svg)
+# Treasure Hunt Browser Demo Report
+
+### Deep Q-Learning Maze Project Rebuilt as a GitHub Pages Front-End Game
+
+</div>
+
+---
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Live Demo](#live-demo)
-- [Purpose](#purpose)
-- [Features](#features)
-- [How the Game Works](#how-the-game-works)
-- [Implementation Highlights](#implementation-highlights)
-- [Front-End Adaptation](#front-end-adaptation)
-- [Project Structure](#project-structure)
-- [Technologies](#technologies)
-- [How to Run Locally](#how-to-run-locally)
-- [GitHub Pages Deployment](#github-pages-deployment)
-- [Customization](#customization)
-- [Accessibility](#accessibility)
-- [Browser Compatibility](#browser-compatibility)
-- [Troubleshooting](#troubleshooting)
-- [Related Write-Ups](#related-write-ups)
+- [Project Statement](#project-statement)
+  - [Purpose](#purpose)
+  - [Project Summary](#project-summary)
+    - [Original Concept](#original-concept)
+    - [Browser Demo Concept](#browser-demo-concept)
+    - [Key Contrast: Original vs Demo](#key-contrast-original-vs-demo)
+  - [Scope](#scope)
+    - [Included Pages](#included-pages)
+    - [Demo Scope](#demo-scope)
+    - [Source Scope](#source-scope)
+  - [Constraints & Limitations](#constraints--limitations)
+    - [Python/Keras Runtime Not Included in GitHub Pages](#pythonkeras-runtime-not-included-in-github-pages)
+    - [Browser-Safe Simulation](#browser-safe-simulation)
+- [Application Architecture](#application-architecture)
+  - [File Structure](#file-structure)
+  - [Page Structure](#page-structure)
+  - [Asset Structure](#asset-structure)
+  - [JavaScript Module Structure](#javascript-module-structure)
+- [Gameplay Logic](#gameplay-logic)
+  - [Maze Rules](#maze-rules)
+  - [Player Rules](#player-rules)
+  - [Agent Rules](#agent-rules)
+  - [Difficulty Modes](#difficulty-modes)
+  - [Randomized Maze Generation](#randomized-maze-generation)
+- [Front-End Implementation](#front-end-implementation)
+  - [Design System](#design-system)
+  - [Logo and Branding](#logo-and-branding)
+  - [Accessibility Considerations](#accessibility-considerations)
+  - [Browser Compatibility](#browser-compatibility)
+- [Running, Testing, and Deployment](#running-testing-and-deployment)
+  - [How to Run Locally](#how-to-run-locally)
+  - [How to Test the Game](#how-to-test-the-game)
+  - [GitHub Pages Deployment](#github-pages-deployment)
+  - [Troubleshooting](#troubleshooting)
+- [Portfolio Documentation](#portfolio-documentation)
+  - [Included Articles](#included-articles)
+  - [Case Study](#case-study)
+  - [Future Enhancements](#future-enhancements)
 
-## Overview
+---
 
-Booty on the Brain is a reinforcement-learning treasure hunt game built around an intelligent pirate agent. The agent learns how to navigate an 8×8 maze, avoid blocked cells, reduce repeated or invalid movement, and reach the treasure by improving its decisions over repeated attempts.
+<div align="center">
 
-The original version used Python, Jupyter Notebook, NumPy, Keras, Matplotlib, a custom maze environment, and an experience-replay helper. This repository includes that source material in a cleaned public format and adds a browser-based showcase demo built with HTML, CSS, and JavaScript. The demo keeps the same core maze layout, movement directions, reward-driven goal, and reinforcement-learning concept while making the project easier to open, test, and share.
+# Project Statement
 
-## Live Demo
+---
 
-The application is designed to run as a static site.
+### Treasure Hunt Game: Original AI Project, Browser Demo Scope, and Portfolio-Ready Front-End Rebuild
 
-When deployed with GitHub Pages, the main demo page is:
+### Report By: Alysha Pursley  
+#### *Software Developer*  
+#### June 2026
 
-```text
-https://your-username.github.io/your-repository-name/
-```
+---
 
-Supporting pages are included here:
+**_Project ID: TREASURE-HUNT-FRONTEND-DEMO_**
 
-```text
-./info.html
-./case-study.html
-./articles.html
-./article.html
-./reflection.html
-```
+</div>
 
-The main `index.html` page contains only the interactive app. Project background, case study details, article content, and reflection notes live on separate pages so the demo itself stays focused.
+---
+
+**Project Type:** Artificial Intelligence Concept Rebuilt as a Static Browser Game  
+
+**Implementation Scope:** HTML, CSS, and JavaScript front-end demo with original Python/Jupyter source preserved for reference.
+
+---
+
+<details open><summary>
 
 ## Purpose
 
-I built this version to make the original AI maze project more accessible as a front-end experience. The notebook version is useful for development and training, but a browser demo lets someone immediately see the environment, move through the maze manually, train the agent, and watch the learned route.
+</summary>
 
-The finished project demonstrates both algorithmic thinking and front-end development. It shows how reinforcement learning can create adaptive behavior, and it also shows how a code-heavy AI workflow can be translated into a polished browser application without requiring a local machine-learning setup.
+I built this version of Treasure Hunt to make the original maze-learning project easier to view, test, and understand from a portfolio. The original project focused on an intelligent pirate agent learning how to navigate an 8×8 maze to find treasure. That version was written for a Python and Jupyter Notebook environment, which is useful for development and learning but not ideal for a public portfolio demo.
 
-## Features
+This browser version keeps the maze, blocked-cell logic, movement rules, treasure goal, and agent behavior concept, then turns the experience into an interactive game a visitor can play directly in the browser. The goal is to make the project feel like a real application while still clearly connecting it back to the original reinforcement-learning concept.
 
-- Interactive 8×8 maze inspired by the original environment
-- Randomized maze generation with a guaranteed valid route
-- Player-vs-agent race to the X treasure
-- Easy, Medium, and Hard agent difficulty modes
-- Manual movement using buttons, arrow keys, or WASD
-- Valid movement checks for walls, boundaries, and available paths
-- Reward tracking based on reinforcement-learning feedback
-- Agent route behavior that stays inside open cells
-- Player trail, agent trail, step counts, shortest route, and race lead
-- Game log that summarizes important actions
-- Static app architecture with no database or server requirement
-- Separate overview, case study, article hub, and reflection pages
-- Preserved Python source files in a public-safe source folder
+</details>
 
-## How the Game Works
+---
 
-The maze is represented as a grid. Open cells are playable paths, and blocked cells are walls. The pirate can move in four directions:
+<details open><summary>
 
-| Action | Meaning |
-|---|---|
-| Left | Move one cell left |
-| Up | Move one cell up |
-| Right | Move one cell right |
-| Down | Move one cell down |
+## Project Summary
 
-Every action produces feedback. Reaching the treasure is rewarded, valid movement has a small cost, revisiting cells creates a stronger penalty, and invalid movement is punished more heavily. Over repeated episodes, the agent learns which decisions lead toward the treasure and which decisions waste reward.
+</summary>
 
-## Implementation Highlights
+### Original Concept
 
-The Python implementation uses a custom maze environment and experience replay. The maze environment defines the board, valid movement rules, visited cells, reward values, and win/loss conditions. The experience-replay logic stores past states, actions, rewards, and next states so the agent can train from a sample of earlier attempts.
+The original Treasure Hunt project used Python, NumPy, Keras, Matplotlib, a custom maze environment, and an experience-replay helper. The agent learned from repeated attempts inside an 8×8 maze. It received rewards for progress, penalties for invalid or inefficient movement, and a win state when it reached the treasure.
 
-The deep Q-learning workflow trains a model to predict the value of possible actions from the current maze state. During training, the agent balances exploration and exploitation. Exploration gives it room to discover new paths, while exploitation lets it use the best route it has learned so far. As training continues, the agent improves its ability to reach the treasure efficiently.
+### Browser Demo Concept
 
-Key development pieces include:
+The front-end demo recreates the player-facing game experience with static browser code. Instead of running a live Keras training process in GitHub Pages, the demo uses JavaScript pathfinding and difficulty settings to simulate an intelligent agent racing the player to the X treasure.
 
-- Resetting the maze from valid starting cells
-- Choosing actions through epsilon-greedy decision-making
-- Storing episode data for experience replay
-- Updating the model from sampled training experiences
-- Tracking wins, losses, rewards, path length, and model loss
-- Checking whether the agent can successfully reach the treasure from valid positions
-- Visualizing the maze and learned behavior
+### Key Contrast: Original vs Demo
 
-## Front-End Adaptation
+| Area | Original AI Version | Browser Demo Version |
+|---|---|---|
+| Runtime | Python/Jupyter/Keras | HTML/CSS/JavaScript |
+| Main Goal | Train an agent through reinforcement learning | Let a visitor play against an intelligent agent |
+| Hosting | Local machine-learning environment | GitHub Pages |
+| Data Storage | Training memory during execution | Browser session only |
+| Maze | 8×8 grid | 8×8 randomized grid |
+| Agent | Deep Q-learning model | JavaScript behavior inspired by the trained-agent goal |
+| User Experience | Developer-focused notebook | Portfolio-ready interactive game |
 
-The browser version recreates the maze environment with JavaScript classes and a client-side Q-learning trainer. It does not use a database, backend, package manager, or build step. All session activity runs in memory and resets when the page reloads.
+</details>
 
-The front-end version adds:
+---
 
-- A polished app interface
-- Button and keyboard controls
-- Training controls
-- Live metrics
-- Animated path playback
-- Project documentation pages
-- GitHub Pages-compatible relative paths
+<details open><summary>
 
+## Scope
 
+</summary>
 
-## Enhanced Browser Gameplay
+### Included Pages
 
-The front-end demo now turns the original maze environment into a playable player-versus-agent race. Visitors start in the top-left cell and try to reach the X treasure before the intelligent agent does. The game runs fully in the browser with no database, backend, install step, or saved session state.
+- `index.html` — the playable game demo.
+- `info.html` — project overview and implementation context.
+- `case-study.html` — project conversion case study.
+- `article.html` — technical article page.
+- `articles.html` — article hub and compare/contrast writing.
+- `reflection.html` — public-facing project reflection.
 
-### Gameplay Features
+### Demo Scope
 
-- Randomized 8×8 maze generation for each new game
-- Guaranteed valid path from the start cell to the X treasure
-- Blocked cells that neither the player nor the agent can move through
-- Player movement with arrow keys, WASD, or on-screen controls
-- Reward tracking based on the original maze environment logic
-- Agent trail, player trail, move counts, race lead, and game log
+The demo is designed to run fully in the browser. It includes randomized mazes, player movement, agent movement, difficulty selection, reward tracking, game logs, and visible race feedback.
 
-### Agent Difficulty Modes
+### Source Scope
 
-The intelligent agent uses the same pathfinding rules on every difficulty, but its behavior is tuned to create different gameplay experiences:
+The original Python and notebook files are preserved in `source/original-python/` so the project keeps its technical origin while the public-facing demo remains easy to open and use.
 
-| Difficulty | Behavior | Demo Purpose |
-| --- | --- | --- |
-| Easy | Slower agent, delayed start, more exploratory moves | Lets visitors learn the controls and understand the maze |
-| Medium | Balanced speed with occasional exploration | Feels like a fair race against an imperfect trained agent |
-| Hard | Fast agent using the optimal route | Shows the agent exploiting the learned path efficiently |
+</details>
 
-The agent never walks through walls. Difficulty changes its speed, delay, and exploration rate rather than breaking the rules of the maze.
+---
 
-## Project Structure
+<details open><summary>
+
+## Constraints & Limitations
+
+</summary>
+
+### Python/Keras Runtime Not Included in GitHub Pages
+
+GitHub Pages cannot run Python, Jupyter Notebook, or Keras training code directly. Because of that, the public demo does not attempt to train a neural network live in the browser.
+
+### Browser-Safe Simulation
+
+The front-end version uses JavaScript to recreate the decision-making experience. Hard mode follows a stronger valid route, medium mode adds occasional exploratory behavior, and easy mode gives the player more room to win. The result is honest to the project’s goal without pretending GitHub Pages can run a full machine-learning backend.
+
+</details>
+
+---
+
+<div align="center">
+
+# Application Architecture
+
+</div>
+
+---
+
+<details open><summary>
+
+## File Structure
+
+</summary>
 
 ```text
-.
+treasure-hunt-demo/
 ├── index.html
 ├── info.html
 ├── case-study.html
@@ -158,118 +200,370 @@ The agent never walks through walls. Difficulty changes its speed, delay, and ex
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
-│   ├── images/
-│   │   └── treasure-hunt-mark.svg
-│   └── js/
-│       ├── app.js
-│       ├── q-agent.js
-│       └── treasure-maze.js
+│   ├── js/
+│   │   ├── app.js
+│   │   ├── q-agent.js
+│   │   └── treasure-maze.js
+│   └── images/
+│       ├── treasure-hunt-logo.png
+│       ├── treasure-hunt-mark.svg
+│       └── favicon.svg
 ├── docs/
 │   ├── article.md
 │   ├── articles.md
-│   ├── original-ai-article.md
-│   ├── enhanced-browser-demo-article.md
-│   ├── original-vs-demo-comparison.md
 │   ├── case-study.md
+│   ├── enhanced-browser-demo-article.md
+│   ├── original-ai-article.md
+│   ├── original-vs-demo-comparison.md
 │   ├── portfolio-content.md
 │   └── project-reflection.md
 └── source/
     ├── README.md
     └── original-python/
         ├── GameExperience.py
-        ├── TreasureMaze.py
-        └── TreasureHuntGame.ipynb
+        ├── TreasureHuntGame.ipynb
+        └── TreasureMaze.py
 ```
 
-## Technologies
+</details>
 
-| Area | Tools |
-|---|---|
-| Front end | HTML, CSS, JavaScript |
-| Original AI workflow | Python, Jupyter Notebook, NumPy, Keras, Matplotlib |
-| Learning approach | Deep Q-learning, experience replay, epsilon-greedy exploration |
-| Deployment | GitHub Pages or any static host |
+---
 
-## How to Run Locally
+<details open><summary>
 
-No installation is required for the browser demo.
+## Page Structure
 
-1. Download or clone the repository.
-2. Open `index.html` in a browser.
-3. Use the manual controls to play the maze or select an episode count and train the agent.
+</summary>
 
-For the original Python notebook, use a Python environment with the required machine-learning dependencies installed. The notebook is included for source reference, while the front-end demo is the easiest version to run quickly.
+The app page is intentionally focused on the playable demo. The supporting writing lives on separate pages so the game page does not feel crowded or like a report pasted under an app. This keeps the project easier to present in a portfolio and easier for a visitor to understand.
 
-## GitHub Pages Deployment
+</details>
 
-This project is ready for GitHub Pages because all paths are relative and the site does not require a server.
+---
 
-1. Upload the repository to GitHub.
-2. Open the repository settings.
-3. Go to **Pages**.
-4. Select the branch you want to publish from.
-5. Select the repository root as the publishing folder.
-6. Save the settings.
+<details open><summary>
 
-After GitHub Pages finishes publishing, the demo will open from the repository’s Pages URL.
+## Asset Structure
 
-## Customization
+</summary>
 
-Useful places to edit:
-
-| File | Purpose |
-|---|---|
-| `assets/js/treasure-maze.js` | Maze layout, reward rules, movement logic |
-| `assets/js/q-agent.js` | Q-learning trainer and learned path logic |
-| `assets/js/app.js` | Interface behavior, controls, metrics, rendering |
-| `assets/css/styles.css` | Visual design, layout, colors, responsive behavior |
-| `info.html` | Public project overview |
-| `case-study.html` | Case study page |
-| `article.html` | Technical article page |
-| `articles.html` | Article hub with original-version, demo-version, and comparison writing |
-| `reflection.html` | Development and ethics reflection page |
-| `docs/` | Markdown versions of the write-ups |
-
-## Accessibility
-
-The demo includes semantic page structure, visible buttons, labeled regions, keyboard movement support, status updates, and responsive sizing. The visual maze uses icons and a legend so the board is not dependent on color alone.
-
-## Browser Compatibility
-
-The front-end demo uses standard HTML, CSS, and JavaScript modules. It is intended for current versions of Chrome, Edge, Firefox, and Safari.
-
-## Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| The page opens but the app does not run | Use a current browser that supports JavaScript modules. |
-| GitHub Pages shows a blank page | Make sure the files are published from the repository root and that `.nojekyll` is included. |
-| Styling or scripts do not load | Keep the folder structure the same and do not change the relative paths unless the files are moved. |
-| Training results vary | The agent uses exploration during training, so some variation between runs is expected. |
-| The Python notebook requires dependencies | Install the Python machine-learning packages needed by the notebook, or use the static browser demo instead. |
-
-## Related Write-Ups
-
-- [`info.html`](./info.html) gives a public-facing overview of the project.
-- [`case-study.html`](./case-study.html) explains the implementation and browser adaptation.
-- [`article.html`](./article.html) explains reinforcement-learning concepts using the maze.
-- [`articles.html`](./articles.html) includes the original AI article, the enhanced demo article, and the compare-and-contrast write-up.
-- [`reflection.html`](./reflection.html) discusses software development habits, responsible AI, and maintainability.
-- [`docs/`](./docs/) contains markdown versions of the portfolio write-ups.
-
-
-## Branding and Logo
-
-The front-end demo uses `assets/images/treasure-hunt-logo.png` as the primary logo. The interface is styled around that mark: black background, neon-lime path/border accents, white open maze cells, dark blocked cells, and the X as the treasure goal.
-
-To replace the logo later, overwrite:
+The `assets` folder contains the front-end styling, JavaScript modules, and image files. The logo file can be replaced without changing the game logic as long as the path remains the same.
 
 ```text
 assets/images/treasure-hunt-logo.png
 ```
 
-Keep the same filename and path, and the webpage will use the updated version automatically.
+</details>
 
-## Readable article layout
+---
 
-The article, case study, reflection, and info pages use constrained reading containers so long-form text stays readable on large screens. The CSS limits text width, adds margins, creates card-style content panels, and improves paragraph, list, table, and heading spacing.
+<details open><summary>
+
+## JavaScript Module Structure
+
+</summary>
+
+- `treasure-maze.js` handles maze rules, valid movement, randomized board generation, and route checks.
+- `q-agent.js` handles the browser-safe intelligent agent behavior and difficulty modes.
+- `app.js` connects the interface to the game logic, renders the board, updates HUD values, and manages player input.
+
+</details>
+
+---
+
+<div align="center">
+
+# Gameplay Logic
+
+</div>
+
+---
+
+<details open><summary>
+
+## Maze Rules
+
+</summary>
+
+The maze is an 8×8 grid. Open cells can be crossed. Blocked cells cannot be crossed. The treasure is represented by the X, and the goal is to reach that X before the agent does.
+
+The randomized board generator must preserve three rules:
+
+- The player start cell must be open.
+- The treasure cell must be open.
+- At least one valid route must exist between the start and treasure.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Player Rules
+
+</summary>
+
+The player can move with keyboard controls or on-screen buttons. The available movement directions are up, down, left, and right. Invalid moves do not move the player, and blocked squares remain blocked.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Agent Rules
+
+</summary>
+
+The agent uses valid open cells only. It does not walk through blocked cells. Its movement is based on route evaluation and difficulty settings so the demo feels like a race rather than a static board.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Difficulty Modes
+
+</summary>
+
+| Mode | Behavior |
+|---|---|
+| Easy | Slower and less efficient, giving the player more time to win. |
+| Medium | Usually follows a strong route but can make exploratory choices. |
+| Hard | Plays closer to the shortest valid route and moves more aggressively. |
+
+</details>
+
+---
+
+<details open><summary>
+
+## Randomized Maze Generation
+
+</summary>
+
+Each new game creates a fresh board while still protecting the core gameplay requirement: the board must be solvable. This makes the demo replayable without needing a database or server.
+
+</details>
+
+---
+
+<div align="center">
+
+# Front-End Implementation
+
+</div>
+
+---
+
+<details open><summary>
+
+## Design System
+
+</summary>
+
+The design uses a dark maze-game interface with high-contrast grid cells, neon accent colors, and a focused app layout. The styling supports the treasure/maze theme without burying the actual game under decorative clutter.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Logo and Branding
+
+</summary>
+
+The primary logo is stored in:
+
+```text
+assets/images/treasure-hunt-logo.png
+```
+
+The current visual direction uses a black background, neon-lime path and border accents, white open cells, dark blocked cells, and the X as the treasure marker.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Accessibility Considerations
+
+</summary>
+
+The page uses visible labels, button controls, keyboard controls, readable contrast, and descriptive page structure. The browser game can be played without needing a mouse because arrow keys and WASD are supported.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Browser Compatibility
+
+</summary>
+
+The demo uses standard HTML, CSS, and JavaScript modules. It is intended for current versions of Chrome, Edge, Firefox, and Safari.
+
+</details>
+
+---
+
+<div align="center">
+
+# Running, Testing, and Deployment
+
+</div>
+
+---
+
+<details open><summary>
+
+## How to Run Locally
+
+</summary>
+
+Open `index.html` directly in a browser, or run a local static server:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+</details>
+
+---
+
+<details open><summary>
+
+## How to Test the Game
+
+</summary>
+
+1. Open `index.html`.
+2. Select Easy, Medium, or Hard.
+3. Click **New Maze** several times and confirm the board changes.
+4. Click **Start Race**.
+5. Move with arrow keys, WASD, or the on-screen buttons.
+6. Confirm the player and agent only move through open cells.
+7. Confirm the X remains the treasure goal.
+8. Confirm the game declares a winner when the player or agent reaches the X.
+
+</details>
+
+---
+
+<details open><summary>
+
+## GitHub Pages Deployment
+
+</summary>
+
+1. Upload the project files to a GitHub repository.
+2. Keep `index.html` in the repository root.
+3. Keep `.nojekyll` in the repository root.
+4. Go to **Settings → Pages**.
+5. Choose the branch and root folder.
+6. Save and open the published URL.
+
+No build command is required.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Troubleshooting
+
+</summary>
+
+| Issue | Fix |
+|---|---|
+| Page opens but styling is missing | Check that `assets/css/styles.css` exists and the path is unchanged. |
+| Game does not start | Confirm `assets/js/app.js` is loading as a module. |
+| Logo does not appear | Confirm `assets/images/treasure-hunt-logo.png` exists. |
+| Board looks stretched | Check that `#maze-board` is still styled as an 8×8 CSS grid. |
+| GitHub Pages shows a blank page | Make sure all paths are relative and `.nojekyll` is present. |
+
+</details>
+
+---
+
+<div align="center">
+
+# Portfolio Documentation
+
+</div>
+
+---
+
+<details open><summary>
+
+## Included Articles
+
+</summary>
+
+The project includes article-style documentation explaining the original AI implementation, the browser demo version, and the comparison between the two.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Case Study
+
+</summary>
+
+The case study explains how I turned a Python/Jupyter reinforcement-learning project into a playable front-end showcase demo while keeping the public version accurate to the original concept.
+
+</details>
+
+---
+
+<details open><summary>
+
+## Future Enhancements
+
+</summary>
+
+Possible future improvements include animation polish, saved high scores, alternate maze sizes, a visual path replay, and optional localStorage support for player history.
+
+</details>
+
+---
+
+<div align="center">
+
+**Built and maintained by Alysha Pursley**
+
+</div>
+
+
+---
+
+<details open><summary>
+
+## Original Repository and Source Links
+
+</summary>
+
+The demo pages include an **Original Repository** button and a source-code link. The repository URL currently points to my GitHub profile because the exact original repository URL was not available in this workspace.
+
+Update the original repository URL in the HTML pages after the project repository is created or confirmed.
+
+Current source reference:
+
+```text
+source/original-python/
+```
+
+</details>
