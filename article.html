@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Article | Treasure Hunt</title>
+  <link rel="icon" href="./assets/images/treasure-hunt-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body class="longform-body">
+  
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Treasure Hunt home">
+      <img class="brand-logo" src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt logo">
+      <span class="brand-text">
+        <span class="brand-title">Treasure<span>Hunt</span></span>
+        <span class="brand-subtitle">Player vs. intelligent agent</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Game</a>
+<a href="info.html">Info</a>
+<a href="case-study.html">Case Study</a>
+<a href="articles.html">Articles</a>
+<a href="reflection.html">Reflection</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="content-page article-page">
+    <p class="eyebrow">Technical Article</p><h1>How a Reinforcement-Learning Maze Teaches an Agent to Make Better Decisions</h1><p>A treasure maze is a compact way to understand reinforcement learning because every move has immediate feedback. The agent starts in a grid, chooses a direction, receives a reward or penalty, and gradually learns which decisions lead toward success. The pirate theme makes the concept easier to visualize, but underneath the map is a practical example of how software can learn through trial, feedback, and adjustment.</p>
+    <section class="content-section content-card"><h2>The Environment</h2><p>The environment is the world the agent interacts with. In this project, that world is an 8×8 maze. Some cells are open paths, some are blocked walls, and one cell holds the treasure. The pirate can move in four directions: left, up, right, and down. A move is only valid when it stays inside the grid and lands on an open path.</p></section>
+    <section class="content-section content-card"><h2>The Reward System</h2><p>The reward system is the steering mechanism. Reaching the treasure gives the agent a strong positive reward, while invalid movement, blocked movement, revisiting cells, or taking too long creates penalties. Over many attempts, the agent learns that the best route is not just any route that eventually reaches the treasure. The best route is the one that reaches the goal while avoiding unnecessary penalties.</p></section>
+    <section class="content-section content-card"><h2>Exploration and Exploitation</h2><p>The agent has to balance curiosity with confidence. Exploration lets it try unfamiliar moves and discover paths it may not have tested. Exploitation lets it choose the best move it has already learned. Epsilon controls that balance. A higher epsilon encourages experimentation, while a lower epsilon means the agent relies more heavily on what it has learned from previous episodes.</p></section>
+    <section class="content-section content-card"><h2>Experience Replay</h2><p>Experience replay helps the agent learn from earlier attempts instead of only reacting to the latest move. Each stored experience contains the state, the action, the reward, the next state, and whether the episode ended. Training from these stored samples makes learning more stable because the agent can revisit a wider mix of successful and unsuccessful decisions.</p></section>
+    <section class="content-section content-card"><h2>Why Visualization Matters</h2><p>A notebook can show code, outputs, and charts, but an interactive browser version makes the learning process feel more concrete. When the board updates, the reward changes, and the trained route appears, the relationship between action and outcome becomes easier to see. That matters because explainable, inspectable behavior is an important part of building trustworthy AI systems.</p></section>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Alysha Pursley</span>
+    <span>Static front-end demo built for GitHub Pages.</span>
+  </div>
+</footer>
+
+</body>
+</html>

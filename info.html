@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Info | Treasure Hunt</title>
+  <link rel="icon" href="./assets/images/treasure-hunt-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+<body class="longform-body">
+  
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Treasure Hunt home">
+      <img class="brand-logo" src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt logo">
+      <span class="brand-text">
+        <span class="brand-title">Treasure<span>Hunt</span></span>
+        <span class="brand-subtitle">Player vs. intelligent agent</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Game</a>
+<a href="info.html" class="active">Info</a>
+<a href="case-study.html">Case Study</a>
+<a href="articles.html">Articles</a>
+<a href="reflection.html">Reflection</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="content-page">
+    <p class="eyebrow">Project Overview</p>
+    <h1>Booty on the Brain: A Deep Q-Learning Treasure Hunt Game</h1>
+    <p>This project explores how a reinforcement-learning agent can learn to navigate an 8×8 maze in search of hidden treasure. The agent is represented as a pirate, and its objective is to discover an efficient path from the starting area to the treasure while avoiding walls, repeated moves, invalid actions, and wasted steps.</p>
+    <p>The original implementation used Python, Jupyter Notebook, NumPy, Keras, Matplotlib, a custom maze environment, and an experience-replay helper. This front-end version recreates the same environment rules, reward structure, movement logic, and training goal as a static browser demo that can be opened directly from GitHub Pages.</p>
+    <section class="content-section content-card"><h2>Core Concept</h2><p>The maze is made of open paths and blocked cells. The pirate can move left, up, right, or down. Every action returns a result: progress may lead closer to the treasure, repeated or inefficient movement reduces the reward, and invalid movement is penalized more heavily. Over repeated episodes, the agent learns which choices are more valuable and which routes lead to dead ends.</p></section>
+    <section class="content-section content-card"><h2>What the Browser Demo Preserves</h2><ul><li>The same 8×8 maze layout from the Python version.</li><li>The same four-direction movement system: left, up, right, and down.</li><li>The same terminal goal: reach the treasure cell in the bottom-right corner.</li><li>The same reinforcement-learning idea of rewards, penalties, exploration, and learned paths.</li><li>The same no-database behavior: training runs in memory and resets cleanly between sessions.</li></ul></section>
+    <section class="content-section content-card"><h2>What Changed for the Showcase Version</h2><p>The original notebook workflow was translated into a front-end application with HTML, CSS, and JavaScript. Instead of requiring Python, TensorFlow, Keras, or Jupyter, the demo runs entirely in the browser. I also added manual movement controls, keyboard input, a visual maze board, training metrics, an animated learned-path replay, and a small training log so the learning process is easier to understand at a glance.</p></section>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Alysha Pursley</span>
+    <span>Static front-end demo built for GitHub Pages.</span>
+  </div>
+</footer>
+
+</body>
+</html>

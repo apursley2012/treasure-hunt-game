@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Treasure Hunt | Browser Game Demo</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body class="app-body">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Treasure Hunt home">
+      <img class="brand-logo" src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt logo">
+      <span class="brand-text">
+        <span class="brand-title">Treasure<span>Hunt</span></span>
+        <span class="brand-subtitle">Player vs. intelligent agent</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html" class="active">Game</a>
+      <a href="info.html">Info</a>
+      <a href="case-study.html">Case Study</a>
+      <a href="articles.html">Articles</a>
+      <a href="reflection.html">Reflection</a>
+    </nav>
+  </div>
+</header>
+
+<main class="app-shell" aria-label="Treasure Hunt Game browser demo">
+  <section class="hero compact-hero">
+    <div class="hero-copy">
+      <span class="eyebrow">8x8 randomized maze race</span>
+      <h1>Beat the agent to the <span class="text-accent">X</span>.</h1>
+      <p class="lede">Race an intelligent JavaScript agent through a randomized maze. The X is the treasure, blocked cells stay blocked, and every board keeps a valid path from start to goal.</p>
+      <div class="cta-row">
+        <a class="button primary" href="#game">Play the Demo</a>
+        <a class="button secondary" href="articles.html">Read the Articles</a>
+      </div>
+    </div>
+    <div class="hero-logo-card">
+      <img class="hero-logo" src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt logo">
+    </div>
+  </section>
+
+  <section id="game" class="game-card" aria-labelledby="app-title">
+    <div class="game-title-row">
+      <div>
+        <span class="eyebrow">Playable Demo</span>
+        <h2 id="app-title">Treasure Hunt Race</h2>
+      </div>
+      <span id="game-status" class="status-pill">Ready</span>
+    </div>
+
+    <div class="game-layout">
+      <section class="board-panel" aria-label="Maze board">
+        <div class="board-toolbar race-toolbar">
+          <div>
+            <span class="mini-label">Difficulty</span>
+            <strong id="difficulty-label">Medium</strong>
+          </div>
+          <div>
+            <span class="mini-label">Reward</span>
+            <strong id="reward-label">0.00</strong>
+          </div>
+          <div>
+            <span class="mini-label">Player Steps</span>
+            <strong id="player-steps-label">0</strong>
+          </div>
+          <div>
+            <span class="mini-label">Agent Steps</span>
+            <strong id="agent-steps-label">0</strong>
+          </div>
+          <div>
+            <span class="mini-label">Shortest Route</span>
+            <strong id="path-length-label">—</strong>
+          </div>
+          <div>
+            <span class="mini-label">Race Lead</span>
+            <strong id="player-lead-label">Even</strong>
+          </div>
+        </div>
+
+        <div id="maze-board" class="maze-board" role="grid" aria-label="8 by 8 treasure maze"></div>
+
+        <div class="legend" aria-label="Maze legend">
+          <span><i class="legend-free"></i>Open</span>
+          <span><i class="legend-wall"></i>Blocked</span>
+          <span><i class="legend-visited"></i>Your Trail</span>
+          <span><i class="legend-agent"></i>Agent Trail</span>
+          <span><i class="legend-pirate"></i>You</span>
+          <span><i class="legend-treasure"></i>X Treasure</span>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="Game controls">
+        <section class="panel-block">
+          <h2>Race Setup</h2>
+          <p>Beat the intelligent agent to the X. Every new game creates a fresh 8×8 maze with blocked squares, valid moves only, and a guaranteed path to the goal.</p>
+          <label class="select-label" for="difficulty-select">Agent Difficulty</label>
+          <select id="difficulty-select">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <p id="difficulty-description" class="difficulty-copy"></p>
+          <div class="button-row stacked-buttons">
+            <button class="primary-button" id="start-race" type="button">Start Race</button>
+            <button id="new-maze" type="button">New Maze</button>
+            <button id="reset-race" type="button">Reset</button>
+          </div>
+        </section>
+
+        <section class="panel-block">
+          <h2>Player Controls</h2>
+          <p>Use the buttons, arrow keys, or WASD. Invalid wall moves cost reward but do not move your player.</p>
+          <div class="direction-grid" aria-label="Movement controls">
+            <button class="ghost-space" tabindex="-1" aria-hidden="true"></button>
+            <button data-action="up" aria-label="Move up">↑</button>
+            <button class="ghost-space" tabindex="-1" aria-hidden="true"></button>
+            <button data-action="left" aria-label="Move left">←</button>
+            <div class="agent-chip">
+              <span class="mini-label">Agent</span>
+              <strong id="agent-move-label">waiting</strong>
+            </div>
+            <button data-action="right" aria-label="Move right">→</button>
+            <button class="ghost-space" tabindex="-1" aria-hidden="true"></button>
+            <button data-action="down" aria-label="Move down">↓</button>
+            <button class="ghost-space" tabindex="-1" aria-hidden="true"></button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <section class="console-panel" aria-label="Game log">
+      <div class="console-title">Game Log</div>
+      <ol id="training-log" class="training-log">
+        <li>Randomized maze race loaded.</li>
+      </ol>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Alysha Pursley</span>
+    <span>Static front-end demo built for GitHub Pages.</span>
+  </div>
+</footer>
+
+<script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>
