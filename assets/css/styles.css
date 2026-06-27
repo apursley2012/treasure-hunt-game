@@ -1734,6 +1734,7 @@ body:not(.app-body) .info-card {
   }
 }
 
+
 /* Source / Original Project Links */
 .source-links {
   width: min(1180px, calc(100% - 32px));
@@ -1793,3 +1794,64 @@ body:not(.app-body) .info-card {
   }
 }
 
+
+/* Mobile / touch controls for Treasure Hunt */
+#maze-board,
+.direction-grid,
+.direction-grid button,
+[data-action] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#maze-board {
+  touch-action: none;
+  user-select: none;
+}
+
+.direction-grid button[data-action],
+button[data-action] {
+  min-width: 64px;
+  min-height: 64px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.direction-grid button[data-action]:active,
+button[data-action]:active {
+  transform: scale(0.96);
+  filter: brightness(1.15);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .direction-grid {
+    grid-template-columns: repeat(3, minmax(64px, 78px)) !important;
+    grid-template-rows: repeat(3, minmax(64px, 78px)) !important;
+    gap: 10px !important;
+  }
+
+  .direction-grid button[data-action] {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    font-size: 1.65rem !important;
+  }
+
+  .agent-chip {
+    min-height: 64px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .direction-grid {
+    grid-template-columns: repeat(3, 72px) !important;
+    grid-template-rows: repeat(3, 72px) !important;
+    justify-content: center !important;
+  }
+
+  .direction-grid button[data-action] {
+    min-width: 72px !important;
+    min-height: 72px !important;
+  }
+}
