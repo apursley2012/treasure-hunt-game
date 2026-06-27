@@ -214,6 +214,7 @@ h2 {
 }
 
 h3 {
+  color: var(--lime);
   margin: 0 0 10px;
   font-size: 1.2rem;
 }
