@@ -72,10 +72,6 @@ Date: June 2026
 #### *Software Developer*  
 #### June 2026
 
----
-
-**_Project ID: TREASURE-HUNT-FRONTEND-DEMO_**
-
 </div>
 
 ---
