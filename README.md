@@ -1,571 +1,499 @@
 <!--
 File: README.md
-Document Title: Treasure Hunt Browser Demo Report
-Author: Alysha Pursley, Software Developer
-Date: June 2026
+Document Title: Treasure Hunt Game
+Author: Alysha Pursley
+Date: August 2026
 -->
 
 <div align="center">
 
-# Treasure Hunt Browser Demo Report
+<h1>Treasure Hunt Game 🏴‍☠️</h1>
 
-### Deep Q-Learning Maze Project Rebuilt as a GitHub Pages Front-End Game
+<p><a href="https://github.com/apursley2012/treasure-hunt-game/stargazers"><img src="https://img.shields.io/github/stars/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Stars" alt="Stars"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/forks"><img src="https://img.shields.io/github/forks/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Forks" alt="Forks"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/issues"><img src="https://img.shields.io/github/issues/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Issues" alt="Issues"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/commits"><img src="https://img.shields.io/github/last-commit/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=git&amp;label=Last%20Commit" alt="Last Commit"></a> <a href="https://github.com/apursley2012/treasure-hunt-game"><img src="https://img.shields.io/github/repo-size/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Repo%20Size" alt="Repo Size"></a> <a href="https://github.com/apursley2012/treasure-hunt-game"><img src="https://img.shields.io/github/languages/top/apursley2012/treasure-hunt-game?style=for-the-badge&amp;label=Top%20Language" alt="Top Language"></a></p>
 
-**Race an intelligent JavaScript agent through a randomized maze. The X is the treasure, blocked cells act as walls and every board keeps a valid path from start to goal.** 
+<p><a href="https://apursley2012.github.io/treasure-hunt-game/"><img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-222222?style=for-the-badge&amp;logo=githubpages&amp;logoColor=white" alt="Live Demo"></a> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&amp;logo=jupyter&amp;logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&amp;logo=keras&amp;logoColor=white" alt="Keras"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&amp;logo=javascript&amp;logoColor=black" alt="JavaScript"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&amp;logo=html5&amp;logoColor=white" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&amp;logo=css3&amp;logoColor=white" alt="CSS3"></p>
 
----
+<p><strong>A playable treasure-hunt maze where a player races an intelligent JavaScript agent across randomized valid boards, with difficulty controls and the original reinforcement-learning source preserved for reference.</strong></p>
 
 ![Treasure Hunt Game](./assets/images/treasure-hunt-logo.png)
 
-</div>
-
----
-
-## Table of Contents
-
-- [Project Statement](#project-statement)
-  - [Purpose](#purpose)
-  - [Project Summary](#project-summary)
-    - [Original Concept](#original-concept)
-    - [Browser Demo Concept](#browser-demo-concept)
-    - [Key Contrast: Original vs Demo](#key-contrast-original-vs-demo)
-  - [Scope](#scope)
-    - [Included Pages](#included-pages)
-    - [Demo Scope](#demo-scope)
-    - [Source Scope](#source-scope)
-  - [Constraints & Limitations](#constraints--limitations)
-    - [Python/Keras Runtime Not Included in GitHub Pages](#pythonkeras-runtime-not-included-in-github-pages)
-    - [Browser-Safe Simulation](#browser-safe-simulation)
-- [Application Architecture](#application-architecture)
-  - [File Structure](#file-structure)
-  - [Page Structure](#page-structure)
-  - [Asset Structure](#asset-structure)
-  - [JavaScript Module Structure](#javascript-module-structure)
-- [Gameplay Logic](#gameplay-logic)
-  - [Maze Rules](#maze-rules)
-  - [Player Rules](#player-rules)
-  - [Agent Rules](#agent-rules)
-  - [Difficulty Modes](#difficulty-modes)
-  - [Randomized Maze Generation](#randomized-maze-generation)
-- [Front-End Implementation](#front-end-implementation)
-  - [Design System](#design-system)
-  - [Logo and Branding](#logo-and-branding)
-  - [Accessibility Considerations](#accessibility-considerations)
-  - [Browser Compatibility](#browser-compatibility)
-- [Running, Testing, and Deployment](#running-testing-and-deployment)
-  - [How to Run Locally](#how-to-run-locally)
-  - [How to Test the Game](#how-to-test-the-game)
-  - [GitHub Pages Deployment](#github-pages-deployment)
-  - [Troubleshooting](#troubleshooting)
-- [Portfolio Documentation](#portfolio-documentation)
-  - [Included Articles](#included-articles)
-  - [Case Study](#case-study)
-  - [Future Enhancements](#future-enhancements)
-
----
-
-<div align="center">
-
-# Project Statement
-
----
-
-### Treasure Hunt Game: Original AI Project, Browser Demo Scope, and Portfolio-Ready Front-End Rebuild
-
-### Report By: Alysha Pursley  
-#### *Software Developer*  
-#### June 2026
+<p><a href="https://apursley2012.github.io/treasure-hunt-game/">Open the live project</a> · <a href="https://github.com/apursley2012/treasure-hunt-game">View the repository</a> · <a href="https://github.com/apursley2012/treasure-hunt-game/issues/new/choose">Report an issue or request an addition</a></p>
 
 </div>
 
 ---
 
-**Project Type:** Artificial Intelligence Concept Rebuilt as a Static Browser Game  
+## Table of Contents 📖
 
-**Implementation Scope:** HTML, CSS, and JavaScript front-end demo with original Python/Jupyter source preserved for reference.
+*   [Project Overview 🔎](#project-overview)
+    *   [Purpose 🎯](#purpose)
+    *   [Design Style and Inspiration 🎨](#design-style-and-inspiration)
+    *   [Main Color Palette 🌈](#main-color-palette)
+    *   [Preview Screenshots 🖼️](#preview-screenshots)
+*   [Key Features ✨](#key-features)
+*   [Tech Stack 🛠️](#tech-stack)
+*   [Live Demo 🚀](#live-demo)
+*   [Installation 📦](#installation)
+    *   [Local Use 💻](#local-use)
+    *   [GitHub Pages Deployment 🌐](#github-pages-deployment)
+*   [Usage 🧭](#usage)
+*   [Project Structure 🗂️](#project-structure)
+    *   [Pages Included 📄](#pages-included)
+    *   [Core Files and Architecture 🧩](#core-files-and-architecture)
+    *   [File and Folder Structure 🌳](#file-and-folder-structure)
+*   [Maze and Agent Behavior 🧠](#maze-and-agent-behavior)
+*   [Customization Guide 🎨](#customization-guide)
+*   [Accessibility and Browser Compatibility ♿](#accessibility-and-browser-compatibility)
+*   [Repository Relationship 🔗](#repository-relationship)
+*   [Project Scope and Limitations 📌](#project-scope-and-limitations)
+*   [Possible Future Enhancements 💡](#possible-future-enhancements)
+*   [Contributing 🤝](#contributing)
+    *   [Reporting Issues 🐛](#reporting-issues)
+    *   [Requesting Additions 📝](#requesting-additions)
+*   [License 📜](#license)
+*   [Important Links 🔗](#important-links)
+*   [Copyright ©️](#copyright)
 
 ---
 
-<details open><summary>
+<a id="project-overview"></a>
 
-## Purpose
+<details open>
+<summary><strong>Project Overview 🔎</strong></summary>
 
-</summary>
 
-I built this version of Treasure Hunt to make the original maze-learning project easier to view, test, and understand from a portfolio. The original project focused on an intelligent pirate agent learning how to navigate an 8×8 maze to find treasure. That version was written for a Python and Jupyter Notebook environment, which is useful for development and learning but not ideal for a public portfolio demo.
+## Project Overview 🔎
 
-This browser version keeps the maze, blocked-cell logic, movement rules, treasure goal, and agent behavior concept, then turns the experience into an interactive game a visitor can play directly in the browser. The goal is to make the project feel like a real application while still clearly connecting it back to the original reinforcement-learning concept.
+**Treasure Hunt Game** a playable treasure-hunt maze where a player races an intelligent JavaScript agent across randomized valid boards, with difficulty controls and the original reinforcement-learning source preserved for reference.
+
+</details>
+
+<a id="purpose"></a>
+
+<details open>
+<summary><strong>Purpose 🎯</strong></summary>
+
+
+### Purpose 🎯
+
+I built the browser version of Treasure Hunt so the core maze problem can be experienced instead of only described in a notebook. Every board keeps a valid route from the starting point to the treasure, the player can move through the maze directly, and an automated agent races toward the same goal. The repository also keeps the original Python and machine-learning material so the playable site and the reinforcement-learning work stay connected without pretending that GitHub Pages is training a neural network.
+
+</details>
+
+<a id="design-style-and-inspiration"></a>
+
+<details open>
+<summary><strong>Design Style and Inspiration 🎨</strong></summary>
+
+
+### Design Style and Inspiration 🎨
+
+Treasure Hunt Game uses a control-room and game-lab visual language to frame the maze, agent behavior, and learning results as something visitors can actively inspect. Cream and paper tones keep the main content readable, while dark navy provides the simulation shell and coral, cyan, lime, yellow, violet, and blue separate controls, metrics, and states. The game board, controls, and reinforcement-learning information remain the visual focus.
+
+</details>
+
+<a id="main-color-palette"></a>
+
+<details open>
+<summary><strong>Main Color Palette 🌈</strong></summary>
+
+
+### Main Color Palette 🌈
+
+I pulled the palette below directly from the current project stylesheet `assets/css/styles.css`.
+
+| Hex | Color Name | Primary Use |
+| --- | --- | --- |
+| `#11172B` | Ink Navy | Primary text, borders, hard shadows, and structural outlines |
+| `#171D36` | Night | Main dark simulation and control surfaces |
+| `#202747` | Night Blue | Secondary dark panels and headers |
+| `#F7F1DF` | Cream | Main page background |
+| `#FFFDF6` | Paper | Cards, canvas surfaces, and light controls |
+| `#FF5F57` | Coral | Primary action and state accent |
+| `#54D8E5` | Cyan | Secondary controls, state accents, and simulation highlights |
+| `#C9F45B` | Lime | Status, success, and high-visibility highlights |
+| `#A78BFA` | Violet | Decorative and secondary metric accent |
+| `#FFD65A` | Yellow | Control and visual emphasis |
+| `#4E78FF` | Blue | Labels and supporting technical emphasis |
+| `#687086` | Muted Slate | Secondary text |
+| `#CFD3DE` | Line Gray | Borders and separators |
+
+</details>
+
+<a id="preview-screenshots"></a>
+
+<details open>
+<summary><strong>Preview Screenshots 🖼️</strong></summary>
+
+
+### Preview Screenshots 🖼️
+
+Click any preview image in the repository screenshot folder to open the full-size file.
+
+
+#### 🖼️ Screenshot Gallery
+
+
+The gallery uses paired, centered images when screenshots are present. Keep screenshots under `images/screenshots/` and use names such as `treasure-hunt-game-screenshot-01.png`, `treasure-hunt-game-screenshot-02.png`, and so on. I have not invented image filenames that were not verified in the current project source.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="key-features"></a>
 
-## Project Summary
+<details open>
+<summary><strong>Key Features ✨</strong></summary>
 
-</summary>
 
-### Original Concept
+## Key Features ✨
 
-The original Treasure Hunt project used Python, NumPy, Keras, Matplotlib, a custom maze environment, and an experience-replay helper. The agent learned from repeated attempts inside an 8×8 maze. It received rewards for progress, penalties for invalid or inefficient movement, and a win state when it reached the treasure.
-
-### Browser Demo Concept
-
-The front-end demo recreates the player-facing game experience with static browser code. Instead of running a live Keras training process in GitHub Pages, the demo uses JavaScript pathfinding and difficulty settings to simulate an intelligent agent racing the player to the X treasure.
-
-### Key Contrast: Original vs Demo
-
-| Area | Original AI Version | Browser Demo Version |
-|---|---|---|
-| Runtime | Python/Jupyter/Keras | HTML/CSS/JavaScript |
-| Main Goal | Train an agent through reinforcement learning | Let a visitor play against an intelligent agent |
-| Hosting | Local machine-learning environment | GitHub Pages |
-| Data Storage | Training memory during execution | Browser session only |
-| Maze | 8×8 grid | 8×8 randomized grid |
-| Agent | Deep Q-learning model | JavaScript behavior inspired by the trained-agent goal |
-| User Experience | Developer-focused notebook | Portfolio-ready interactive game |
+*   **Generate randomized 8×8 mazes that retain a valid path to the treasure**
+*   **Move the player through valid cells while blocking illegal moves**
+*   **Run an automated JavaScript agent toward the same treasure**
+*   **Choose difficulty settings that change the race behavior**
+*   **Track movement, reward-style feedback, and game status**
+*   **Restart with a new valid maze**
+*   **Preserve original Python/Jupyter/Keras source under the source area**
+*   **Include project information, case study, articles, and reflection pages**
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="tech-stack"></a>
 
-## Scope
+<details open>
+<summary><strong>Tech Stack 🛠️</strong></summary>
 
-</summary>
 
-### Included Pages
+## Tech Stack 🛠️
 
-- `index.html` — the playable game demo.
-- `info.html` — project overview and implementation context.
-- `case-study.html` — project conversion case study.
-- `article.html` — technical article page.
-- `articles.html` — article hub and compare/contrast writing.
-- `reflection.html` — public-facing project reflection.
-
-### Demo Scope
-
-The demo is designed to run fully in the browser. It includes randomized mazes, player movement, agent movement, difficulty selection, reward tracking, game logs, and visible race feedback.
-
-### Source Scope
-
-The original Python and notebook files are preserved in `source/original-python/` so the project keeps its technical origin while the public-facing demo remains easy to open and use.
+*   **HTML**
+*   **CSS**
+*   **JavaScript**
+*   **Python source**
+*   **NumPy source**
+*   **Keras/TensorFlow-era reinforcement-learning source**
+*   **Jupyter Notebook source**
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="live-demo"></a>
 
-## Constraints & Limitations
+<details open>
+<summary><strong>Live Demo 🚀</strong></summary>
 
-</summary>
 
-### Python/Keras Runtime Not Included in GitHub Pages
+## Live Demo 🚀
 
-GitHub Pages cannot run Python, Jupyter Notebook, or Keras training code directly. Because of that, the public demo does not attempt to train a neural network live in the browser.
+Open the published project here:
 
-### Browser-Safe Simulation
-
-The front-end version uses JavaScript to recreate the decision-making experience. Hard mode follows a stronger valid route, medium mode adds occasional exploratory behavior, and easy mode gives the player more room to win. The result is honest to the project’s goal without pretending GitHub Pages can run a full machine-learning backend.
+[https://apursley2012.github.io/treasure-hunt-game/](https://apursley2012.github.io/treasure-hunt-game/)
 
 </details>
 
 ---
 
-<div align="center">
+<a id="installation"></a>
 
-# Application Architecture
+<details open>
+<summary><strong>Installation 📦</strong></summary>
 
-</div>
+
+## Installation 📦
+
+</details>
+
+<a id="local-use"></a>
+
+<details open>
+<summary><strong>Local Use 💻</strong></summary>
+
+
+### Local Use 💻
+
+1. Clone or download the repository.
+2. Keep the existing folder structure intact so the page can still find its styles, scripts, data, and assets.
+3. Open the root `index.html` for static projects, or follow the project-specific runtime instructions when a backend/source application is included.
+4. Before I publish changes, I check the main workflow, navigation, saved browser data where it applies, and the responsive layout.
+
+</details>
+
+<a id="github-pages-deployment"></a>
+
+<details open>
+<summary><strong>GitHub Pages Deployment 🌐</strong></summary>
+
+
+### GitHub Pages Deployment 🌐
+
+For the static/public portion, keep `index.html` at the repository root, use relative asset paths, then enable **Settings → Pages → Deploy from a branch → main → / (root)**. Projects that include Python, Node, MongoDB, authentication, browser automation, or another server runtime still need an appropriate backend host for those server-dependent features.
+
+</details>
 
 ---
 
-<details open><summary>
+<a id="usage"></a>
 
-## File Structure
+<details open>
+<summary><strong>Usage 🧭</strong></summary>
 
-</summary>
+
+## Usage 🧭
+
+Start with the main page and follow the project’s primary workflow. The interface is intended to be usable without reading the source first, while the case studies, articles, documentation, and source folders provide the deeper implementation context. Where browser storage is used, saved information belongs to that browser/device unless the project explicitly includes a shared backend.
+
+</details>
+
+---
+
+<a id="project-structure"></a>
+
+<details open>
+<summary><strong>Project Structure 🗂️</strong></summary>
+
+
+## Project Structure 🗂️
+
+</details>
+
+<a id="pages-included"></a>
+
+<details open>
+<summary><strong>Pages Included 📄</strong></summary>
+
+
+### Pages Included 📄
+
+| Page / Area | Purpose |
+| --- | --- |
+| `index.html` | Playable browser game |
+| `info.html` | Project overview and implementation context |
+| `case-study.html` | Detailed project case study |
+| `article.html` | Technical article |
+| `articles.html` | Writing hub |
+| `reflection.html` | Project reflection |
+| `source/` | Original Python and learning-related source files |
+| `docs/` | Supporting documentation |
+
+</details>
+
+<a id="core-files-and-architecture"></a>
+
+<details open>
+<summary><strong>Core Files and Architecture 🧩</strong></summary>
+
+
+### Core Files and Architecture 🧩
+
+The repository separates the public interface from supporting source and documentation where the project needs that distinction. The important rule is that **Treasure Hunt Game should be documented as the project it is**, not as a generic theme or one-size-fits-all site. Files that implement the main workflow belong with the application, while case studies, articles, source history, data, or backend code are documented according to their real role.
+
+</details>
+
+<a id="file-and-folder-structure"></a>
+
+<details open>
+<summary><strong>File and Folder Structure 🌳</strong></summary>
+
+
+### File and Folder Structure 🌳
 
 ```text
-treasure-hunt-demo/
+treasure-hunt-game/
+├── README.md
 ├── index.html
 ├── info.html
 ├── case-study.html
 ├── article.html
 ├── articles.html
 ├── reflection.html
-├── README.md
-├── .nojekyll
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   ├── app.js
-│   │   ├── q-agent.js
-│   │   └── treasure-maze.js
-│   └── images/
-│       ├── treasure-hunt-logo.png
-│       ├── treasure-hunt-mark.svg
-│       └── favicon.svg
-├── docs/
-│   ├── article.md
-│   ├── articles.md
-│   ├── case-study.md
-│   ├── enhanced-browser-demo-article.md
-│   ├── original-ai-article.md
-│   ├── original-vs-demo-comparison.md
-│   ├── portfolio-content.md
-│   └── project-reflection.md
-└── source/
-    ├── README.md
-    └── original-python/
-        ├── GameExperience.py
-        ├── TreasureHuntGame.ipynb
-        └── TreasureMaze.py
+├── source/
+└── docs/
 ```
 
-</details>
-
----
-
-<details open><summary>
-
-## Page Structure
-
-</summary>
-
-The app page is intentionally focused on the playable demo. The supporting writing lives on separate pages so the game page does not feel crowded or like a report pasted under an app. This keeps the project easier to present in a portfolio and easier for a visitor to understand.
+This tree highlights the major documented areas rather than inventing files that were not verified.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="maze-and-agent-behavior"></a>
 
-## Asset Structure
+<details open>
+<summary><strong>Maze and Agent Behavior 🧠</strong></summary>
 
-</summary>
 
-The `assets` folder contains the front-end styling, JavaScript modules, and image files. The logo file can be replaced without changing the game logic as long as the path remains the same.
+## Maze and Agent Behavior 🧠
 
-```text
-assets/images/treasure-hunt-logo.png
-```
+The browser game separates valid-maze generation from agent movement. A randomized board is only accepted when the start and treasure remain connected, so the difficulty comes from navigation rather than accidentally generating an unwinnable board.
 
-</details>
-
----
-
-<details open><summary>
-
-## JavaScript Module Structure
-
-</summary>
-
-- `treasure-maze.js` handles maze rules, valid movement, randomized board generation, and route checks.
-- `q-agent.js` handles the browser-safe intelligent agent behavior and difficulty modes.
-- `app.js` connects the interface to the game logic, renders the board, updates HUD values, and manages player input.
+The JavaScript agent is intentionally described as an intelligent game agent, not as live deep-Q training. The original reinforcement-learning implementation belongs to the preserved Python/Jupyter source. The published GitHub Pages experience reproduces the problem and race behavior in a browser-safe way.
 
 </details>
 
 ---
 
-<div align="center">
+<a id="customization-guide"></a>
 
-# Gameplay Logic
+<details open>
+<summary><strong>Customization Guide 🎨</strong></summary>
 
-</div>
 
----
+## Customization Guide 🎨
 
-<details open><summary>
+The safest way to customize or extend **Treasure Hunt Game** is to preserve its existing workflow first, then change one layer at a time. Update project content and data in the files that already own that information, keep visual changes inside the existing style system, and test every page that shares the changed component or data source. New features should solve a problem that belongs to this project instead of copying a feature from an unrelated application.
 
-## Maze Rules
-
-</summary>
-
-The maze is an 8×8 grid. Open cells can be crossed. Blocked cells cannot be crossed. The treasure is represented by the X, and the goal is to reach that X before the agent does.
-
-The randomized board generator must preserve three rules:
-
-- The player start cell must be open.
-- The treasure cell must be open.
-- At least one valid route must exist between the start and treasure.
+For visual changes, update the documented palette intentionally and re-check contrast, responsive spacing, screenshots, and any state colors that depend on the same variables. For data or logic changes, test both the normal path and empty/error/edge cases before publishing.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="accessibility-and-browser-compatibility"></a>
 
-## Player Rules
+<details open>
+<summary><strong>Accessibility and Browser Compatibility ♿</strong></summary>
 
-</summary>
 
-The player can move with keyboard controls or on-screen buttons. The available movement directions are up, down, left, and right. Invalid moves do not move the player, and blocked squares remain blocked.
+## Accessibility and Browser Compatibility ♿
 
-</details>
-
----
-
-<details open><summary>
-
-## Agent Rules
-
-</summary>
-
-The agent uses valid open cells only. It does not walk through blocked cells. Its movement is based on route evaluation and difficulty settings so the demo feels like a race rather than a static board.
+The public interface should remain keyboard-navigable, readable at common mobile and desktop widths, and usable without relying on color alone to communicate state. Form controls should keep visible labels or accessible names, images should use meaningful `alt` text, focus indicators should remain visible, and decorative animation should respect reduced-motion preferences when motion is present. Browser compatibility should be checked in current Safari, Chrome, Firefox, and Edge where practical.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="repository-relationship"></a>
 
-## Difficulty Modes
+<details open>
+<summary><strong>Repository Relationship 🔗</strong></summary>
 
-</summary>
 
-| Mode | Behavior |
-|---|---|
-| Easy | Slower and less efficient, giving the player more time to win. |
-| Medium | Usually follows a strong route but can make exploratory choices. |
-| Hard | Plays closer to the shortest valid route and moves more aggressively. |
+## Repository Relationship 🔗
 
-</details>
+**Treasure Hunt Game** is documented as its own project. Supporting case studies, articles, source history, static presentation layers, or backend/runtime folders are parts of this repository only when they help explain or run this project. They should not be described as separate replacement projects.
 
----
-
-<details open><summary>
-
-## Randomized Maze Generation
-
-</summary>
-
-Each new game creates a fresh board while still protecting the core gameplay requirement: the board must be solvable. This makes the demo replayable without needing a database or server.
+Where this repository contains both a static GitHub Pages layer and source that requires another runtime, the two are related but not interchangeable: the static layer provides the public experience that can run in a browser, while the source/runtime layer preserves functionality that GitHub Pages cannot execute directly.
 
 </details>
 
 ---
 
-<div align="center">
+<a id="project-scope-and-limitations"></a>
 
-# Front-End Implementation
+<details open>
+<summary><strong>Project Scope and Limitations 📌</strong></summary>
 
-</div>
 
----
+## Project Scope and Limitations 📌
 
-<details open><summary>
-
-## Design System
-
-</summary>
-
-The design uses a dark maze-game interface with high-contrast grid cells, neon accent colors, and a focused app layout. The styling supports the treasure/maze theme without burying the actual game under decorative clutter.
+This README separates what the published browser version can do from functionality that belongs to a backend, database, native application, notebook, or other runtime. Static hosting limitations are stated where they materially affect the project. The documentation should not imply that GitHub Pages is providing server-side authentication, Python execution, MongoDB access, SMS delivery, or another service it cannot actually run.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="possible-future-enhancements"></a>
 
-## Logo and Branding
+<details open>
+<summary><strong>Possible Future Enhancements 💡</strong></summary>
 
-</summary>
 
-The primary logo is stored in:
+## Possible Future Enhancements 💡
 
-```text
-assets/images/treasure-hunt-logo.png
-```
-
-The current visual direction uses a black background, neon-lime path and border accents, white open cells, dark blocked cells, and the X as the treasure marker.
-
-</details>
-
----
-
-<details open><summary>
-
-## Accessibility Considerations
-
-</summary>
-
-The page uses visible labels, button controls, keyboard controls, readable contrast, and descriptive page structure. The browser game can be played without needing a mouse because arrow keys and WASD are supported.
+*   Add optional visualization of the agent’s chosen path
+*   Expose more difficulty parameters without making the controls cluttered
+*   Add seedable maze generation for reproducible comparisons
+*   Add automated tests that verify every generated maze remains solvable
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="contributing"></a>
 
-## Browser Compatibility
+<details open>
+<summary><strong>Contributing 🤝</strong></summary>
 
-</summary>
 
-The demo uses standard HTML, CSS, and JavaScript modules. It is intended for current versions of Chrome, Edge, Firefox, and Safari.
+## Contributing 🤝
+
+Contributions, bug reports, and practical improvement suggestions are welcome when they preserve the existing project direction and do not replace its identity with a generic redesign.
+
+</details>
+
+<a id="reporting-issues"></a>
+
+<details open>
+<summary><strong>Reporting Issues 🐛</strong></summary>
+
+
+### Reporting Issues 🐛
+
+When reporting a problem, include the page or workflow involved, what you expected, what actually happened, browser/device information when relevant, and a screenshot if the issue is visual.
+
+</details>
+
+<a id="requesting-additions"></a>
+
+<details open>
+<summary><strong>Requesting Additions 📝</strong></summary>
+
+
+### Requesting Additions 📝
+
+Feature requests should explain the user problem the addition would solve and how it fits the existing project. Project-specific improvements are preferred over adding features only because they are common in other applications.
 
 </details>
 
 ---
 
-<div align="center">
+<a id="license"></a>
 
-# Running, Testing, and Deployment
+<details open>
+<summary><strong>License 📜</strong></summary>
 
-</div>
 
----
+## License 📜
 
-<details open><summary>
-
-## How to Run Locally
-
-</summary>
-
-Open `index.html` directly in a browser, or run a local static server:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
+No license terms are assumed here. If the repository includes a `LICENSE` file, that file controls reuse. If it does not, normal copyright applies and permission should not be inferred from the repository being public.
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="important-links"></a>
 
-## How to Test the Game
+<details open>
+<summary><strong>Important Links 🔗</strong></summary>
 
-</summary>
 
-1. Open `index.html`.
-2. Select Easy, Medium, or Hard.
-3. Click **New Maze** several times and confirm the board changes.
-4. Click **Start Race**.
-5. Move with arrow keys, WASD, or the on-screen buttons.
-6. Confirm the player and agent only move through open cells.
-7. Confirm the X remains the treasure goal.
-8. Confirm the game declares a winner when the player or agent reaches the X.
+## Important Links 🔗
+
+*   **Live Project:** [https://apursley2012.github.io/treasure-hunt-game/](https://apursley2012.github.io/treasure-hunt-game/)
+*   **Repository:** [https://github.com/apursley2012/treasure-hunt-game](https://github.com/apursley2012/treasure-hunt-game)
+*   **Issues / Requests:** [https://github.com/apursley2012/treasure-hunt-game/issues/new/choose](https://github.com/apursley2012/treasure-hunt-game/issues/new/choose)
 
 </details>
 
 ---
 
-<details open><summary>
+<a id="copyright"></a>
 
-## GitHub Pages Deployment
+<details open>
+<summary><strong>Copyright ©️</strong></summary>
 
-</summary>
 
-1. Upload the project files to a GitHub repository.
-2. Keep `index.html` in the repository root.
-3. Keep `.nojekyll` in the repository root.
-4. Go to **Settings → Pages**.
-5. Choose the branch and root folder.
-6. Save and open the published URL.
+## Copyright ©️
 
-No build command is required.
-
-</details>
-
----
-
-<details open><summary>
-
-## Troubleshooting
-
-</summary>
-
-| Issue | Fix |
-|---|---|
-| Page opens but styling is missing | Check that `assets/css/styles.css` exists and the path is unchanged. |
-| Game does not start | Confirm `assets/js/app.js` is loading as a module. |
-| Logo does not appear | Confirm `assets/images/treasure-hunt-logo.png` exists. |
-| Board looks stretched | Check that `#maze-board` is still styled as an 8×8 CSS grid. |
-| GitHub Pages shows a blank page | Make sure all paths are relative and `.nojekyll` is present. |
-
-</details>
-
----
-
-<div align="center">
-
-# Portfolio Documentation
-
-</div>
-
----
-
-<details open><summary>
-
-## Included Articles
-
-</summary>
-
-The project includes article-style documentation explaining the original AI implementation, the browser demo version, and the comparison between the two.
-
-</details>
-
----
-
-<details open><summary>
-
-## Case Study
-
-</summary>
-
-The case study explains how I turned a Python/Jupyter reinforcement-learning project into a playable front-end showcase demo while keeping the public version accurate to the original concept.
-
-</details>
-
----
-
-<details open><summary>
-
-## Future Enhancements
-
-</summary>
-
-Possible future improvements include animation polish, saved high scores, alternate maze sizes, a visual path replay, and optional localStorage support for player history.
-
-</details>
-
----
-
-<div align="center">
-
-**Built and maintained by Alysha Pursley**
-
-</div>
+© 2026 Alysha Pursley. Project documentation and original project materials are credited to their respective sources where applicable.
 
 
 ---
 
-<details open><summary>
-
-## Original Repository and Source Links
-
-</summary>
-
-The demo pages include an **Original Repository** button and a source-code link. The repository URL currently points to my GitHub profile because the exact original repository URL was not available in this workspace.
-
-Update the original repository URL in the HTML pages after the project repository is created or confirmed.
-
-Current source reference:
-
-```text
-source/original-python/
-```
+Made with care by Alysha Pursley.
 
 </details>
