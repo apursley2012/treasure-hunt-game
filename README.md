@@ -52,7 +52,7 @@ Date: August 2026
     *   [Requesting Additions 📝](#requesting-additions)
 *   [License 📜](#license)
 *   [Important Links 🔗](#important-links)
-*   [Copyright ©️](#copyright)
+*   [Attribution ℹ️](#attribution)
 
 ---
 
@@ -63,7 +63,13 @@ Date: August 2026
 
 
 
-**Treasure Hunt Game** a playable treasure-hunt maze where a player races an intelligent JavaScript agent across randomized valid boards, with difficulty controls and the original reinforcement-learning source preserved for reference.
+
+
+**Treasure Hunt Game** is an interactive maze experience that lets a player and an automated agent work toward the same treasure on a generated board. The playable interface turns agent behavior into something visible: a person can make movement decisions directly while watching how the automated strategy approaches the same goal.
+
+I designed the project so the maze is more than a decorative shell around an algorithm. Boards preserve a valid route, game state is clearly presented, and the agent race provides an immediate comparison between human navigation and learned or programmed decision-making. That makes the underlying control problem easier to understand because the consequences of each decision are visible on screen.
+
+The original Python, notebook, and reinforcement-learning material remains connected to the project where it helps explain the technical work behind the agent. The browser-facing game provides the interactive presentation, while the supporting source documents the experimentation and learning logic that informed it.
 
 </details>
 
@@ -74,8 +80,8 @@ Date: August 2026
 
 
 
-I built the browser version of Treasure Hunt so the core maze problem can be experienced instead of only described in a notebook. Every board keeps a valid route from the starting point to the treasure, the player can move through the maze directly, and an automated agent races toward the same goal. The repository also keeps the original Python and machine-learning material so the playable site and the reinforcement-learning work stay connected without pretending that GitHub Pages is training a neural network.
 
+I created **Treasure Hunt Game** to turn an intelligent-agent maze problem into something people can actually play, watch, and compare. Each randomized board preserves a valid path to the treasure, the player can navigate the maze directly, and an automated agent races toward the same goal, which makes the difference between human choices and agent behavior visible instead of leaving it buried in code or notebook output. The original Python and reinforcement-learning material remains connected to the project so the playable experience and the underlying learning work can be explored together.
 </details>
 
 <a id="design-style-and-inspiration"></a>
@@ -96,18 +102,22 @@ Treasure Hunt Game uses a control-room and game-lab visual language to frame the
 
 
 
+
+
 I pulled the palette below directly from the current project stylesheet `assets/css/styles.css`.
 
-| Hex | Color Name | Primary Use |
+Each row lists every interface-use category identified for that exact color value in the documented stylesheet analysis. When one hex value is reused for several jobs, I keep all of those uses together in the same row instead of reducing it to a single generic label.
+
+| Hex | Color Name | Complete Use in the Interface |
 | --- | --- | --- |
-| `#11172B` | Ink Navy | Primary text, borders, hard shadows, and structural outlines |
+| `#11172B` | Ink Navy | Primary text; borders; hard shadows; and structural outlines |
 | `#171D36` | Night | Main dark simulation and control surfaces |
 | `#202747` | Night Blue | Secondary dark panels and headers |
 | `#F7F1DF` | Cream | Main page background |
-| `#FFFDF6` | Paper | Cards, canvas surfaces, and light controls |
+| `#FFFDF6` | Paper | Cards; canvas surfaces; and light controls |
 | `#FF5F57` | Coral | Primary action and state accent |
-| `#54D8E5` | Cyan | Secondary controls, state accents, and simulation highlights |
-| `#C9F45B` | Lime | Status, success, and high-visibility highlights |
+| `#54D8E5` | Cyan | Secondary controls; state accents; and simulation highlights |
+| `#C9F45B` | Lime | Status; success; and high-visibility highlights |
 | `#A78BFA` | Violet | Decorative and secondary metric accent |
 | `#FFD65A` | Yellow | Control and visual emphasis |
 | `#4E78FF` | Blue | Labels and supporting technical emphasis |
@@ -454,18 +464,28 @@ No license terms are assumed here. If the repository includes a `LICENSE` file, 
 
 ---
 
-<a id="copyright"></a>
+<a id="attribution"></a>
 
 <details open>
-<summary><h2><strong>Copyright ©️</strong></h2></summary>
+<summary><h2><strong>Attribution ℹ️</strong></h2></summary>
 
 
+Project documentation and original project materials are credited to their respective sources where applicable.
 
-© 2026 Alysha Pursley. Project documentation and original project materials are credited to their respective sources where applicable.
-
+</details>
 
 ---
 
-Made with care by Alysha Pursley.
+<div align=center>
+   
+***Made with ❤️ and a bit of 🪄.***
+<br>
+**©️ 2026 Alysha Pursley. All Rights Reserved.**
 
-</details>
+</div>
+
+
+
+
+
+
