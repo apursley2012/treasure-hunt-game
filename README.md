@@ -7,6 +7,8 @@ Date: August 2026
 
 <div align="center">
 
+<img src="assets/images/treasure-hunt-logo.png" alt="Treasure Hunt Game logo" width="65%">
+
 <h1>Treasure Hunt Game 🏴‍☠️</h1>
 
 <p><a href="https://github.com/apursley2012/treasure-hunt-game/stargazers"><img src="https://img.shields.io/github/stars/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Stars" alt="Stars"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/forks"><img src="https://img.shields.io/github/forks/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Forks" alt="Forks"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/issues"><img src="https://img.shields.io/github/issues/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Issues" alt="Issues"></a> <a href="https://github.com/apursley2012/treasure-hunt-game/commits"><img src="https://img.shields.io/github/last-commit/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=git&amp;label=Last%20Commit" alt="Last Commit"></a> <a href="https://github.com/apursley2012/treasure-hunt-game"><img src="https://img.shields.io/github/repo-size/apursley2012/treasure-hunt-game?style=for-the-badge&amp;logo=github&amp;label=Repo%20Size" alt="Repo Size"></a> <a href="https://github.com/apursley2012/treasure-hunt-game"><img src="https://img.shields.io/github/languages/top/apursley2012/treasure-hunt-game?style=for-the-badge&amp;label=Top%20Language" alt="Top Language"></a></p>
@@ -14,8 +16,6 @@ Date: August 2026
 <p><a href="https://apursley2012.github.io/treasure-hunt-game/"><img src="https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-222222?style=for-the-badge&amp;logo=githubpages&amp;logoColor=white" alt="Live Demo"></a> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&amp;logo=jupyter&amp;logoColor=white" alt="Jupyter"> <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&amp;logo=keras&amp;logoColor=white" alt="Keras"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&amp;logo=javascript&amp;logoColor=black" alt="JavaScript"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&amp;logo=html5&amp;logoColor=white" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&amp;logo=css3&amp;logoColor=white" alt="CSS3"></p>
 
 <p><strong>A playable treasure-hunt maze where a player races an intelligent JavaScript agent across randomized valid boards, with difficulty controls and the original reinforcement-learning source preserved for reference.</strong></p>
-
-![Treasure Hunt Game](./assets/images/treasure-hunt-logo.png)
 
 <p><a href="https://apursley2012.github.io/treasure-hunt-game/">Open the live project</a> · <a href="https://github.com/apursley2012/treasure-hunt-game">View the repository</a> · <a href="https://github.com/apursley2012/treasure-hunt-game/issues/new/choose">Report an issue or request an addition</a></p>
 
