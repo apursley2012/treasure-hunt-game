@@ -15,8 +15,8 @@
  */
 body:not(.app-body) main.site-writing {
 	display: block;
-	width: min(var(--max), calc(100% - 32px));
-	max-width: var(--max);
+	width: min(1280px, calc(100% - 32px));
+	max-width: 1280px;
 	margin: 0 auto;
 	padding: 42px 0 100px;
 	color: var(--white);
@@ -74,8 +74,8 @@ body:not(.app-body) main.site-writing > article.content-section {
 	counter-increment: writing-section;
 	position: relative;
 	display: block;
-	width: min(970px, 100%);
-	max-width: 970px;
+	width: min(1200px, 100%);
+	max-width: 1200px;
 	margin: 18px auto;
 	padding: clamp(24px, 3.6vw, 42px);
 	border: 1px solid #a7ff003a;
