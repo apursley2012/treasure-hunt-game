@@ -1,76 +1,45 @@
 /*
   ******************************************************************************
  * Treasure Hunt Game                                                          *
- * File: /navigation.css                                                       *
- * Purpose: Styles responsive navigation and its expanded/collapsed            *
- *          interaction states.                                                *
+ * File: /header.css                                                           *
+ * Purpose: Styles the shared page header that hosts branding and navigation.  *
  * Author: Alysha Pursley                                                      *
  * Copyright: (c) 2026 Alysha Pursley.                                         *
  * License: Proprietary; see LICENSE                                           *
   ******************************************************************************
  */
 
-.nav-toggle {
-  display: none;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 8px 14px;
-  border: 1px solid #a7ff005c;
-  border-radius: 999px;
-  background: #a7ff0014;
-  color: var(--lime);
-  font: inherit;
-  font-weight: 800;
-  cursor: pointer;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid #a7ff002e;
+  background: #000000d1;
+  backdrop-filter: blur(18px);
 }
 
-.nav-links {
+.header-inner {
+  width: calc(100% - 48px);
+  min-height: 76px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  padding: 10px 13px;
-  border: 1px solid #00000000;
-  border-radius: 999px;
-  color: #dbe3e3;
-  text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  border-color: #a7ff005c;
-  background: #a7ff0014;
-  color: var(--lime);
+  justify-content: space-between;
+  gap: 18px;
 }
 
 @media (max-width: 900px) {
-  .nav-toggle {
-    display: inline-flex;
+  .header-inner {
+    min-height: auto;
+    padding: 14px 0;
     align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+}
 
-  .nav-links {
-    display: none;
-    width: 100%;
-    align-items: stretch;
-    gap: 6px;
-    flex-direction: column;
-  }
-
-  .nav-links.is-open {
-    display: flex;
-  }
-
-  .nav-links a {
-    min-height: 44px;
-    padding: 8px 10px;
-    display: inline-flex;
-    align-items: center;
+@media (max-width: 540px) {
+  .header-inner {
+    position: relative;
   }
 }
