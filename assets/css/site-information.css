@@ -8,16 +8,6 @@
  * License: Proprietary; see LICENSE                                           *
   ******************************************************************************
  */
-/*
-  ******************************************************************************
- * Treasure Hunt Game                                                          *
- * File: /site-information.css                                                 *
- * Purpose: Styles informational, legal, reviewer, and not-found page content. *
- * Author: Alysha Pursley                                                      *
- * Copyright: (c) 2026 Alysha Pursley.                                         *
- * License: Proprietary; see LICENSE                                           *
-  ******************************************************************************
- */
 
 .site-information {
 	width: min(var(--max), calc(100% - 32px));
