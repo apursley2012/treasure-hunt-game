@@ -11,13 +11,13 @@
  */
 
 :root {
-	--font-display: "Space Grotesk", "Arial", sans-serif;
-	--font-body: "Sora", "Arial", sans-serif;
+  --font-display: "Space Grotesk", "Arial", sans-serif;
+  --font-body: "Sora", "Arial", sans-serif;
 }
 
 body {
-	font-family: var(--font-body);
-	font-weight: 400;
+  font-family: var(--font-body);
+  font-weight: 400;
 }
 
 body h1,
@@ -31,15 +31,15 @@ body .info-heading h2,
 body .info-bottom h2,
 body .info-tile h3,
 body .info-story-item h3,
-body main.site-writing > h1,
+body main.site-writing>h1,
 body main.site-writing .content-section h2,
 body main.site-writing .content-section h3,
 body main.site-writing .content-section h4 {
-	font-family: var(--font-display);
-	font-weight: 700;
-	letter-spacing: -0.035em;
-	line-height: 1.2;
-	overflow-wrap: break-word;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 body h3,
@@ -48,8 +48,8 @@ body .info-tile h3,
 body .info-story-item h3,
 body main.site-writing .content-section h3,
 body main.site-writing .content-section h4 {
-	font-weight: 600;
-	letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 body p,
@@ -61,23 +61,24 @@ body textarea,
 body nav,
 body .footer-links,
 body .page-lede {
-	font-family: var(--font-body);
+  font-family: var(--font-body);
 }
 
 body button,
 body nav,
 body .footer-links,
 body label {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
-	body h1,
-	body .info-hero h1,
-	body .site-information h1,
-	body main.site-writing > h1 {
-		letter-spacing: -0.03em;
-	}
+
+  body h1,
+  body .info-hero h1,
+  body .site-information h1,
+  body main.site-writing>h1 {
+    letter-spacing: -0.03em;
+  }
 }
 
 /* Make the pairing authoritative for every page component, including game UI. */
@@ -104,7 +105,7 @@ main,
 .nav-links,
 .game-panel,
 .game-status {
-	font-family: var(--font-body);
+  font-family: var(--font-body);
 }
 
 h1,
@@ -127,12 +128,12 @@ h6,
 .hero h2,
 .content-card h2,
 .content-card h3 {
-	font-family: var(--font-display);
+  font-family: var(--font-display);
 }
 
 code,
 pre,
 kbd,
 samp {
-	font-family: "Cascadia Code", "Consolas", monospace;
+  font-family: "Cascadia Code", "Consolas", monospace;
 }
