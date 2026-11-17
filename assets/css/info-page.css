@@ -237,7 +237,7 @@
 		grid-template-columns: 1fr 1fr;
 	}
 }
-@media (max-width: 600px) { 
+@media (max-width: 600px) {
 	.info-main {
 		padding-top: 26px;
 	}
