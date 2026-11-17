@@ -1,17 +1,18 @@
 /*
- ******************************************************************************
+  ******************************************************************************
  * Treasure Hunt Game                                                          *
  * File: /brand.js                                                             *
  * Purpose: Builds the reusable brand markup shared by site pages.             *
  * Author: Alysha Pursley                                                      *
  * Copyright: (c) 2026 Alysha Pursley.                                         *
  * License: Proprietary; see LICENSE                                           *
- ******************************************************************************
+  ******************************************************************************
  */
 import { getPagesBasePath, getAssetsBasePath } from "./paths.js";
 
+
 export function createBrandMarkup() {
-	return `
+  return `
     <a class="brand" href="${getPagesBasePath()}index.html" aria-label="Treasure Hunt home">
       <img
         class="brand-logo"
