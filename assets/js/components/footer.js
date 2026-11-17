@@ -1,14 +1,4 @@
 /*
-  ******************************************************************************
- * Treasure Hunt Game                                                          *
- * File: /footer.js                                                            *
- * Purpose: Renders shared footer links and copyright text on site pages.      *
- * Author: Alysha Pursley                                                      *
- * Copyright: (c) 2026 Alysha Pursley.                                         *
- * License: Proprietary; see LICENSE                                           *
-  ******************************************************************************
- */
-/*
  ******************************************************************************
  * Treasure Hunt Game                                                          *
  * File: /footer.js                                                            *
