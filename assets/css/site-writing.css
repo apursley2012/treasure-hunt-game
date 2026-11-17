@@ -4,6 +4,12 @@
  * File: /site-writing.css                                                     *
  * Purpose: Styles the case study, articles, and reflection reading layouts.   *
  * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 /*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /site-writing.css                                                     *
+ * Purpose: Styles the case study, articles, and reflection reading layouts.   *
+ * Author: Alysha Pursley                                                      *
  * Copyright: (c) 2026 Alysha Pursley.                                         *
  * License: Proprietary; see LICENSE                                           *
   ******************************************************************************
@@ -255,4 +261,233 @@ body:not(.app-body) main.site-writing article.paper-article .eyebrow {
 	font-weight: 800;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
+}
+Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+
+/*
+ * The playable game is the design reference. Scope every rule to .site-writing
+ * so this file cannot change the home page or game controls.
+ */
+body:not(.app-body) main.site-writing {
+  display: block;
+  width: min(1280px, calc(100% - 32px));
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 0 100px;
+  color: var(--white);
+  font-family: var(--font-body);
+  counter-reset: writing-section;
+}
+body:not(.app-body):has(main.site-writing) {
+  background: radial-gradient(circle at 20% -10%, #a7ff001a, transparent 34%),
+    linear-gradient(135deg, var(--bg), #050706 100%);
+}
+body:not(.app-body) main.site-writing > .eyebrow {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--lime);
+  font: 800 .76rem/1.5 var(--font-body);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: left;
+}
+body:not(.app-body) main.site-writing > h1 {
+  width: min(940px, 100%);
+  max-width: 940px;
+  margin: 0 0 24px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.05em;
+  text-align: left;
+  text-wrap: balance;
+}
+body:not(.app-body) main.site-writing > p:not(.eyebrow) {
+  display: block;
+  width: min(820px, 100%);
+  max-width: 820px;
+  margin: 0 0 35px;
+  padding: 0;
+  border: 0;
+  color: #c3d0cc;
+  font: 400 clamp(1.05rem, 1.5vw, 1.2rem)/1.8 var(--font-body);
+  text-align: left;
+}
+body:not(.app-body) main.site-writing > section.content-section:not(.article-toc),
+body:not(.app-body) main.site-writing > article.content-section {
+  counter-increment: writing-section;
+  position: relative;
+  display: block;
+  width: min(1200px, 100%);
+  max-width: 1200px;
+  margin: 18px auto;
+  padding: clamp(24px, 3.6vw, 42px);
+  border: 1px solid #a7ff003a;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, #19231d, #0b110e);
+  box-shadow: none;
+  color: var(--white);
+}
+body:not(.app-body) main.site-writing > section.content-section:not(.article-toc):nth-of-type(even),
+body:not(.app-body) main.site-writing > article.content-section:nth-of-type(even) {
+  background: #101a14;
+}
+body:not(.app-body) main.site-writing > section.content-section:not(.article-toc)::before,
+body:not(.app-body) main.site-writing > article.content-section::before {
+  content: "PROJECT NOTES / " counter(writing-section, decimal-leading-zero);
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--lime);
+  font: 800 .7rem/1.5 var(--font-body);
+  letter-spacing: .13em;
+}
+body:not(.app-body) main.site-writing .content-section h2,
+body:not(.app-body) main.site-writing .content-section h3,
+body:not(.app-body) main.site-writing .content-section h4 {
+  font-family: var(--font-display);
+  color: var(--white);
+  letter-spacing: -.035em;
+  text-transform: none;
+}
+body:not(.app-body) main.site-writing .content-section h2 {
+  max-width: 950px;
+  margin: 0 0 22px;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.18;
+}
+body:not(.app-body) main.site-writing .content-section h2::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 3px;
+  margin: 13px 0 0;
+  border-radius: 99px;
+  background: var(--lime);
+  box-shadow: 0 0 16px #a7ff0080;
+}
+body:not(.app-body) main.site-writing .content-section h3 {
+  color: #dfff9a;
+  font-size: 1.22rem;
+  font-weight: 750;
+}
+body:not(.app-body) main.site-writing .content-section p,
+body:not(.app-body) main.site-writing .content-section li,
+body:not(.app-body) main.site-writing .content-section dd,
+body:not(.app-body) main.site-writing .content-section figcaption {
+  color: #d8e0dc;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+body:not(.app-body) main.site-writing .content-section strong,
+body:not(.app-body) main.site-writing .content-section b { color: #fff; }
+body:not(.app-body) main.site-writing .content-section a { color: #c8ff73; }
+body:not(.app-body) main.site-writing .content-section a:hover { color: #fff; }
+body:not(.app-body) main.site-writing .content-section blockquote {
+  background: #a7ff0012;
+  border-left: 4px solid var(--lime);
+  color: #efffca;
+  box-shadow: none;
+}
+body:not(.app-body) main.site-writing .content-section blockquote p { color: #efffca; }
+body:not(.app-body) main.site-writing .content-section table {
+  width: 100%;
+  background: #0c150f;
+  border: 1px solid #a7ff003d;
+}
+body:not(.app-body) main.site-writing .content-section th,
+body:not(.app-body) main.site-writing .content-section td {
+  border: 1px solid #a7ff0029;
+  color: #d8e0dc;
+  background: transparent;
+}
+body:not(.app-body) main.site-writing .content-section th {
+  background: #a7ff001a;
+  color: var(--lime);
+}
+body:not(.app-body) main.site-writing > section.article-toc {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin: 22px 0 28px;
+  padding: 20px;
+  border: 1px solid #a7ff003a;
+  border-radius: var(--radius-lg);
+  background: #101a14;
+  box-shadow: none;
+}
+body:not(.app-body) main.site-writing > section.article-toc a {
+  border: 1px solid #a7ff0059;
+  border-radius: var(--radius-md);
+  background: #a7ff0012;
+  color: #dfff9a;
+  font-family: var(--font-display);
+}
+body:not(.app-body) main.site-writing :is(pre, code) {
+  border-color: #a7ff003a;
+}
+body:not(.app-body) main.site-writing pre {
+  max-width: 100%;
+  overflow-x: auto;
+  background: #080e0a;
+  color: #e9f6e4;
+}
+body:not(.app-body) main.site-writing :focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 4px;
+}
+@media (max-width: 900px) {
+  /* Keep long project introductions readable on phones and compact tablets. */
+  body:not(.app-body) main.site-writing > .eyebrow {
+    display: block;
+    font-size: clamp(0.85rem, 2.1vw, 0.95rem);
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 650px) {
+  body:not(.app-body) main.site-writing { padding: 28px 0 65px; }
+  body:not(.app-body) main.site-writing > h1 { font-size: clamp(2rem, 9vw, 3.2rem); }
+  body:not(.app-body) main.site-writing > section.content-section:not(.article-toc),
+  body:not(.app-body) main.site-writing > article.content-section {
+    padding: 22px;
+    border-radius: var(--radius-md);
+  }
+  body:not(.app-body) main.site-writing .content-section table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* The original paper's article marker remains readable on dark surfaces. */
+body:not(.app-body) main.site-writing article.paper-article .eyebrow {
+  color: var(--lime);
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
