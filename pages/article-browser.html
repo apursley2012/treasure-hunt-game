@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /article-browser.html                                                 *
+ * Purpose: Presents a standalone browser engineering article.                 *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>
+			From Notebook to Browser — Building a Playable Maze Race | Alysha
+			Pursley
+		</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="How a solvable maze generator, pathfinding opponent, and responsive controls turn a learning concept into an interactive browser game."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="From Notebook to Browser — Building a Playable Maze Race | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="How a solvable maze generator, pathfinding opponent, and responsive controls turn a learning concept into an interactive browser game."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="From Notebook to Browser — Building a Playable Maze Race | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="How a solvable maze generator, pathfinding opponent, and responsive controls turn a learning concept into an interactive browser game."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/article-browser.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/article-browser.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-AIaiAozv+q+N2CkDqGm5ptrm9wVDpEcDxRGUBuN1Gm8=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
+			http-equiv="Content-Security-Policy" />
+		<meta
+			content="Alysha Pursley"
+			property="article:author" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "From Notebook to Browser — Building a Playable Maze Race | Alysha Pursley",
+				"description": "How a solvable maze generator, pathfinding opponent, and responsive controls turn a learning concept into an interactive browser game.",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/article-browser.html",
+				"author": { "@type": "Person", "name": "Alysha Pursley" },
+				"publisher": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/articles.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-writing.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="content-page article-page site-writing"
+			id="main-content">
+			<header class="article-hero">
+				<p class="eyebrow">Browser Engineering</p>
+				<h1>
+					From Notebook to Browser — Building a Playable Maze Race
+				</h1>
+				<p class="lede">
+					How a solvable maze generator, pathfinding opponent, and
+					responsive controls turn a learning concept into an
+					interactive browser game.
+				</p>
+				<p class="article-byline">By Alysha Pursley</p>
+			</header>
+			<article class="content-section paper-article">
+				<p>
+					A portfolio project needs a way to be experienced, not just
+					described. The browser edition of Treasure Hunt turns the
+					same maze-navigation challenge into a race between a human
+					player and a computer-controlled opponent. It keeps the
+					rules recognizable while making the experience available
+					through a static website.
+				</p>
+				<p>
+					This is a separate JavaScript implementation. Its opponent
+					uses pathfinding, not the trained Python neural network.
+					That difference is intentional: the browser version
+					prioritizes immediate interaction, straightforward
+					deployment, and transparent behavior.
+				</p>
+				<h2>The first requirement: every round must be playable</h2>
+				<p>
+					Randomly generated walls create variety, but they also
+					introduce a failure mode: the treasure might become
+					unreachable. The maze generator checks for a valid route
+					before accepting a board and can fall back to a known
+					configuration. That invariant matters more than simply
+					producing a visually different grid.
+				</p>
+				<p>
+					Movement rules are shared by the player and the opponent.
+					The maze logic decides whether a move stays in bounds and
+					avoids blocked cells, so the interface cannot quietly invent
+					a different set of rules.
+				</p>
+				<p>
+					The generator is not just scattering walls at random. It
+					builds a connected corridor, adds dead ends, and checks the
+					resulting route. Generation attempts are bounded, and a
+					solvable fallback prevents an unusable round. This is a
+					practical trade-off: variety is valuable only if the game
+					remains winnable.
+				</p>
+				<h2>An opponent that can be understood</h2>
+				<p>
+					The computer-controlled racer uses shortest-path information
+					to move toward the treasure. On more challenging settings,
+					it follows that information more directly. Easier settings
+					introduce different pacing and occasional less direct
+					choices, giving visitors a meaningful way to adjust the
+					race.
+				</p>
+				<p>
+					These settings are game-design parameters, not
+					machine-learning training controls. Being precise about that
+					distinction helps visitors evaluate the browser engineering
+					on its own merits.
+				</p>
+				<p>
+					The opponent recomputes a shortest route after moving, which
+					matters when an exploratory choice takes it away from the
+					earlier path. Hard mode removes hesitation and exploratory
+					probability; easier modes use both, along with slower
+					movement and longer start delays. Those values shape a race
+					rather than train a neural network.
+				</p>
+				<h2>Separating game rules from interface code</h2>
+				<p>
+					The maze module handles board state, movement constraints,
+					route utilities, and solvable generation. The opponent
+					module handles decisions and difficulty behavior. The
+					application module connects those pieces to rendering,
+					keyboard and on-screen controls, race timing, and round
+					feedback.
+				</p>
+				<p>
+					That separation has a practical benefit: a movement rule can
+					be tested without clicking through the page, and a visual
+					change does not need to alter the pathfinding algorithm. The
+					structure is deliberately modest because the project does
+					not need a larger application framework.
+				</p>
+				<p>
+					The game state is distributed deliberately. TreasureMaze
+					owns the player and environment; CompetitiveAgent owns the
+					opponent's position and trail; app.js owns the race
+					lifecycle, controls, timers, and rendering. Resetting a race
+					clears active timers and reconstructs the relevant state
+					together, avoiding an opponent continuing to move after a
+					new round begins.
+				</p>
+				<h2>Designing for visitors, not only developers</h2>
+				<p>
+					The game gives visitors a direct way to discover the
+					problem: choose a route, observe the opponent, and try
+					another round. The supporting pages then provide the
+					technical context for those who want it. This progression
+					makes the project accessible to both casual visitors and
+					people evaluating its implementation.
+				</p>
+				<p>
+					Responsive controls, consistent site navigation, and clear
+					page links matter because the project is meant to be
+					explored outside a development environment. A static site
+					also avoids a sign-in requirement or server-side state.
+				</p>
+				<p>
+					The dark visual system uses bright accents to distinguish
+					the game board and actions. On-screen controls, keyboard
+					arrows, and WASD offer multiple ways to play; the keyboard
+					handler avoids intercepting shortcuts while the user is
+					interacting with native controls. Grid-cell labels
+					communicate position and state to accessibility APIs. These
+					are implementation choices, not proof of a completed
+					assistive-technology audit.
+				</p>
+				<h2>How the browser version is verified</h2>
+				<p>
+					JavaScript tests exercise movement constraints, route
+					reachability, randomized board invariants, and opponent
+					configuration. Source checks cover syntax and local asset
+					references. Those checks protect important behavior while
+					leaving room for real-browser accessibility and visual
+					testing.
+				</p>
+				<p>
+					The most useful outcome is a demonstration whose behavior
+					can be explained from its source. The race does not need to
+					pretend to be a deployed neural network to show thoughtful
+					application design.
+				</p>
+				<p>
+					Tests can verify movement constraints, generated-board
+					reachability, opponent settings, and reset flows without
+					loading the entire website. A simulated DOM can also
+					exercise application controls, but it cannot replace
+					real-browser checks of layout, focus, touch behavior, or
+					screen-reader announcements.
+				</p>
+			</article>
+			<section
+				aria-label="Continue reading"
+				class="content-section article-toc">
+				<h2>Continue exploring</h2>
+				<a href="article.html">Deep Q-Learning</a>
+				<a href="article-neural-networks.html">Algorithm Comparison</a>
+				<a href="articles.html">All articles</a>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /index.html                                                           *
+ * Purpose: Hosts the playable maze race and loads its browser application.    *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>Treasure Hunt Browser Game Demo | Alysha Pursley</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/index.css"
+			rel="stylesheet" />
+		<meta
+			content="Race through a randomized 8×8 treasure maze against a JavaScript pathfinding agent and explore the original deep Q-learning project by Alysha Pursley."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="Treasure Hunt Browser Game Demo | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="Race through a randomized 8×8 treasure maze against a JavaScript pathfinding agent and explore the original deep Q-learning project by Alysha Pursley."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="Treasure Hunt Browser Game Demo | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="Race through a randomized 8×8 treasure maze against a JavaScript pathfinding agent and explore the original deep Q-learning project by Alysha Pursley."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/index.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/index.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-XyGsIbGxKL2bR9PGy23gY6yA36BAJbg4WSZ3WT6fg8k='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'none'"
+			http-equiv="Content-Security-Policy" />
+		<link
+			as="image"
+			href="../assets/images/treasure-hunt-logo.webp"
+			rel="preload" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Person",
+						"@id": "https://apursley2012.github.io/treasure-hunt-game/#author",
+						"name": "Alysha Pursley"
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://apursley2012.github.io/treasure-hunt-game/#website",
+						"url": "https://apursley2012.github.io/treasure-hunt-game/pages/index.html",
+						"name": "Treasure Hunt Game",
+						"author": {
+							"@id": "https://apursley2012.github.io/treasure-hunt-game/#author"
+						}
+					},
+					{
+						"@type": "WebPage",
+						"url": "https://apursley2012.github.io/treasure-hunt-game/pages/index.html",
+						"name": "Treasure Hunt Browser Game Demo | Alysha Pursley",
+						"description": "Race through a randomized 8×8 treasure maze against a JavaScript pathfinding agent and explore the original deep Q-learning project by Alysha Pursley.",
+						"isPartOf": {
+							"@id": "https://apursley2012.github.io/treasure-hunt-game/#website"
+						}
+					}
+				]
+			}
+		</script>
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="app-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			aria-label="Treasure Hunt Game browser demo"
+			class="app-shell"
+			id="main-content">
+			<section class="hero compact-hero">
+				<div class="hero-copy">
+					<span class="eyebrow">8x8 randomized maze race</span>
+					<h1>
+						Beat the agent to the
+						<span class="text-accent">X</span>
+						.
+					</h1>
+					<p class="lede">
+						Race an intelligent JavaScript agent through a
+						randomized maze. The X is the treasure, blocked cells
+						stay blocked, and every board keeps a valid path from
+						start to goal.
+					</p>
+					<div class="cta-row">
+						<a
+							class="button primary"
+							href="#game">
+							Play the Demo
+						</a>
+						<a
+							class="button secondary"
+							href="articles.html">
+							Read the Articles
+						</a>
+					</div>
+				</div>
+				<div class="hero-logo-card">
+					<img
+						alt="Treasure Hunt logo"
+						class="hero-logo"
+						height="512"
+						src="../assets/images/treasure-hunt-logo.webp"
+						width="512" />
+				</div>
+			</section>
+			<section
+				aria-labelledby="app-title"
+				class="game-card"
+				id="game">
+				<div class="game-title-row">
+					<div>
+						<span class="eyebrow">Playable Demo</span>
+						<h2 id="app-title">Treasure Hunt Race</h2>
+					</div>
+					<span
+						aria-live="polite"
+						class="status-pill"
+						id="game-status">
+						Ready
+					</span>
+				</div>
+				<section
+					aria-labelledby="race-setup-title"
+					class="panel-block race-setup-panel">
+					<h2 id="race-setup-title">Race Setup</h2>
+					<p>
+						Beat the intelligent agent to the X. Every new game
+						creates a fresh 8×8 maze with blocked squares, valid
+						moves only, and a guaranteed path to the goal.
+					</p>
+					<label
+						class="select-label"
+						for="difficulty-select">
+						Agent Difficulty
+					</label>
+					<select
+						aria-describedby="difficulty-description"
+						id="difficulty-select">
+						<option value="easy">Easy</option>
+						<option
+							selected=""
+							value="medium">
+							Medium
+						</option>
+						<option value="hard">Hard</option>
+					</select>
+					<p
+						class="difficulty-copy"
+						id="difficulty-description"></p>
+					<div class="button-row stacked-buttons">
+						<button
+							class="primary-button"
+							id="start-race"
+							type="button">
+							Start Race
+						</button>
+						<button
+							id="new-maze"
+							type="button">
+							New Maze
+						</button>
+						<button
+							id="reset-race"
+							type="button">
+							Reset
+						</button>
+					</div>
+				</section>
+				<div class="game-layout">
+					<section
+						aria-label="Maze board"
+						class="board-panel">
+						<div class="board-toolbar race-toolbar">
+							<div>
+								<span class="mini-label">Difficulty</span>
+								<strong id="difficulty-label">Medium</strong>
+							</div>
+							<div>
+								<span class="mini-label">Reward</span>
+								<strong id="reward-label">0.00</strong>
+							</div>
+							<div>
+								<span class="mini-label">Player Steps</span>
+								<strong id="player-steps-label">0</strong>
+							</div>
+							<div>
+								<span class="mini-label">Agent Steps</span>
+								<strong id="agent-steps-label">0</strong>
+							</div>
+							<div>
+								<span class="mini-label">Shortest Route</span>
+								<strong id="path-length-label">—</strong>
+							</div>
+							<div>
+								<span class="mini-label">Race Lead</span>
+								<strong id="player-lead-label">Even</strong>
+							</div>
+						</div>
+						<div
+							aria-label="8 by 8 treasure maze"
+							class="maze-board"
+							id="maze-board"
+							role="group"></div>
+						<div
+							aria-label="Maze legend"
+							class="legend">
+							<span>
+								<i class="legend-free"></i>
+								Open
+							</span>
+							<span>
+								<i class="legend-wall"></i>
+								Blocked
+							</span>
+							<span>
+								<i class="legend-visited"></i>
+								Your Trail
+							</span>
+							<span>
+								<i class="legend-agent"></i>
+								Agent Trail
+							</span>
+							<span>
+								<i class="legend-pirate"></i>
+								You
+							</span>
+							<span>
+								<i class="legend-treasure"></i>
+								X Treasure
+							</span>
+						</div>
+					</section>
+					<aside
+						aria-label="Game controls"
+						class="control-panel">
+						<section class="panel-block">
+							<h2>Player Controls</h2>
+							<p>
+								Use the on-screen arrows, touch taps, keyboard
+								arrow keys, or WASD. Invalid wall moves cost
+								reward but do not move your player.
+							</p>
+							<div
+								aria-label="Movement controls"
+								class="direction-grid">
+								<span
+									aria-hidden="true"
+									class="ghost-space"></span>
+								<button
+									aria-label="Move up"
+									data-action="up"
+									type="button">
+									↑
+								</button>
+								<span
+									aria-hidden="true"
+									class="ghost-space"></span>
+								<button
+									aria-label="Move left"
+									data-action="left"
+									type="button">
+									←
+								</button>
+								<div class="agent-chip">
+									<span class="mini-label">Agent</span>
+									<strong id="agent-move-label">
+										waiting
+									</strong>
+								</div>
+								<button
+									aria-label="Move right"
+									data-action="right"
+									type="button">
+									→
+								</button>
+								<span
+									aria-hidden="true"
+									class="ghost-space"></span>
+								<button
+									aria-label="Move down"
+									data-action="down"
+									type="button">
+									↓
+								</button>
+								<span
+									aria-hidden="true"
+									class="ghost-space"></span>
+							</div>
+						</section>
+					</aside>
+				</div>
+				<section
+					aria-label="Game log"
+					class="console-panel">
+					<div class="console-title">Game Log</div>
+					<ol
+						aria-live="polite"
+						class="training-log"
+						id="training-log">
+						<li>Randomized maze race loaded.</li>
+					</ol>
+				</section>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/app.js"
+			type="module"></script>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

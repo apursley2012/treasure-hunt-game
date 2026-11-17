@@ -1,0 +1,429 @@
+/*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /articles.css                                                         *
+ * Purpose: Owns the articles page layout and long-form reading styles; shared *
+ *          cards and typography remain in site-wide stylesheets.              *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+/*
+ * Article-page headings and introductory copy
+ */
+h3 {
+	color: var(--lime);
+	margin: 0 0 10px;
+	font-size: 1.2rem;
+}
+
+body:not(.app-body) main.content-page > .lede {
+	display: block;
+	width: min(840px, 100%);
+	max-width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	color: #d9e2e2;
+	font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+	line-height: 1.82;
+	margin-bottom: 1.2rem;
+}
+
+/*
+ * Paper-style article cards
+ */
+body:not(.app-body) main.content-page > article {
+	display: block;
+	width: min(880px, 100%);
+	max-width: 880px;
+	margin: 28px auto;
+	padding: clamp(24px, 4vw, 44px);
+	border: 1px solid #a7ff003d;
+	border-radius: 28px;
+	background: linear-gradient(180deg, #ffffff13, #ffffff07), #080a0af5;
+	box-shadow:
+		0 24px 70px #0000007a,
+		0 0 32px #a7ff001a;
+}
+
+/* Keep the article subtitles distinct from their preview summaries. */
+body:not(.app-body)
+	main.content-page
+	article.article-preview
+	p.article-preview-subtitle {
+	margin: 0 0 1.1rem;
+	color: #d9e6d6;
+	font-size: clamp(1rem, 2vw, 1.12rem);
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+/* Reading links on the four article preview cards. */
+body:not(.app-body)
+	main.content-page
+	article.article-preview
+	a.article-read-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 44px;
+	padding: 10px 16px;
+	border: 1px solid #a7ff0070;
+	border-radius: 999px;
+	background: #1d3328;
+	color: #e8ffbe;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+body:not(.app-body)
+	main.content-page
+	article.article-preview
+	a.article-read-link:hover,
+body:not(.app-body)
+	main.content-page
+	article.article-preview
+	a.article-read-link:focus-visible {
+	background: #2d5239;
+	color: #ffffff;
+}
+
+/*
+ * In-page article navigation
+ */
+body:not(.app-body) main.content-page > section.article-toc {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px;
+	padding: 18px;
+	background: #a7ff0012;
+}
+
+body:not(.app-body) main.content-page > section.article-toc > h2 {
+	flex-basis: 100%;
+	margin-bottom: 0;
+}
+
+body:not(.app-body) main.content-page > section.article-toc a {
+	display: inline-flex;
+	padding: 10px 14px;
+	border: 1px solid #a7ff0047;
+	border-radius: 999px;
+	color: var(--lime);
+	text-decoration: none;
+	font-weight: 900;
+}
+
+body:not(.app-body) main.content-page article * {
+	max-width: 100%;
+}
+
+body:not(.app-body) main.content-page article h2 {
+	margin: 0 0 16px;
+	color: #ffffff;
+	font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+	line-height: 1.12;
+	letter-spacing: -0.045em;
+}
+
+body:not(.app-body) main.content-page article h2::after {
+	content: "";
+	display: block;
+	width: 76px;
+	height: 3px;
+	margin-top: 12px;
+	border-radius: 999px;
+	background: var(--lime);
+	box-shadow: 0 0 16px #a7ff0080;
+}
+
+body:not(.app-body) main.content-page section h3,
+body:not(.app-body) main.content-page article h3 {
+	margin: 28px 0 12px;
+	color: #dfff9a;
+	font-size: 1.2rem;
+}
+
+body:not(.app-body) main.content-page article p {
+	width: 100%;
+	max-width: 72ch;
+	color: #d8e0e0;
+	font-size: 1.045rem;
+	line-height: 1.82;
+	margin: 0 0 1.15rem;
+}
+
+/*
+ * Wider reading measure for the research/comparison page
+ */
+body:not(.app-body)
+	main.content-page.wide-article-page
+	> article.paper-article {
+	width: min(920px, 100%);
+	max-width: 920px;
+}
+
+body:not(.app-body)
+	main.content-page.wide-article-page
+	> article.paper-article
+	p {
+	max-width: 74ch;
+}
+
+@media (max-width: 760px) {
+	body:not(.app-body) main.content-page > article {
+		padding: 22px;
+		border-radius: 20px;
+	}
+}
+
+/* The article index reads like an editorial contents strip, not another card. */
+body:not(.app-body) main.content-page > section.article-toc {
+	width: min(970px, 100%);
+	max-width: 970px;
+	margin: 20px auto 34px;
+	padding: 20px 24px;
+	justify-content: flex-start;
+	background: transparent;
+	border: 1px solid #a5c77d70;
+	border-radius: 16px;
+	box-shadow: none;
+}
+
+body:not(.app-body) main.content-page > section.article-toc a {
+	border-color: #a5c77d80;
+	color: #e8ffbe;
+	background: #1d3328;
+	font-weight: 700;
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+body:not(.app-body) main.content-page > section.article-toc a:hover,
+body:not(.app-body) main.content-page > section.article-toc a:focus-visible {
+	background: #2d5239;
+	border-color: #b8ed71;
+}
+
+body:not(.app-body) main.content-page article.paper-article .eyebrow {
+	color: #4e733e;
+	text-transform: uppercase;
+	font-size: 0.78rem;
+	letter-spacing: 0.15em;
+	font-weight: 800;
+}
+
+body:not(.app-body) main.content-page > article.paper-article {
+	width: min(970px, 100%);
+	max-width: 970px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body:not(.app-body) main.content-page > section.article-toc a {
+		transition: none;
+	}
+}
+
+/*
+ * Individual article mastheads: a clear editorial hierarchy for category,
+ * headline, and subtitle without affecting the article index or other pages.
+ */
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero {
+	position: relative;
+	isolation: isolate;
+	width: min(970px, 100%);
+	margin: 0 auto 32px;
+	padding: clamp(26px, 5vw, 56px);
+	overflow: hidden;
+	border: 1px solid #a7ff004d;
+	border-radius: 24px;
+	background:
+		radial-gradient(ellipse at 100% 0%, #a7ff001c, transparent 55%),
+		linear-gradient(145deg, #17241c, #0a100d 75%);
+	box-shadow: 0 18px 48px #00000042;
+}
+
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero::before {
+	content: "";
+	display: block;
+	width: 48px;
+	height: 4px;
+	margin-bottom: 24px;
+	border-radius: 99px;
+	background: var(--lime);
+}
+
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero
+	> .eyebrow {
+	width: auto;
+	margin: 0 0 15px;
+	padding: 0;
+	color: #caff77;
+	font: 700 0.76rem/1.5 var(--font-body);
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero
+	> h1 {
+	width: min(850px, 100%);
+	margin: 0;
+	color: #fff;
+	font-family: var(--font-display);
+	font-size: clamp(2.15rem, 5vw, 4.15rem);
+	font-weight: 700;
+	line-height: 1.12;
+	letter-spacing: -0.045em;
+	text-wrap: balance;
+	overflow-wrap: break-word;
+}
+
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero
+	> .lede {
+	width: min(760px, 100%);
+	margin: 22px 0 0;
+	padding: 19px 0 0;
+	border-top: 1px solid #b7d69a45;
+	color: #d2dfd4;
+	font: 400 clamp(1rem, 1.6vw, 1.2rem)/1.65 var(--font-body);
+	text-wrap: pretty;
+}
+
+@media (max-width: 600px) {
+	body:not(.app-body)
+		main:is(.article-page, .case-study).site-writing
+		> .article-hero {
+		padding: 26px 22px;
+		border-radius: 18px;
+		margin-bottom: 24px;
+	}
+
+	body:not(.app-body)
+		main:is(.article-page, .case-study).site-writing
+		> .article-hero
+		> h1 {
+		font-size: clamp(2rem, 8vw, 2.8rem);
+		letter-spacing: -0.03em;
+	}
+}
+
+/* Consistent editorial subtitles and authorship across all four articles. */
+body:not(.app-body)
+	main.content-page
+	article.article-preview
+	> p.article-preview-subtitle {
+	margin: 18px 0 22px;
+	color: #d2dfd4;
+	font-size: clamp(1rem, 1.6vw, 1.2rem);
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.65;
+}
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero
+	> .lede {
+	font-style: italic;
+}
+body:not(.app-body)
+	main:is(.article-page, .case-study).site-writing
+	> .article-hero
+	> .article-byline {
+	margin: 18px 0 0;
+	color: #b6c8b9;
+	font-size: 0.9rem;
+	font-weight: 600;
+	letter-spacing: 0.015em;
+}
+
+/*
+ * Article index mastheads mirror the individual article pages.
+ * Specific selectors override the shared card heading/eyebrow decoration.
+ */
+body:not(.app-body) main.article-page.site-writing > article.article-preview {
+	padding: clamp(26px, 5vw, 48px);
+}
+body:not(.app-body)
+	main.article-page.site-writing
+	> article.article-preview
+	> .eyebrow {
+	display: block;
+	width: auto;
+	margin: 0 0 15px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: #caff77;
+	font-size: 0.76rem;
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+body:not(.app-body)
+	main.article-page.site-writing
+	> article.article-preview
+	> h2 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: var(--font-display);
+	font-size: clamp(1.65rem, 3.4vw, 2.45rem);
+	font-weight: 700;
+	line-height: 1.16;
+	letter-spacing: -0.035em;
+	text-wrap: balance;
+}
+body:not(.app-body)
+	main.article-page.site-writing
+	> article.article-preview
+	> h2::after {
+	display: none;
+}
+body:not(.app-body)
+	main.article-page.site-writing
+	> article.article-preview
+	> .article-preview-subtitle {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin: 20px 0 0;
+	padding: 17px 0 0;
+	border-top: 1px solid #b7d69a45;
+	color: #d2dfd4;
+	font-family: var(--font-body);
+	font-size: clamp(1rem, 1.6vw, 1.2rem);
+	font-weight: 400;
+	font-style: italic;
+	line-height: 1.65;
+}
+body:not(.app-body)
+	main.article-page.site-writing
+	> article.article-preview
+	> .article-preview-summary {
+	margin: 24px 0 18px;
+	color: #d8e0e0;
+	font-style: normal;
+}
+@media (max-width: 600px) {
+	body:not(.app-body)
+		main.article-page.site-writing
+		> article.article-preview {
+		padding: 26px 22px;
+	}
+}

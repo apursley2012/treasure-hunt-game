@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /article-neural-networks.html                                         *
+ * Purpose: Presents an article adapted from the author’s neural-network and   *
+ *          GDPR research.                                                     *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>
+			Inside a Neural Network — From Predictions to Responsible AI |
+			Alysha Pursley
+		</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="An accessible look at neural-network layers, training, personalization, bias, and privacy, adapted from my research on neural networks and GDPR."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="Inside a Neural Network — From Predictions to Responsible AI | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="An accessible look at neural-network layers, training, personalization, bias, and privacy, adapted from my research on neural networks and GDPR."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="Inside a Neural Network — From Predictions to Responsible AI | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="An accessible look at neural-network layers, training, personalization, bias, and privacy, adapted from my research on neural networks and GDPR."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/article-neural-networks.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/article-neural-networks.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-OENDzua23x5f7xiYuKMjkqaKxHFba5zr3n3q8tsSV/I=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
+			http-equiv="Content-Security-Policy" />
+		<meta
+			content="Alysha Pursley"
+			property="article:author" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "Inside a Neural Network — From Predictions to Responsible AI | Alysha Pursley",
+				"description": "An accessible look at neural-network layers, training, personalization, bias, and privacy, adapted from my research on neural networks and GDPR.",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/article-neural-networks.html",
+				"author": { "@type": "Person", "name": "Alysha Pursley" },
+				"publisher": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/articles.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-writing.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="content-page article-page site-writing"
+			id="main-content">
+			<header class="article-hero">
+				<p class="eyebrow">Neural Networks & Responsible AI</p>
+				<h1>
+					Inside a Neural Network — From Predictions to Responsible AI
+				</h1>
+				<p class="lede">
+					An accessible look at neural-network layers, training,
+					personalization, bias, and privacy, adapted from my research
+					on neural networks and GDPR.
+				</p>
+				<p class="article-byline">By Alysha Pursley</p>
+			</header>
+			<article class="content-section paper-article">
+				<p>
+					Neural networks are often described as systems that learn
+					patterns from data. That description is accurate, but it
+					leaves out the questions I find most interesting: what
+					actually changes when a network learns, what makes its
+					predictions useful, and what responsibilities come with
+					using those predictions?
+				</p>
+				<p>
+					In my research on neural-network-powered personalization and
+					the General Data Protection Regulation (GDPR), I explored
+					those questions through a hypothetical social media
+					platform. The example is different from my Treasure Hunt
+					deep Q-learning project, but the underlying idea is related:
+					a model transforms numerical inputs into predictions, and
+					training changes how those predictions are made.
+				</p>
+				<p>
+					This article draws on that white paper and my neural-network
+					fundamentals writing. It explains the technology first, then
+					considers what happens when the same capabilities are used
+					to make decisions about people.
+				</p>
+				<h2>What a Neural Network Actually Does</h2>
+				<p>
+					A neural network is a mathematical model made of connected
+					processing units arranged in layers. The biological-neuron
+					analogy is a useful starting point, but artificial neurons
+					do not think or operate like cells in a brain. They perform
+					calculations.
+				</p>
+				<p>
+					An input layer receives numerical features. In a
+					recommendation system, those features might represent
+					clicks, time spent viewing a post, or patterns of
+					interaction. In a maze-learning system, the input might
+					instead describe the current environment.
+				</p>
+				<p>
+					Hidden layers transform the input. Each unit combines
+					incoming values using learned weights and a bias, then
+					applies an activation function. Functions such as ReLU allow
+					a network to represent relationships that a single linear
+					calculation could not capture.
+				</p>
+				<p>
+					An output layer produces values that the application can
+					interpret. A personalization model might score content for
+					relevance; a classification model might estimate the
+					likelihood of a category; a Q-network estimates the value of
+					possible actions. The meaning of the output depends on the
+					task, not on the mere presence of a neural network.
+				</p>
+				<h2>How Training Turns Calculations Into Predictions</h2>
+				<p>
+					Before training, the network's weights do not encode a
+					useful solution to the task. Training repeatedly compares
+					model outputs with a learning objective and updates the
+					weights to reduce error or improve estimated value.
+				</p>
+				<p>
+					In supervised learning, the objective often compares a
+					prediction with a known target. Backpropagation calculates
+					how changes to weights affect the loss, and an optimizer
+					uses that information to update the network. This is the
+					training process I described in my neural-network research.
+				</p>
+				<p>
+					Deep Q-learning uses a different target: it estimates how
+					valuable an action is in a state, based on rewards and
+					expected future rewards. The network still learns through
+					weight updates, but the feedback comes from interaction with
+					an environment rather than a straightforward list of correct
+					labels.
+				</p>
+				<p>
+					That distinction is important in my portfolio. My original
+					Python Treasure Hunt notebook explores deep Q-learning with
+					a neural network and experience replay. The playable browser
+					opponent uses pathfinding, not the trained network. The two
+					implementations should not be described as if they were the
+					same model.
+				</p>
+				<h2>A Personalization Example: What the Model Sees</h2>
+				<p>
+					Consider a fictional social platform that recommends posts.
+					A user spends more time reading cooking content than sports
+					content. The system can represent that behavior as numerical
+					signals and use it to rank future recommendations.
+				</p>
+				<p>
+					The network does not know why the user lingered. It sees
+					patterns in the available data and learns associations that
+					help optimize a defined objective, such as predicting
+					engagement.
+				</p>
+				<p>
+					That makes neural networks powerful, but it also reveals a
+					limitation: a useful prediction is not necessarily a
+					complete explanation. A long viewing time might indicate
+					interest, confusion, or even that the user left the page
+					open. The data and the training objective shape what the
+					model can learn.
+				</p>
+				<p>
+					In my white paper, this example led to a larger question:
+					when a system is optimized for personalization, how do we
+					prevent it from collecting more information than it needs or
+					reinforcing patterns that disadvantage users?
+				</p>
+				<h2>Accuracy Is Not the Only Measure of a Good Model</h2>
+				<p>
+					Neural networks can be difficult to interpret. A prediction
+					may depend on many interacting weights, making it harder to
+					explain why one recommendation appeared instead of another.
+					This is often called the black-box problem.
+				</p>
+				<p>
+					Bias is another concern. If training data reflects unequal
+					representation or historical patterns, a model may reproduce
+					those patterns. Testing only aggregate accuracy can conceal
+					problems experienced by particular groups.
+				</p>
+				<p>
+					I argued in my research that evaluation should include more
+					than performance metrics. Developers should examine data
+					quality, document intended uses, test for disparate outcomes
+					where appropriate, and provide ways to investigate or
+					challenge consequential automated decisions.
+				</p>
+				<p>
+					Explainable AI techniques can help communicate model
+					behavior, but explanations should not be presented as
+					guarantees that a complex system is fair or error-free.
+				</p>
+				<h2>Privacy by Design: Lessons From My GDPR Research</h2>
+				<p>
+					My white paper examined seven GDPR data-protection
+					principles in the context of neural-network personalization:
+					lawfulness, fairness and transparency; purpose limitation;
+					data minimization; accuracy; storage limitation; integrity
+					and confidentiality; and accountability.
+				</p>
+				<p>
+					Those principles translate into concrete engineering
+					questions. What information is actually needed for the
+					model? Why was it collected? How long should it be retained?
+					Who can access it? Can the organization explain its
+					processing and respond to user requests?
+				</p>
+				<p>
+					For a hypothetical recommendation platform, I proposed
+					clearer privacy notices, stronger limits on secondary uses
+					of data, defined retention periods, access controls, and
+					regular audits. These are design and governance
+					recommendations, not a claim that any particular platform
+					implemented them.
+				</p>
+				<p>
+					I also explored approaches such as differential privacy,
+					federated learning, and explainability. Each can address a
+					specific concern, but none automatically makes a system
+					compliant. Legal obligations depend on the processing
+					context, and technical safeguards still require careful
+					implementation and evaluation.
+				</p>
+				<h2>What This Research Changed About How I Think</h2>
+				<p>
+					The most valuable part of studying neural networks was
+					moving beyond the idea that a model is successful simply
+					because it produces a convincing result.
+				</p>
+				<p>
+					Working on the Treasure Hunt agent taught me to examine
+					rewards, exploration, training stability, and whether
+					behavior actually improved. Writing about personalization
+					made me ask an additional set of questions about the data
+					and people affected by a model.
+				</p>
+				<p>
+					Both experiences point to the same engineering habit: define
+					what success means before declaring a system successful. A
+					model can be technically functional while its training
+					signals are misleading, its explanations are weak, or its
+					data practices are inappropriate.
+				</p>
+				<p>
+					Neural networks are useful because they can learn complex
+					patterns. Building them responsibly means understanding the
+					calculations, questioning the objective, validating the
+					results, and being transparent about the limits.
+				</p>
+				<h2>About the Source Material</h2>
+				<p>
+					This article is adapted from my writing on neural-network
+					fundamentals and my white paper, “Ensuring GDPR Compliance
+					in Neural Network-Powered Personalization.” The
+					social-platform scenario in that paper is an academic case
+					study, not a description of a company I operated or an audit
+					I performed.
+				</p>
+				<p>
+					The deep Q-learning implementation is documented separately
+					in the Treasure Hunt article and the original Python
+					notebook. This article focuses on the broader technology and
+					the questions that arise when neural networks are applied to
+					personal data.
+				</p>
+			</article>
+			<section
+				aria-label="Continue reading"
+				class="content-section article-toc">
+				<h2>Continue exploring</h2>
+				<a href="article.html">Deep Q-Learning</a>
+				<a href="article-browser.html">Browser Engineering</a>
+				<a href="articles.html">All articles</a>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

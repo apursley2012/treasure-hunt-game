@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /info.html                                                            *
+ * Purpose: Explains game controls and the relationship between the Python and *
+ *          browser versions.                                                  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>Treasure Hunt Project Information | Alysha Pursley</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="Explore the goals, architecture, technologies, maze rules, and relationship between the Treasure Hunt static browser demo and original deep Q-learning project."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="Treasure Hunt Project Information | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="Explore the goals, architecture, technologies, maze rules, and relationship between the Treasure Hunt static browser demo and original deep Q-learning project."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="Treasure Hunt Project Information | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="Explore the goals, architecture, technologies, maze rules, and relationship between the Treasure Hunt static browser demo and original deep Q-learning project."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/info.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/info.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-St/eH2BBkI18IiUu9ZrUdEJgEGMfhJNae7UY/cLkLrA='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'none'"
+			http-equiv="Content-Security-Policy" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/info.html",
+				"name": "Treasure Hunt Project Information | Alysha Pursley",
+				"description": "Explore the goals, architecture, technologies, maze rules, and relationship between the Treasure Hunt static browser demo and original deep Q-learning project.",
+				"author": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/info-page.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="info-main"
+			id="main-content">
+			<section
+				aria-labelledby="info-title"
+				class="info-hero">
+				<div class="info-hero-copy">
+					<span class="eyebrow">PROJECT INFORMATION</span>
+					<h1 id="info-title">
+						Treasure Hunt
+						<span class="text-accent">Game</span>
+					</h1>
+					<p class="info-lede">
+						Race a computer-controlled agent through an 8×8 maze.
+						Navigate open paths, avoid walls, and reach the treasure
+						first.
+					</p>
+					<p>
+						The playable website brings a maze-navigation challenge
+						to your browser. It also showcases the original Python
+						deep Q-learning project that inspired it.
+					</p>
+					<div class="info-actions">
+						<a
+							class="info-btn info-btn-primary"
+							href="../index.html">
+							Play the game
+						</a>
+						<a
+							class="info-btn info-btn-outline"
+							href="case-study.html">
+							View the case study
+						</a>
+					</div>
+				</div>
+				<div class="info-logo-panel">
+					<img
+						alt="Treasure Hunt Game logo"
+						height="512"
+						src="../assets/images/treasure-hunt-logo.webp"
+						width="512" />
+				</div>
+			</section>
+			<section
+				aria-label="Project at a glance"
+				class="info-summary">
+				<div>
+					<strong>8 × 8</strong>
+					<span>MAZE GRID</span>
+				</div>
+				<div>
+					<strong>3</strong>
+					<span>DIFFICULTY SETTINGS</span>
+				</div>
+				<div>
+					<strong>2</strong>
+					<span>RACERS</span>
+				</div>
+				<div>
+					<strong>100%</strong>
+					<span>BROWSER PLAYABLE</span>
+				</div>
+			</section>
+			<section
+				aria-labelledby="how-heading"
+				class="info-section">
+				<div class="info-heading">
+					<span class="eyebrow">HOW IT WORKS</span>
+					<h2 id="how-heading">How the Maze Race Works</h2>
+					<p>
+						Simple to start, with a different route to solve each
+						time.
+					</p>
+				</div>
+				<div class="info-grid">
+					<article class="info-tile">
+						<span
+							aria-hidden="true"
+							class="info-tile-icon">
+							01
+						</span>
+						<h3>Navigate the maze</h3>
+						<p>
+							Move with the keyboard or on-screen controls. Open
+							cells are safe to enter; walls block your way.
+						</p>
+					</article>
+					<article class="info-tile">
+						<span
+							aria-hidden="true"
+							class="info-tile-icon">
+							02
+						</span>
+						<h3>Race the computer opponent</h3>
+						<p>
+							A JavaScript opponent searches for a route to the
+							treasure. You win by arriving before it does.
+						</p>
+					</article>
+					<article class="info-tile">
+						<span
+							aria-hidden="true"
+							class="info-tile-icon">
+							03
+						</span>
+						<h3>Choose your challenge</h3>
+						<p>
+							Choose Easy, Medium, or Hard, reset the race, or
+							generate another maze with a valid route.
+						</p>
+					</article>
+				</div>
+			</section>
+			<section
+				aria-labelledby="story-heading"
+				class="info-section info-story">
+				<div class="info-heading">
+					<span class="eyebrow">PROJECT BACKGROUND</span>
+					<h2 id="story-heading">
+						Two Approaches to the Same Problem
+					</h2>
+					<p>
+						The two versions explore the same navigation problem,
+						but they are separate implementations.
+					</p>
+				</div>
+				<div class="info-story-grid">
+					<article class="info-story-item">
+						<span class="info-story-tag">ORIGINAL PROJECT</span>
+						<h3>Python / Jupyter</h3>
+						<p>
+							The original coursework uses a maze environment,
+							rewards and penalties, epsilon-greedy exploration,
+							and experience replay to explore deep Q-learning.
+							Its notebook and supporting code are preserved in
+							the project.
+						</p>
+					</article>
+					<article class="info-story-item">
+						<span class="info-story-tag">PLAYABLE WEBSITE</span>
+						<h3>JavaScript / browser</h3>
+						<p>
+							The interactive game runs without a server or
+							neural-network training. Its opponent uses
+							shortest-path search with difficulty-dependent
+							timing and exploration—not the original trained
+							Python model.
+						</p>
+					</article>
+				</div>
+			</section>
+			<section
+				aria-labelledby="original-source-heading"
+				class="info-section info-story">
+				<div class="info-heading">
+					<span class="eyebrow">ORIGINAL PROJECT</span>
+					<h2 id="original-source-heading">
+						Original Python Project and Notebook
+					</h2>
+					<p>
+						The original coursework is separate from this browser
+						demo. You can explore its source repository and Jupyter
+						notebook directly.
+					</p>
+				</div>
+				<div class="info-links">
+					<a
+						href="https://github.com/apursley2012/CS370-Current-Emerging-Trends-In-CS/tree/main"
+						target="_blank"
+						rel="noopener noreferrer">
+						Original Python repository
+						<span aria-hidden="true">↗</span>
+					</a>
+					<a
+						href="https://github.com/apursley2012/CS370-Current-Emerging-Trends-In-CS/blob/main/Pursley_Alysha_Project2.ipynb"
+						target="_blank"
+						rel="noopener noreferrer">
+						Original Jupyter notebook
+						<span aria-hidden="true">↗</span>
+					</a>
+				</div>
+			</section>
+			<section
+				aria-labelledby="more-heading"
+				class="info-bottom">
+				<div>
+					<span class="eyebrow">EXPLORE THE PROJECT</span>
+					<h2 id="more-heading">
+						Explore the Engineering Behind the Game
+					</h2>
+					<p>
+						Read about the technical decisions, research, and
+						lessons learned.
+					</p>
+				</div>
+				<div class="info-links">
+					<a href="case-study.html">
+						Development case study
+						<span aria-hidden="true">↗</span>
+					</a>
+					<a href="articles.html">
+						Project articles
+						<span aria-hidden="true">↗</span>
+					</a>
+					<a href="reflection.html">
+						Project reflection
+						<span aria-hidden="true">↗</span>
+					</a>
+				</div>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

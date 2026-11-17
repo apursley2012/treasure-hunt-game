@@ -1,0 +1,165 @@
+/*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /base.css                                                             *
+ * Purpose: Defines document defaults, shared controls, and accessibility      *
+ *          helpers used by the static pages.                                  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--font-body, system-ui, sans-serif);
+	color: var(--white);
+	background:
+		radial-gradient(circle at 25% 10%, #a7ff001a, #00000000 28%),
+		radial-gradient(circle at 85% 0%, #a7ff0014, #00000000 26%),
+		linear-gradient(135deg, #000000 0%, #050505 45%, #0b0f0f 100%);
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image:
+		linear-gradient(#ffffff06 1px, #00000000 1px),
+		linear-gradient(90deg, #ffffff06 1px, #00000000 1px);
+	background-size: 44px 44px;
+	mask-image: linear-gradient(to bottom, #000000b2, #00000000 80%);
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--lime);
+	border: 1px solid #a7ff0047;
+	background: #a7ff0014;
+	border-radius: 999px;
+	padding: 8px 12px;
+	font-size: 0.78rem;
+	font-weight: 900;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+h1 {
+	margin: 18px 0 14px;
+	font-size: clamp(2.7rem, 7vw, 6.7rem);
+	line-height: 0.92;
+	letter-spacing: -0.07em;
+}
+
+h2 {
+	margin: 0 0 14px;
+	font-size: clamp(1.65rem, 3vw, 2.5rem);
+	letter-spacing: -0.045em;
+}
+
+p {
+	color: #c7d0d0;
+	line-height: 1.72;
+}
+
+.lede {
+	font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+	max-width: 64ch;
+}
+
+:where(a, button, select, [tabindex]):focus-visible {
+	outline: 3px solid var(--lime);
+	outline-offset: 3px;
+}
+
+/*
+ * Respect reduced-motion preferences for the site's optional smooth scrolling.
+ * Navigation remains fully functional without animated scrolling.
+ */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/*
+ * Accessibility utilities
+ * Keep keyboard navigation usable before shared JavaScript components render.
+ */
+.skip-link {
+	position: fixed;
+	top: 8px;
+	left: 8px;
+	z-index: 1000;
+	padding: 10px 14px;
+	transform: translateY(-160%);
+	background: #ffffff;
+	color: #12141b;
+	border: 2px solid #12141b;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+.no-script-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 16px;
+	background: #12141b;
+}
+
+.no-script-nav a {
+	min-width: 44px;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media print {
+	.site-header,
+	.site-footer,
+	.skip-link,
+	.no-script-nav,
+	.cta-row {
+		display: none;
+	}
+
+	body {
+		background: #ffffff;
+		color: #000000;
+	}
+
+	main {
+		width: 100%;
+		max-width: none;
+	}
+
+	a {
+		color: #000000;
+		text-decoration: underline;
+	}
+}

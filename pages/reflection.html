@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /reflection.html                                                      *
+ * Purpose: Discusses engineering lessons and remaining verification           *
+ *          boundaries.                                                        *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>Treasure Hunt Project Reflection | Alysha Pursley</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="Read Alysha Pursley’s reflection on building Treasure Hunt, connecting original deep Q-learning coursework with a maintainable, accessible browser demo."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="Treasure Hunt Project Reflection | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="Read Alysha Pursley’s reflection on building Treasure Hunt, connecting original deep Q-learning coursework with a maintainable, accessible browser demo."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="Treasure Hunt Project Reflection | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="Read Alysha Pursley’s reflection on building Treasure Hunt, connecting original deep Q-learning coursework with a maintainable, accessible browser demo."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/reflection.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/reflection.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src 'self'; img-src 'self' data:; script-src 'self' 'sha256-ppQ+XPNmXzj/ssmqDLyl8lDMHLEQKhzNFeIuOw30wzg='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'none'"
+			http-equiv="Content-Security-Policy" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/reflection.html",
+				"name": "Treasure Hunt Project Reflection | Alysha Pursley",
+				"description": "Read Alysha Pursley’s reflection on building Treasure Hunt, connecting original deep Q-learning coursework with a maintainable, accessible browser demo.",
+				"author": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/site-writing.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="content-page article-page site-writing"
+			id="main-content">
+			<p class="eyebrow">
+				Treasure Hunt reinforced a practical lesson: a compelling demo
+				is only valuable when its behavior can be explained, its
+				assumptions can be tested, and its limitations are visible. The
+				project brought together reinforcement-learning concepts,
+				modular game logic, and a browser experience designed for people
+				encountering the work for the first time.
+			</p>
+			<h1>Engineering Lessons from Treasure Hunt</h1>
+			<p>
+				Building a learning experiment and a browser game around the
+				same maze taught me that good software is more than a successful
+				demonstration. The strongest decisions are the ones that keep
+				rules consistent, state understandable, and technical claims
+				grounded in what the code can actually prove.
+			</p>
+			<section class="content-section content-card">
+				<h2>Start with invariants, not interface details</h2>
+
+				<p>
+					The most useful engineering decision in Treasure Hunt was to
+					make the maze's rules explicit before building the public
+					experience. A move must respect walls and boundaries, a
+					round needs a reachable treasure, and the game must
+					distinguish ongoing play from a win or loss. Those
+					invariants provide something concrete to test when the
+					surrounding interface changes.
+				</p>
+				<p>
+					The browser maze generator demonstrates the value of this
+					approach. Randomness alone can create an impossible board;
+					generating a corridor, verifying a route, and retaining a
+					fallback keeps the game playable. I would apply the same
+					principle to other systems: identify the conditions that
+					must always hold, then make them visible in the code and
+					tests.
+				</p>
+			</section>
+			<section class="content-section content-card">
+				<h2>Be precise about what the technology actually does</h2>
+
+				<p>
+					The original Python notebook explores deep Q-learning, while
+					the public browser opponent uses shortest-path search.
+					Initially, it would be easy to describe both simply as an
+					intelligent maze agent. The more useful explanation is
+					specific: one implementation estimates action values from
+					rewards, and the other computes routes and adjusts timing to
+					create a race.
+				</p>
+				<p>
+					That precision matters to technical reviewers and to users.
+					It keeps a compelling interface from becoming an exaggerated
+					claim and helps me distinguish what the source demonstrates
+					from what still needs independent evaluation.
+				</p>
+			</section>
+			<section class="content-section content-card">
+				<h2>
+					Make architecture understandable to someone new to the code
+				</h2>
+
+				<p>
+					The JavaScript project separates maze rules, opponent
+					decisions, and application coordination. The Python project
+					separates environment transitions from replay-memory
+					construction and notebook orchestration. Those boundaries
+					make it easier to locate a bug, reason about state, and test
+					behavior without reproducing the entire interface or
+					training process.
+				</p>
+				<p>
+					Communication is part of that architecture. The playable
+					race introduces the challenge; the case study explains the
+					decisions; the articles explore the learning and pathfinding
+					concepts in more depth. A reviewer should be able to move
+					between those layers without having to guess which
+					implementation a claim refers to.
+				</p>
+			</section>
+			<section class="content-section content-card">
+				<h2>Treat accessibility and testing as engineering work</h2>
+
+				<p>
+					The browser interface offers keyboard and on-screen
+					controls, avoids hijacking keys while focus is in form
+					controls, and supplies descriptive labels for grid cells.
+					The dark visual system uses clear distinctions between
+					player, opponent, obstacles, and treasure. These decisions
+					make the experience easier to approach, but they are
+					starting points rather than a completed accessibility
+					certification.
+				</p>
+				<p>
+					Likewise, regression tests can establish that maze movement,
+					route generation, opponent configuration, and reset flows
+					behave as expected. A simulated DOM can exercise application
+					logic, yet it cannot prove how the site feels on a touch
+					screen or behaves with assistive technology. Recognizing
+					those different kinds of evidence is essential to
+					trustworthy engineering.
+				</p>
+			</section>
+			<section class="content-section content-card">
+				<h2>The next level of evidence</h2>
+
+				<p>
+					The next meaningful step for the Python side would be a
+					reproducible end-to-end training run in a documented
+					compatible TensorFlow/Keras environment, followed by
+					recorded results across starting positions. That would
+					connect the implemented learning workflow to repeatable
+					performance evidence.
+				</p>
+				<p>
+					For the browser side, I would prioritize real-device checks
+					of keyboard focus, mobile controls, responsive layout, and
+					screen-reader announcements, followed by verification of the
+					deployed site. These are targeted validation goals, not
+					claims about work already completed. The broader lesson of
+					Treasure Hunt is that a project becomes more convincing when
+					its behavior, limitations, and evidence are all equally
+					clear.
+				</p>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

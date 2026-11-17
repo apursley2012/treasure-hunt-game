@@ -1,0 +1,944 @@
+/*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /index.css                                                            *
+ * Purpose: Owns the game page layout, maze board, race feedback, and          *
+ *          responsive controls.                                               *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+/*
+ * Hero and game-page action styling
+ */
+.text-accent {
+	color: var(--lime);
+}
+
+.hero {
+	width: min(var(--max), calc(100% - 32px));
+	margin: 0 auto;
+	padding: clamp(42px, 7vw, 84px) 0 36px;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+	align-items: center;
+	gap: clamp(28px, 6vw, 72px);
+}
+
+.hero-copy {
+	position: relative;
+	z-index: 1;
+}
+
+.hero p {
+	font-size: clamp(1.02rem, 1.7vw, 1.24rem);
+	max-width: 64ch;
+}
+
+.cta-row,
+.button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+.button,
+button,
+select {
+	appearance: none;
+	border: 0;
+	border-radius: 999px;
+	padding: 12px 18px;
+	font-weight: 900;
+	font-size: 0.95rem;
+	cursor: pointer;
+}
+
+.button.primary,
+button.primary {
+	color: #071000;
+	background: var(--lime);
+	box-shadow: 0 0 24px #a7ff0040;
+}
+
+.button.secondary,
+button.secondary {
+	color: var(--white);
+	background: #ffffff14;
+	border: 1px solid #ffffff24;
+}
+
+button:hover,
+.button:hover {
+	transform: translateY(-1px);
+}
+
+.cell {
+	position: relative;
+	min-height: 44px;
+	border: 2px solid var(--grid-line);
+	background: var(--cell-open);
+}
+
+.cell.blocked,
+.cell.wall {
+	background: var(--cell-blocked);
+}
+
+.cell.start::after,
+.cell.player::after {
+	content: "";
+	position: absolute;
+	width: 46%;
+	height: 46%;
+	border-radius: 999px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--lime);
+	box-shadow: 0 0 20px #a7ff00b2;
+}
+
+.cell.goal::after,
+.cell.treasure::after {
+	content: "X";
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	color: var(--lime);
+	font-weight: 1000;
+	font-size: clamp(1.5rem, 4vw, 2.6rem);
+	text-shadow: 0 0 18px #a7ff00b2;
+}
+
+.cell.agent::before {
+	content: "";
+	position: absolute;
+	width: 32%;
+	height: 32%;
+	border-radius: 8px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	background: #ffffff;
+	border: 2px solid var(--lime);
+	box-shadow: 0 0 16px #a7ff0099;
+}
+
+select {
+	color: var(--white);
+	background: #090c0c;
+	border: 1px solid #a7ff0042;
+}
+
+@media (max-width: 900px) {
+	.hero,
+	.game-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.hero-logo-card {
+		order: -1;
+	}
+}
+
+@media (max-width: 540px) {
+	.cell {
+		min-height: 32px;
+		border-width: 1px;
+	}
+}
+
+/*
+ * Main game shell and two-column race layout
+ */
+body.app-body {
+	overflow-x: hidden;
+}
+
+.app-shell {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.game-card {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #00000000;
+}
+
+.game-card > .hero {
+	margin-bottom: 10px;
+}
+
+.hero-logo-card {
+	border: 1px solid #a7ff0047;
+	border-radius: var(--radius-xl);
+	background: #000000b8;
+	box-shadow: var(--shadow);
+	padding: clamp(18px, 3vw, 26px);
+	display: grid;
+	place-items: center;
+}
+
+.hero-logo {
+	max-width: 470px;
+	margin: 0 auto;
+	border-radius: 18px;
+	width: min(100%, 430px);
+	max-height: 430px;
+	object-fit: contain;
+}
+
+.game-layout {
+	width: min(1180px, calc(100% - 32px));
+	margin: 0 auto 48px;
+	padding: 24px 0 0;
+	display: grid;
+	grid-template-columns: minmax(360px, 720px) minmax(280px, 380px);
+	align-items: start;
+	gap: 24px;
+}
+
+.board-toolbar,
+.race-toolbar {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.legend span {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.legend i {
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	border-radius: 4px;
+	border: 1px solid #ffffff40;
+}
+
+.legend-free {
+	background: #f7f7f3;
+}
+
+.legend-wall {
+	background: #050505;
+}
+
+.legend-visited {
+	background: #dfff97;
+}
+
+.legend-agent {
+	background: #2d3636;
+}
+
+.legend-pirate {
+	background: var(--lime);
+	border-radius: 999px;
+}
+
+.legend-treasure {
+	background: #00000000;
+	position: relative;
+}
+
+.legend-treasure::after {
+	content: "X";
+	color: var(--lime);
+	font-weight: 1000;
+	position: absolute;
+	inset: -3px 0 0 2px;
+}
+
+/*
+ * Race controls, direction pad, and activity log
+ */
+.control-panel {
+	border-radius: var(--radius-lg);
+	width: 100%;
+	min-width: 0;
+	display: grid;
+	gap: 16px;
+	padding: 0;
+	border: 0;
+	background: #00000000;
+	box-shadow: none;
+}
+
+.panel-block {
+	padding: 20px;
+	border: 1px solid #a7ff002e;
+	border-radius: 22px;
+	background: #0a0c0ceb;
+}
+
+.stacked-buttons,
+.button-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+
+.primary-button,
+#start-race {
+	color: #071000;
+	background: var(--lime);
+}
+
+.direction-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 60px);
+	grid-template-rows: repeat(3, 60px);
+	gap: 8px;
+	justify-content: center;
+	align-items: center;
+	margin-top: 14px;
+}
+
+.direction-grid button {
+	width: 60px;
+	height: 60px;
+	border-radius: 16px;
+	color: var(--lime);
+	background: #a7ff0014;
+	border: 1px solid #a7ff0040;
+	font-size: 1.3rem;
+}
+
+.direction-grid .ghost-space {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.console-panel {
+	width: min(1180px, calc(100% - 32px));
+	margin: 0 auto 54px;
+	padding: 18px 20px;
+	border: 1px solid #a7ff002e;
+	border-radius: 22px;
+	background: #000000c2;
+}
+
+.console-title {
+	color: var(--lime);
+	font-weight: 900;
+	margin-bottom: 8px;
+}
+
+@media (max-width: 980px) {
+	.game-layout {
+		grid-template-columns: 1fr;
+	}
+
+	#maze-board {
+		max-width: min(640px, calc(100vw - 64px));
+	}
+
+	.board-toolbar,
+	.race-toolbar {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 560px) {
+	.board-panel {
+		padding: 10px;
+	}
+
+	#maze-board {
+		border-width: 5px;
+		outline-width: 3px;
+		border-radius: 18px;
+		max-width: calc(100vw - 44px);
+	}
+
+	.board-toolbar,
+	.race-toolbar {
+		grid-template-columns: 1fr;
+	}
+}
+
+/*
+ * Maze cell states rendered by app.js
+ */
+#maze-board .cell {
+	width: auto;
+	height: auto;
+	min-width: 0;
+	min-height: 0;
+	aspect-ratio: auto;
+	display: grid;
+	place-items: center;
+	position: relative;
+	border: 2px solid #050505;
+	background: #f7f7f3;
+	color: #050505;
+	overflow: hidden;
+}
+
+#maze-board .cell.wall {
+	background: #050505;
+}
+
+#maze-board .cell.visited {
+	background: linear-gradient(135deg, #a7ff0033, #f7f7f3);
+}
+
+#maze-board .cell.agent-trail {
+	box-shadow: inset 0 0 0 999px #a7ff001a;
+}
+
+#maze-board .cell.treasure {
+	background: #f7f7f3;
+}
+
+#maze-board .cell-icon {
+	position: relative;
+	z-index: 7;
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: clamp(1rem, 3vw, 2.2rem);
+	line-height: 1;
+	font-weight: 1000;
+	color: var(--lime);
+	text-shadow: 0 0 16px #a7ff00bf;
+}
+
+#maze-board .cell.wall .cell-icon {
+	color: #00000000;
+	text-shadow: none;
+}
+
+#maze-board .cell.player .cell-icon {
+	color: var(--lime);
+}
+
+#maze-board .cell.agent .cell-icon {
+	font-size: clamp(0.85rem, 2vw, 1.6rem);
+}
+
+#maze-board .cell.treasure .cell-icon {
+	color: var(--lime);
+	font-size: clamp(1.4rem, 4vw, 2.8rem);
+}
+
+/*
+ * Touch interaction and compact-game adjustments
+ */
+.compact-hero {
+	padding-top: clamp(28px, 4vw, 54px);
+	padding-bottom: 18px;
+}
+
+.compact-hero h1 {
+	font-size: clamp(2.4rem, 6vw, 5.5rem);
+}
+
+#maze-board,
+.direction-grid,
+.direction-grid button,
+[data-action] {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: #00000000;
+}
+
+.direction-grid button[data-action],
+button[data-action] {
+	min-width: 64px;
+	min-height: 64px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.direction-grid button[data-action]:active,
+button[data-action]:active {
+	transform: scale(0.96);
+	filter: brightness(1.15);
+}
+
+@media (hover: none), (pointer: coarse) {
+	.direction-grid {
+		grid-template-columns: repeat(3, minmax(64px, 78px));
+		grid-template-rows: repeat(3, minmax(64px, 78px));
+		gap: 10px;
+	}
+
+	.direction-grid button[data-action] {
+		width: 100%;
+		height: 100%;
+		min-width: 64px;
+		min-height: 64px;
+		font-size: 1.65rem;
+	}
+
+	.agent-chip {
+		min-height: 64px;
+	}
+}
+
+@media (max-width: 560px) {
+	.direction-grid {
+		grid-template-columns: repeat(3, 72px);
+		grid-template-rows: repeat(3, 72px);
+		justify-content: center;
+	}
+
+	.direction-grid button[data-action] {
+		min-width: 72px;
+		min-height: 72px;
+	}
+}
+
+#game {
+	scroll-margin-top: 88px;
+}
+
+/*
+ * Dense HUD and toolbar presentation
+ */
+.select-label {
+	display: block;
+	color: var(--lime);
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin: 0;
+	font-size: 0.66rem;
+}
+
+.difficulty-copy {
+	display: none;
+}
+
+.board-toolbar,
+.race-toolbar {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 5px;
+	margin-bottom: 8px;
+}
+
+.board-toolbar > div,
+.race-toolbar > div {
+	min-width: 0;
+	border: 1px solid #a7ff002e;
+	background: #a7ff000f;
+	padding: 5px 6px;
+	border-radius: 10px;
+}
+
+.mini-label {
+	display: block;
+	color: #9aa6a6;
+	font-weight: 900;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	font-size: 0.52rem;
+	line-height: 1.1;
+}
+
+.board-toolbar strong,
+.race-toolbar strong {
+	display: block;
+	color: var(--lime);
+	font-size: 0.74rem;
+	margin-top: 2px;
+}
+
+.direction-grid {
+	grid-template-columns: repeat(3, 54px);
+	grid-template-rows: repeat(3, 54px);
+	gap: 7px;
+	justify-content: center;
+	margin-top: 8px;
+}
+
+.direction-grid button[data-action] {
+	width: 54px;
+	height: 54px;
+	min-width: 54px;
+	min-height: 54px;
+	font-size: 1.3rem;
+}
+
+.agent-chip {
+	width: 100%;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	border-radius: 16px;
+	background: #ffffff0d;
+	border: 1px solid #ffffff1f;
+	min-height: 54px;
+	font-size: 0.68rem;
+}
+
+.console-panel {
+	width: min(1040px, calc(100% - 32px));
+	margin: 0 auto 24px;
+	padding: 10px 12px;
+}
+
+.training-log {
+	margin: 0;
+	padding-left: 22px;
+	color: #dbe3e3;
+	max-height: 76px;
+	overflow-y: auto;
+	font-size: 0.78rem;
+}
+
+@media (max-width: 980px) {
+	#maze-board {
+		width: min(100%, 34vh, 340px);
+		max-width: 340px;
+	}
+}
+
+@media (max-width: 560px) {
+	.game-title-row {
+		width: min(100% - 20px, 1040px);
+	}
+
+	#maze-board {
+		width: min(100%, 32vh, calc(100vw - 64px));
+		max-width: calc(100vw - 64px);
+	}
+
+	.board-toolbar,
+	.race-toolbar {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.direction-grid {
+		grid-template-columns: repeat(3, 58px);
+		grid-template-rows: repeat(3, 58px);
+	}
+
+	.direction-grid button[data-action] {
+		width: 58px;
+		height: 58px;
+		min-width: 58px;
+		min-height: 58px;
+	}
+
+	.console-panel {
+		display: none;
+	}
+}
+
+.board-toolbar,
+.race-toolbar {
+	width: 100%;
+}
+
+.legend {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 8px auto 0;
+	max-width: 640px;
+	color: #dbe3e3;
+	gap: 5px 8px;
+	font-size: 0.66rem;
+	line-height: 1.2;
+	justify-content: center;
+	text-align: center;
+}
+
+.direction-grid {
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 980px) {
+	.board-panel {
+		max-width: 440px;
+	}
+}
+
+@media (max-width: 560px) {
+	.board-panel {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+/*
+ * Final cascade layer preserves established board/title sizing.
+ */
+.console-panel,
+.game-title-row {
+	width: min(1180px, calc(100% - 32px));
+	max-width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.game-title-row {
+	width: min(1040px, calc(100% - 32px));
+	margin: 0 auto;
+	margin-bottom: 18px;
+	padding: 20px 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	text-align: center;
+}
+
+.game-title-row > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+}
+
+.game-title-row .eyebrow {
+	margin: 0 auto;
+}
+
+.game-title-row h2 {
+	margin: 0;
+	text-align: center;
+	font-size: clamp(2.4rem, 5vw, 4rem);
+	line-height: 1;
+}
+
+.status-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 96px;
+	padding: 10px 14px;
+	border-radius: 999px;
+	color: #071000;
+	background: var(--lime);
+	font-weight: 1000;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	position: static;
+	margin: 0 auto;
+	align-self: center;
+}
+
+#difficulty-select {
+	border-radius: 14px;
+	min-height: 38px;
+	padding: 7px 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.board-panel {
+	min-width: 0;
+	border: 1px solid #a7ff0038;
+	border-radius: 18px;
+	background: #0a0e0ef0;
+	box-shadow: none;
+	height: 100%;
+	width: 100%;
+	max-width: none;
+	justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 16px;
+}
+
+#maze-board {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+	gap: 0;
+	overflow: hidden;
+	border: 5px solid #050505;
+	outline: 4px solid var(--lime);
+	outline-offset: 0;
+	background: #050505;
+	box-shadow:
+		inset 0 0 0 2px #050505,
+		0 0 28px #a7ff0047;
+	touch-action: none;
+	user-select: none;
+	border-radius: 18px;
+	width: min(100%, 54vh, 520px);
+	max-width: 520px;
+	aspect-ratio: 1 / 1;
+	margin: 0 auto;
+}
+
+.direction-grid {
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
+
+.console-panel {
+	margin-top: 0;
+	margin-bottom: 28px;
+	padding: 14px 18px;
+}
+
+@media (max-width: 980px) {
+	.console-panel,
+	.game-title-row {
+		width: min(760px, calc(100% - 32px));
+	}
+
+	#maze-board {
+		width: min(100%, max(240px, 46vh), 460px);
+		max-width: 460px;
+	}
+}
+
+@media (max-width: 560px) {
+	.console-panel,
+	.game-title-row {
+		width: min(100% - 20px, 760px);
+	}
+
+	#maze-board {
+		width: min(100%, max(200px, 38vh), calc(100vw - 64px));
+		max-width: calc(100vw - 64px);
+	}
+}
+
+/* Keep race setup above the maze so the movement pad stays beside the board.
+   This is intentionally a compact horizontal setup bar on wide screens. */
+.race-setup-panel {
+	width: min(1180px, calc(100% - 32px));
+	margin: 20px auto 0;
+	display: grid;
+	grid-template-columns: minmax(180px, 1.2fr) minmax(180px, 1.5fr) minmax(
+			160px,
+			1fr
+		) minmax(270px, 1.8fr);
+	gap: 10px 18px;
+	align-items: center;
+}
+
+.race-setup-panel h2 {
+	grid-column: 1;
+	margin: 0;
+}
+
+.race-setup-panel > p:not(.difficulty-copy) {
+	grid-column: 2;
+	grid-row: 1 / span 2;
+	margin: 0;
+	font-size: 0.9rem;
+	line-height: 1.5;
+}
+
+.race-setup-panel .select-label {
+	grid-column: 3;
+	grid-row: 1;
+	margin: 0;
+}
+
+.race-setup-panel #difficulty-select {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+.race-setup-panel .difficulty-copy {
+	grid-column: 1;
+	grid-row: 2;
+	margin: 0;
+	font-size: 0.8rem;
+}
+
+.race-setup-panel .stacked-buttons {
+	grid-column: 4;
+	grid-row: 1 / span 2;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: center;
+}
+
+.race-setup-panel .stacked-buttons button {
+	min-width: 0;
+	padding-inline: 8px;
+	font-size: 0.88rem;
+}
+
+@media (max-width: 1100px) {
+	.race-setup-panel {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	}
+	.race-setup-panel h2,
+	.race-setup-panel > p:not(.difficulty-copy),
+	.race-setup-panel .select-label,
+	.race-setup-panel #difficulty-select,
+	.race-setup-panel .difficulty-copy,
+	.race-setup-panel .stacked-buttons {
+		grid-column: auto;
+		grid-row: auto;
+	}
+	.race-setup-panel h2,
+	.race-setup-panel > p:not(.difficulty-copy),
+	.race-setup-panel .stacked-buttons {
+		grid-column: 1 / -1;
+	}
+	.race-setup-panel .select-label {
+		align-self: end;
+	}
+}
+
+@media (max-width: 560px) {
+	.race-setup-panel {
+		width: calc(100% - 20px);
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+	.race-setup-panel h2,
+	.race-setup-panel > p:not(.difficulty-copy),
+	.race-setup-panel .select-label,
+	.race-setup-panel #difficulty-select,
+	.race-setup-panel .difficulty-copy,
+	.race-setup-panel .stacked-buttons {
+		grid-column: 1;
+	}
+	.race-setup-panel .stacked-buttons {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Compact tablets keep setup actions readable without squeezing buttons. */
+@media (min-width: 561px) and (max-width: 720px) {
+	.race-setup-panel {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.race-setup-panel h2,
+	.race-setup-panel > p:not(.difficulty-copy),
+	.race-setup-panel .select-label,
+	.race-setup-panel #difficulty-select,
+	.race-setup-panel .difficulty-copy,
+	.race-setup-panel .stacked-buttons {
+		grid-column: 1;
+		grid-row: auto;
+	}
+	.race-setup-panel .stacked-buttons {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /case-study.html                                                      *
+ * Purpose: Presents the engineering case study and implementation decisions.  *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>Treasure Hunt Development Case Study | Alysha Pursley</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="How I designed, built, and presented a playable browser maze race alongside the original Python deep Q-learning project."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="Treasure Hunt Development Case Study | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="How I designed, built, and presented a playable browser maze race alongside the original Python deep Q-learning project."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="Treasure Hunt Development Case Study | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="How I designed, built, and presented a playable browser maze race alongside the original Python deep Q-learning project."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/case-study.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/case-study.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-FAxXrzzyaovGewNzoaiMPaO7cGaw4OPXYrj6hs+AhZk=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
+			http-equiv="Content-Security-Policy" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebPage",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/case-study.html",
+				"name": "Treasure Hunt Development Case Study | Alysha Pursley",
+				"description": "How I designed, built, and presented a playable browser maze race alongside the original Python deep Q-learning project.",
+				"author": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/site-writing.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/articles.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="content-page article-page case-study site-writing"
+			id="main-content">
+			<header class="article-hero">
+				<p class="eyebrow">Development Case Study</p>
+				<h1>Making a Learning Experiment Playable</h1>
+				<p class="lede">
+					How I turned a maze-navigation learning project into a
+					browser experience visitors can actually use&mdash;and the
+					choices I made to keep it reliable, approachable, and
+					technically honest.
+				</p>
+				<p class="article-byline">By Alysha Pursley</p>
+			</header>
+			<article class="content-section paper-article">
+				<h2>Project brief: make the work understandable</h2>
+				<p>
+					Treasure Hunt started as a Python/Jupyter experiment in maze
+					navigation through deep Q-learning. Its code demonstrates an
+					environment, rewards, action selection, replay memory, and a
+					training workflow. That was useful source to study, but a
+					notebook alone wasn't the experience I wanted someone to
+					encounter when opening my portfolio.
+				</p>
+				<p>
+					The problem I chose to solve next was a presentation and
+					product problem: how could I let visitors experience the
+					challenge immediately, while still making the original
+					learning project easy to inspect? I decided to build a
+					separate browser game rather than pretend the notebook's
+					neural network was running online.
+				</p>
+				<h2>The goals I designed around</h2>
+				<p>
+					I set four practical goals. First, visitors should be able
+					to start a maze race without installing Python or creating
+					an account. Second, generated rounds should have a reachable
+					treasure. Third, controls and race status should make sense
+					whether someone uses a keyboard or on-screen buttons.
+					Finally, the project should be honest and easy to navigate
+					for someone interested in the engineering.
+				</p>
+				<p>
+					These goals shaped the architecture more than any desire to
+					add a framework or an online service. The game runs as
+					static HTML, CSS, and JavaScript, and the original learning
+					sources remain available as a separate part of the
+					repository.
+				</p>
+				<h2>Turning a concept into a reliable game</h2>
+				<p>
+					I separated the browser implementation into three
+					responsibilities: the maze module owns the board and legal
+					movement, the competitive agent chooses moves, and the app
+					coordinates the interface and race lifecycle. This means a
+					change to the presentation doesn't have to redefine which
+					movements are valid.
+				</p>
+				<p>
+					The maze generator builds possible routes and checks that
+					the target can be reached; it retains a fallback board when
+					generation attempts do not produce a suitable maze. The
+					computer opponent uses pathfinding with difficulty-dependent
+					pacing and exploration. I deliberately kept that approach
+					separate from the learning algorithm in the Python notebook.
+				</p>
+				<h2>Designing for an actual visitor</h2>
+				<p>
+					I used a dark visual palette with high-contrast lime
+					accents, visible race controls, and recognizable player,
+					opponent, wall, and goal states. The game supports arrow
+					keys, WASD, and on-screen directional buttons. Supporting
+					pages explain the project to visitors who want more than the
+					game itself.
+				</p>
+				<p>
+					Mobile layouts require more than reducing font size. The
+					site uses responsive navigation and flexible content widths,
+					including a compact menu for narrower viewports. I also
+					provide a dedicated 404 page and clear routes back to the
+					playable game and project information.
+				</p>
+				<h2>Decisions and trade-offs</h2>
+				<p>
+					Static hosting makes the browser demo straightforward to
+					open and inspect. It also means the website does not execute
+					Python training, save personal game accounts, or serve a
+					trained model. That's a deliberate boundary rather than a
+					feature I hide.
+				</p>
+				<p>
+					Likewise, using a computed route for the browser opponent is
+					a practical design choice: it can deliver predictable
+					movement for an interactive race, while the notebook remains
+					the place to examine how an agent might learn from rewards.
+					The dedicated articles explain those algorithms in depth;
+					this case study focuses on why I made the product and
+					engineering decisions.
+				</p>
+				<h2>What I could verify&mdash;and what remains</h2>
+				<p>
+					The project has passed automated checks for browser maze
+					behavior, opponent input validation, Python environment
+					behavior, and static-page references. These tests help catch
+					regressions in the code, but they are not proof of a
+					flawless experience on every browser or assistive device.
+				</p>
+				<p>
+					A reproducible modern TensorFlow training run has not been
+					established for the original notebook. Live mobile and
+					screen-reader evaluations are separate follow-up work. I
+					want the portfolio to show the implementation and its limits
+					accurately rather than imply evidence I do not have.
+				</p>
+				<h2>The result and what I learned</h2>
+				<p>
+					The result is a standalone maze race that visitors can play,
+					supported by the original Python learning project, four
+					focused technical articles, and clear paths through the
+					source. The browser experience has its own decision engine;
+					it doesn't impersonate a trained neural network.
+				</p>
+				<p>
+					The most valuable lesson was to design for both the person
+					using the project and the person reviewing its code. Clear
+					responsibilities, explicit limits, and an honest explanation
+					of trade-offs make the work stronger than adding technology
+					merely to make the list of tools longer.
+				</p>
+				<h2>Explore the finished work</h2>
+				<p>
+					Try the browser race, examine the original code, or read the
+					four articles for a closer look at the engineering, neural
+					networks, and responsible AI.
+				</p>
+				<p>
+					<a href="index.html">Play the game</a>
+					&middot;
+					<a href="articles.html">Read the articles</a>
+				</p>
+			</article>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

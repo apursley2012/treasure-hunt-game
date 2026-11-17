@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /article.html                                                         *
+ * Purpose: Presents a standalone deep Q-learning article.                     *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport" />
+		<meta
+			content="Alysha Pursley"
+			name="author" />
+		<title>What the Hull Is Q-Learning? | Alysha Pursley</title>
+		<link
+			href="../assets/images/favicon.svg"
+			rel="icon"
+			type="image/svg+xml" />
+		<link
+			href="../assets/css/core/tokens.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/core/base.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/header.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/brand.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/navigation.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/footer.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/components/content-cards.css"
+			rel="stylesheet" />
+		<meta
+			content="Understand the original Python learning experiment: reward signals, exploration, replay memory, and evaluating a learned policy."
+			name="description" />
+		<meta
+			content="#12141b"
+			name="theme-color" />
+		<meta
+			content="strict-origin-when-cross-origin"
+			name="referrer" />
+		<meta
+			content="summary_large_image"
+			name="twitter:card" />
+		<meta
+			content="What the Hull Is Q-Learning? | Alysha Pursley"
+			name="twitter:title" />
+		<meta
+			content="Understand the original Python learning experiment: reward signals, exploration, replay memory, and evaluating a learned policy."
+			name="twitter:description" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			name="twitter:image" />
+		<meta
+			content="What the Hull Is Q-Learning? | Alysha Pursley"
+			property="og:title" />
+		<meta
+			content="Understand the original Python learning experiment: reward signals, exploration, replay memory, and evaluating a learned policy."
+			property="og:description" />
+		<meta
+			content="website"
+			property="og:type" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/pages/article.html"
+			property="og:url" />
+		<meta
+			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+			property="og:image" />
+		<link
+			href="https://apursley2012.github.io/treasure-hunt-game/pages/article.html"
+			rel="canonical" />
+		<link
+			href="../manifest.webmanifest"
+			rel="manifest" />
+		<link
+			href="../assets/images/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180" />
+		<meta
+			content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-uZ9JqEY0XV4FtgfHsCPMCSlVmTyo8JtXdOtZ/kqtA40=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
+			http-equiv="Content-Security-Policy" />
+		<meta
+			content="Alysha Pursley"
+			property="article:author" />
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Article",
+				"headline": "What the Hull Is Q-Learning? | Alysha Pursley",
+				"description": "Understand the original Python learning experiment: reward signals, exploration, replay memory, and evaluating a learned policy.",
+				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/article.html",
+				"author": { "@type": "Person", "name": "Alysha Pursley" },
+				"publisher": { "@type": "Person", "name": "Alysha Pursley" }
+			}
+		</script>
+		<link
+			href="../assets/css/articles.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-writing.css"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/site-information.css"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com"
+			rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+			rel="stylesheet" />
+		<link
+			href="../assets/css/display-type.css"
+			rel="stylesheet" />
+	</head>
+	<body class="longform-body">
+		<a
+			class="skip-link"
+			href="#main-content">
+			Skip to main content
+		</a>
+		<header data-site-header="">
+			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
+		</header>
+		<noscript>
+			<nav
+				aria-label="Main navigation"
+				class="no-script-nav">
+				<a href="index.html">Game</a>
+				<a href="info.html">Info</a>
+				<a href="case-study.html">Case Study</a>
+				<a href="articles.html">Articles</a>
+				<a href="reflection.html">Reflection</a>
+			</nav>
+		</noscript>
+		<!-- Page-specific content -->
+		<main
+			class="content-page article-page site-writing"
+			id="main-content">
+			<header class="article-hero">
+				<p class="eyebrow">Deep Q-Learning</p>
+				<h1>What the Hull Is Q-Learning?</h1>
+				<p class="lede">
+					How to Train Your Pirate (And Actually Find the Booty)
+				</p>
+				<p class="article-byline">By Alysha Pursley</p>
+			</header>
+			<article class="content-section paper-article">
+				<p>
+					A maze looks simple until an agent has to learn its way
+					through one. At every step, the pirate chooses a direction
+					without being handed a finished route. Some actions advance
+					toward the treasure; others waste time or collide with a
+					wall. The challenge is to turn those consequences into a
+					policy that improves through experience.
+				</p>
+				<p>
+					The original Python/Jupyter implementation uses deep
+					Q-learning to approach that problem. Its value is in the
+					learning architecture: a defined environment, explicit
+					rewards, replay memory, and a neural network that estimates
+					the usefulness of each possible move.
+				</p>
+				<h2>A small world with consequential decisions</h2>
+				<p>
+					The environment is an 8&times;8 grid of traversable and
+					blocked cells. The pirate can attempt to move left, up,
+					right, or down. Each action is evaluated against the maze
+					boundaries and walls, and the resulting state is associated
+					with a reward and an episode status.
+				</p>
+				<p>
+					Because the agent sees the consequences of its choices, the
+					maze becomes a controlled setting for studying sequential
+					decision-making. The goal is not simply to produce one path
+					but to learn behavior that can work from multiple valid
+					starting positions.
+				</p>
+				<p>
+					The implementation's state is more than a coordinate. The
+					environment draws a marked copy of the maze and flattens it
+					into the input vector consumed by the model. This means the
+					model sees a consistent numeric representation rather than
+					UI elements or a human-readable map. The separate
+					environment module also makes it possible to inspect an
+					action's consequences without running a training epoch.
+				</p>
+				<h2>Why rewards and state transitions matter</h2>
+				<p>
+					Rewards translate the goal into feedback. Reaching the
+					treasure is desirable; invalid or unproductive movement is
+					discouraged. The precise balance matters because an agent
+					optimizes the signals it receives, not the designer's
+					unstated intentions.
+				</p>
+				<p>
+					An environment must also distinguish an ongoing episode from
+					a terminal win or loss. If the agent treats a finished
+					episode as though it has a future state to exploit, its
+					learning targets become misleading.
+				</p>
+				<p>
+					The reward conditions have a specific precedence. Treasure
+					is checked first; then a blocked state, a revisit, an
+					invalid move, and an ordinary valid move. Because the
+					current cell is marked visited before the action, an invalid
+					action can be classified as a revisit and receive -0.25
+					rather than -0.75. That detail is a reminder that a learning
+					agent responds to actual control flow, not merely the
+					intended labels attached to penalties.
+				</p>
+				<h2>Deep Q-learning, explained without the jargon</h2>
+				<p>
+					A Q-value estimates how useful a particular action is from a
+					particular state when future rewards are considered. Instead
+					of storing a separate value for every possible state-action
+					combination, a neural network approximates those values. In
+					this project, its outputs correspond to the four movement
+					directions.
+				</p>
+				<p>
+					The agent balances exploration and exploitation. Exploration
+					reveals unfamiliar paths; exploitation chooses moves
+					currently predicted to be effective. Epsilon controls that
+					balance, allowing the training process to move from broad
+					experimentation toward greater reliance on learned
+					estimates.
+				</p>
+				<p>
+					The notebook's network has two dense hidden layers with
+					PReLU activations and four output values. Its training loop
+					selects random legal actions during exploration and
+					otherwise chooses the largest predicted Q-value. The choice
+					of a small grid makes it possible to study this feedback
+					loop without introducing a much larger state space.
+				</p>
+				<h2>What experience replay contributes</h2>
+				<p>
+					Rather than updating only from the most recent action, the
+					training workflow stores transitions and samples them in
+					batches. A transition records the current state, action,
+					reward, next state, and terminal status. This helps the
+					model revisit different situations as it learns.
+				</p>
+				<p>
+					For an unfinished episode, a target can include the
+					immediate reward and a discounted estimate of the best next
+					action. For a terminal transition, only the terminal reward
+					contributes. That distinction is an important correctness
+					condition and one of the behaviors covered by the
+					project&rsquo;s Python tests.
+				</p>
+				<p>
+					Replay memory is bounded and samples transitions without
+					replacement within each batch. For a terminal transition,
+					the selected action's target equals the observed reward; for
+					an unfinished transition, the target adds a discounted
+					estimate of the next state's best value. Other action
+					predictions are left unchanged in that target vector. These
+					choices can be inspected directly in game_experience.py.
+				</p>
+				<h2>What counts as convincing evidence</h2>
+				<p>
+					A successful-looking route is not the same as a reliable
+					learned policy. A more useful evaluation asks whether the
+					agent can reach the goal from valid starting positions and
+					whether the result is repeatable. The original notebook
+					contains an evaluation workflow aimed at that question.
+				</p>
+				<p>
+					The project source demonstrates the learning setup, but a
+					fresh complete TensorFlow/Keras training result has not been
+					independently verified for this release. Readers can examine
+					the notebook and implementation without confusing intended
+					evaluation with newly measured performance.
+				</p>
+				<p>
+					The notebook defines a completion check that evaluates
+					greedy play from each usable starting cell. It is a stronger
+					criterion than one successful demonstration, but the
+					presence of that function does not establish a freshly
+					verified model benchmark. Reproducing training would require
+					a compatible TensorFlow/Keras environment and recorded
+					evaluation results.
+				</p>
+			</article>
+			<section
+				aria-label="Continue reading"
+				class="content-section article-toc">
+				<h2>Continue exploring</h2>
+				<a href="article-browser.html">Browser Engineering</a>
+				<a href="article-neural-networks.html">Algorithm Comparison</a>
+				<a href="articles.html">All articles</a>
+			</section>
+		</main>
+		<!-- Shared site footer -->
+		<footer data-site-footer="">
+			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+		</footer>
+		<script
+			src="../assets/js/components/site-shell.js"
+			type="module"></script>
+	</body>
+</html>

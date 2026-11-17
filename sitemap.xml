@@ -1,0 +1,49 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+
+<!-- 
+  Treasure Hunt Game | sitemap.xml
+  Purpose: Lists public pages for search engine discovery.
+  Author: Alysha Pursley
+  Copyright (c) 2026 Alysha Pursley.
+  License: See LICENSE (all rights reserved).
+ -->
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/index.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/info.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/case-study.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/articles.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/article.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/article-browser.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/article-neural-networks.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/reflection.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/privacy.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/terms.html</loc>
+	</url>
+	<url>
+		<loc>https://apursley2012.github.io/treasure-hunt-game/pages/accessibility.html</loc>
+	</url>
+</urlset>

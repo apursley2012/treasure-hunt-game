@@ -1,0 +1,59 @@
+/*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /brand.css                                                            *
+ * Purpose: Styles the reusable project identity used by the shared site       *
+ *          header.                                                            *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	max-width: 430px;
+	text-decoration: none;
+	font-weight: 900;
+	letter-spacing: -0.04em;
+}
+
+.brand-logo {
+	width: 76px;
+	height: 54px;
+	object-fit: contain;
+	object-position: center;
+	filter: drop-shadow(0 0 16px #a7ff0047);
+}
+
+.brand-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+}
+
+.brand-title {
+	font-size: clamp(1.15rem, 2vw, 1.65rem);
+}
+
+.brand-title span,
+.accent {
+	color: var(--lime);
+}
+
+.brand-subtitle {
+	margin-top: 4px;
+	color: var(--muted);
+	font-size: 0.74rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+	.brand-logo {
+		width: 62px;
+		height: 62px;
+	}
+}

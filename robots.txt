@@ -1,0 +1,6 @@
+# Treasure Hunt Game: crawler access and the published sitemap location.
+# Maintainer: Alysha Pursley; Copyright (c) 2026 Alysha Pursley.
+User-agent: *
+Allow: /
+
+Sitemap: https://apursley2012.github.io/treasure-hunt-game/sitemap.xml

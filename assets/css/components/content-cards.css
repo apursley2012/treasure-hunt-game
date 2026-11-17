@@ -1,0 +1,206 @@
+/*
+  ******************************************************************************
+ * Treasure Hunt Game                                                          *
+ * File: /content-cards.css                                                    *
+ * Purpose: Styles reusable content-card layouts across the project            *
+ *          information and writing pages.                                     *
+ * Author: Alysha Pursley                                                      *
+ * Copyright: (c) 2026 Alysha Pursley.                                         *
+ * License: Proprietary; see LICENSE                                           *
+  ******************************************************************************
+ */
+
+main {
+	position: relative;
+	z-index: 1;
+}
+
+body:not(.app-body) {
+	background:
+		radial-gradient(circle at 20% -10%, #a7ff001a, #00000000 34%),
+		linear-gradient(135deg, #000000 0%, #050706 100%);
+}
+
+body:not(.app-body) .content-page,
+body:not(.app-body) main.content-page {
+	display: block;
+	width: min(1040px, calc(100vw - 48px));
+	max-width: 1040px;
+	margin: 0 auto;
+	padding: clamp(36px, 6vw, 72px) 0;
+}
+
+/*
+ * The direct heading group is the shared page-title/hero pattern used by
+ * informational pages. Keeping it structural avoids duplicating hero markup
+ * through JavaScript when each page owns different editorial content.
+ */
+body:not(.app-body) main.content-page > .eyebrow,
+body:not(.app-body) main.content-page > h1,
+body:not(.app-body) main.content-page > p:not(.eyebrow) {
+	display: block;
+	width: min(840px, 100%);
+	max-width: 840px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
+
+body:not(.app-body) main.content-page > .eyebrow {
+	width: fit-content;
+	margin-bottom: 18px;
+}
+
+body:not(.app-body) main.content-page > h1 {
+	margin-top: 0;
+	margin-bottom: 18px;
+	color: #ffffff;
+	font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+	line-height: 0.98;
+	letter-spacing: -0.065em;
+}
+
+body:not(.app-body) main.content-page > p:not(.eyebrow) {
+	margin-bottom: 1.2rem;
+	color: #d9e2e2;
+	font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+	line-height: 1.82;
+}
+
+/*
+ * content-section is the reusable card container. content-card is retained as
+ * a semantic hook on editorial cards so page-specific variants can target
+ * those cards without changing the shared component.
+ */
+.content-section {
+	display: block;
+	width: min(880px, 100%);
+	max-width: 880px;
+	margin: 28px auto;
+	padding: clamp(24px, 4vw, 44px);
+	border: 1px solid #a7ff003d;
+	border-radius: 28px;
+	background: linear-gradient(180deg, #ffffff13, #ffffff07), #080a0af5;
+	box-shadow:
+		0 24px 70px #0000007a,
+		0 0 32px #a7ff001a;
+}
+
+.content-section > *:first-child {
+	margin-top: 0;
+}
+
+.content-section h2 {
+	margin: 0 0 16px;
+	color: #ffffff;
+	font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+	line-height: 1.12;
+	letter-spacing: -0.045em;
+}
+
+.content-section h2::after {
+	content: "";
+	display: block;
+	width: 76px;
+	height: 3px;
+	margin-top: 12px;
+	border-radius: 999px;
+	background: var(--lime);
+	box-shadow: 0 0 16px #a7ff0080;
+}
+
+.content-section h3 {
+	margin: 26px 0 10px;
+	color: #dfff9a;
+	font-size: 1.2rem;
+	letter-spacing: -0.02em;
+}
+
+.content-section p,
+.content-section li {
+	width: 100%;
+	max-width: 72ch;
+	color: #d8e0e0;
+	font-size: 1.045rem;
+	line-height: 1.82;
+}
+
+.content-section p {
+	margin: 0 0 1.15rem;
+}
+
+.content-section ul,
+.content-section ol {
+	width: min(72ch, 100%);
+	margin: 0 0 1.3rem 1.4rem;
+	padding-left: 1rem;
+}
+
+.content-section li {
+	margin: 0.45rem 0;
+	padding-left: 0.2rem;
+}
+
+.content-section blockquote {
+	max-width: 72ch;
+	margin: 28px 0;
+	padding: 18px 20px;
+	border-left: 4px solid var(--lime);
+	border-radius: 16px;
+	background: #a7ff0012;
+	color: #efffca;
+}
+
+.content-section table {
+	display: table;
+	width: 100%;
+	margin: 26px 0;
+	overflow: hidden;
+	border: 1px solid #a7ff003d;
+	border-collapse: collapse;
+	border-radius: 18px;
+}
+
+.content-section th,
+.content-section td {
+	padding: 14px 16px;
+	border: 1px solid #a7ff0029;
+	color: #d8e0e0;
+	vertical-align: top;
+}
+
+.content-section th {
+	color: var(--lime);
+	background: #a7ff001a;
+}
+
+@media (max-width: 760px) {
+	body:not(.app-body) .content-page,
+	body:not(.app-body) main.content-page {
+		width: min(100vw - 24px, 1040px);
+		padding-top: 28px;
+	}
+
+	.content-section {
+		padding: 22px;
+		border-radius: 20px;
+	}
+
+	body:not(.app-body) main.content-page > h1 {
+		font-size: clamp(2rem, 10vw, 3.3rem);
+	}
+}
+
+/* Long source URLs and wide comparison tables must not widen small screens. */
+.content-section {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+	.content-section table {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+}
