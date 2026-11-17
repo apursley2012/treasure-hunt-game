@@ -108,6 +108,9 @@
 			href="../assets/css/site-writing.css"
 			rel="stylesheet" />
 		<link
+			href="../assets/css/articles.css"
+			rel="stylesheet" />
+		<link
 			href="../assets/css/site-information.css"
 			rel="stylesheet" />
 		<link
@@ -148,23 +151,29 @@
 		<main
 			class="content-page article-page site-writing"
 			id="main-content">
-			<p class="eyebrow">
-				Treasure Hunt reinforced a practical lesson: a compelling demo
-				is only valuable when its behavior can be explained, its
-				assumptions can be tested, and its limitations are visible. The
-				project brought together reinforcement-learning concepts,
-				modular game logic, and a browser experience designed for people
-				encountering the work for the first time.
-			</p>
-			<h1>Engineering Lessons from Treasure Hunt</h1>
-			<p>
-				Building a learning experiment and a browser game around the
-				same maze taught me that good software is more than a successful
-				demonstration. The strongest decisions are the ones that keep
-				rules consistent, state understandable, and technical claims
-				grounded in what the code can actually prove.
-			</p>
-			<section class="content-section content-card">
+			<header class="article-hero">
+				<p class="eyebrow">Engineering Reflection</p>
+				<h1>Engineering Lessons from Treasure Hunt</h1>
+				<p class="lede">
+					Building a learning experiment and a browser game around the
+					same maze taught me that good software is more than a
+					successful demonstration. The strongest decisions are the
+					ones that keep rules consistent, state understandable, and
+					technical claims grounded in what the code can actually
+					prove.
+				</p>
+				<p class="article-byline">By Alysha Pursley</p>
+			</header>
+			<article class="content-section paper-article">
+				<p>
+					Treasure Hunt reinforced a practical lesson: a compelling
+					demo is only valuable when its behavior can be explained,
+					its assumptions can be tested, and its limitations are
+					visible. The project brought together reinforcement-learning
+					concepts, modular game logic, and a browser experience
+					designed for people encountering the work for the first
+					time.
+				</p>
 				<h2>Start with invariants, not interface details</h2>
 
 				<p>
@@ -185,8 +194,7 @@
 					must always hold, then make them visible in the code and
 					tests.
 				</p>
-			</section>
-			<section class="content-section content-card">
+
 				<h2>Be precise about what the technology actually does</h2>
 
 				<p>
@@ -204,8 +212,7 @@
 					claim and helps me distinguish what the source demonstrates
 					from what still needs independent evaluation.
 				</p>
-			</section>
-			<section class="content-section content-card">
+
 				<h2>
 					Make architecture understandable to someone new to the code
 				</h2>
@@ -227,8 +234,7 @@
 					between those layers without having to guess which
 					implementation a claim refers to.
 				</p>
-			</section>
-			<section class="content-section content-card">
+
 				<h2>Treat accessibility and testing as engineering work</h2>
 
 				<p>
@@ -250,8 +256,7 @@
 					those different kinds of evidence is essential to
 					trustworthy engineering.
 				</p>
-			</section>
-			<section class="content-section content-card">
+
 				<h2>The next level of evidence</h2>
 
 				<p>
@@ -272,7 +277,7 @@
 					its behavior, limitations, and evidence are all equally
 					clear.
 				</p>
-			</section>
+			</article>
 		</main>
 		<!-- Shared site footer -->
 		<footer data-site-footer="">
