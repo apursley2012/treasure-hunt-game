@@ -11,371 +11,235 @@
   ******************************************************************************
 -->
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			content="width=device-width, initial-scale=1"
-			name="viewport" />
-		<meta
-			content="Alysha Pursley"
-			name="author" />
-		<title>
-			The Privacy Behind Personalization — Designing Neural Networks
-			Responsibly | Alysha Pursley
-		</title>
-		<link
-			href="../assets/images/favicon.svg"
-			rel="icon"
-			type="image/svg+xml" />
-		<link
-			href="../assets/css/core/tokens.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/core/base.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/components/header.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/components/brand.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/components/navigation.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/components/footer.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/components/content-cards.css"
-			rel="stylesheet" />
-		<meta
-			content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
-			name="description" />
-		<meta
-			content="#12141b"
-			name="theme-color" />
-		<meta
-			content="strict-origin-when-cross-origin"
-			name="referrer" />
-		<meta
-			content="summary_large_image"
-			name="twitter:card" />
-		<meta
-			content="The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley"
-			name="twitter:title" />
-		<meta
-			content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
-			name="twitter:description" />
-		<meta
-			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
-			name="twitter:image" />
-		<meta
-			content="The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley"
-			property="og:title" />
-		<meta
-			content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
-			property="og:description" />
-		<meta
-			content="website"
-			property="og:type" />
-		<meta
-			content="https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html"
-			property="og:url" />
-		<meta
-			content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
-			property="og:image" />
-		<link
-			href="https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html"
-			rel="canonical" />
-		<link
-			href="../manifest.webmanifest"
-			rel="manifest" />
-		<link
-			href="../assets/images/apple-touch-icon.png"
-			rel="apple-touch-icon"
-			sizes="180x180" />
-		<meta
-			content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-X7rqhaf5xmziPCIeO68xz5d4fAE6fwBCxNnFFvfXThk=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
-			http-equiv="Content-Security-Policy" />
-		<meta
-			content="Alysha Pursley"
-			property="article:author" />
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "Article",
-				"headline": "The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley",
-				"description": "A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design.",
-				"url": "https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html",
-				"author": { "@type": "Person", "name": "Alysha Pursley" },
-				"publisher": { "@type": "Person", "name": "Alysha Pursley" }
-			}
-		</script>
-		<link
-			href="../assets/css/articles.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/site-writing.css"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/site-information.css"
-			rel="stylesheet" />
-		<link
-			href="https://fonts.googleapis.com"
-			rel="preconnect" />
-		<link
-			crossorigin=""
-			href="https://fonts.gstatic.com"
-			rel="preconnect" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
-			rel="stylesheet" />
-		<link
-			href="../assets/css/display-type.css"
-			rel="stylesheet" />
-	</head>
-	<body class="longform-body">
-		<a
-			class="skip-link"
-			href="#main-content">
-			Skip to main content
-		</a>
-		<header data-site-header="">
-			<!-- Shared site header rendered by assets/js/components/site-shell.js -->
-		</header>
-		<noscript>
-			<nav
-				aria-label="Main navigation"
-				class="no-script-nav">
-				<a href="index.html">Game</a>
-				<a href="info.html">Info</a>
-				<a href="case-study.html">Case Study</a>
-				<a href="articles.html">Articles</a>
-				<a href="reflection.html">Reflection</a>
-			</nav>
-		</noscript>
-		<!-- Page-specific content -->
-		<main
-			class="content-page article-page site-writing"
-			id="main-content">
-			<header class="article-hero">
-				<p class="eyebrow">Privacy, AI & Data Governance</p>
-				<h1>
-					The Privacy Behind Personalization — Designing Neural
-					Networks Responsibly
-				</h1>
-				<p class="lede">
-					A research-based look at GDPR, neural-network
-					personalization, data minimization, transparency, and
-					privacy-aware AI design.
-				</p>
-				<p class="article-byline">By Alysha Pursley</p>
-			</header>
-			<article class="content-section paper-article">
-				<p>
-					Neural networks can make personalization feel effortless. A
-					platform observes patterns in what people click, read, and
-					revisit, then uses those signals to predict what they might
-					want to see next. The engineering challenge is compelling.
-					The privacy challenge is just as important.
-				</p>
-				<p>
-					In my white-paper research, I considered a hypothetical
-					social platform that relies on neural networks for
-					recommendations and advertising. Rather than treating
-					regulatory compliance as a final checklist, I examined how
-					data protection requirements could influence the system's
-					architecture, product decisions, and governance from the
-					beginning.
-				</p>
-				<p>
-					This article adapts the problem analysis and proposed
-					solutions from that research. It is an academic scenario,
-					not a claim that I audited or operated a real platform.
-				</p>
-				<h2>The Problem: Personalization Requires Data</h2>
-				<p>
-					A recommendation model learns from examples. Those examples
-					may include interaction histories, viewing patterns,
-					preferences, and device information. Some signals can help a
-					model identify useful content, but collecting more data does
-					not automatically create better or more responsible
-					predictions.
-				</p>
-				<p>
-					In the hypothetical platform, I identified four immediate
-					concerns: people may not understand how their information is
-					processed; information collected for one purpose may later
-					be reused for another; the system may gather more data than
-					necessary; and the organization may struggle to demonstrate
-					that it is meeting its obligations.
-				</p>
-				<p>
-					These are not merely legal-document problems. They affect
-					what events developers log, what features are sent to a
-					model, how long datasets exist, and who can access them.
-				</p>
-				<h2>Three Paths a Team Could Take</h2>
-				<p>
-					My research compared three broad responses to those risks.
-					The first was minimal change: keep the existing
-					personalization approach and make limited policy updates. It
-					would be relatively easy to implement, but it would leave
-					many underlying risks unresolved.
-				</p>
-				<p>
-					The second was restrictive compliance: sharply reduce data
-					collection and limit personalization. That could lower some
-					exposure, but it might also remove useful functionality
-					without carefully distinguishing necessary data from
-					unnecessary data.
-				</p>
-				<p>
-					The third—and the approach I favored—was strategic
-					compliance. It combines deliberate data minimization, clear
-					purposes, user controls, security, documented
-					accountability, and privacy-aware machine-learning
-					practices. The point is not to preserve every existing
-					feature at any cost; it is to make defensible decisions
-					about what the product truly needs.
-				</p>
-				<h2>Designing Transparency Into the Product</h2>
-				<p>
-					Transparency is difficult when model behavior is complex. A
-					privacy notice that says only 'we use AI to improve your
-					experience' tells users very little about what information
-					is collected or how it affects recommendations.
-				</p>
-				<p>
-					I proposed plain-language explanations that identify
-					categories of data, the purposes of processing, and
-					available choices. A useful interface could let people
-					review relevant settings and understand how personalization
-					changes when they opt out of optional processing.
-				</p>
-				<p>
-					Explainability tools may help teams understand model
-					behavior, but a technical explanation of feature importance
-					is not a substitute for accurate disclosures or meaningful
-					user controls.
-				</p>
-				<h2>Purpose Limitation and Data Minimization</h2>
-				<p>
-					Purpose limitation asks teams to define why data is
-					collected before reusing it for another objective. Data
-					minimization asks whether every collected field is actually
-					needed for that purpose.
-				</p>
-				<p>
-					Applied to a recommendation system, those principles suggest
-					reviewing each feature rather than collecting all available
-					behavioral and location data 'just in case.' Teams can
-					document the purpose of each data field, limit access, and
-					revisit whether it continues to contribute enough value to
-					justify its use.
-				</p>
-				<p>
-					My proposal also called for retention schedules. Data should
-					not remain indefinitely merely because it might someday be
-					useful for training. Appropriate deletion or anonymization
-					procedures need to be planned, implemented, and verified.
-				</p>
-				<h2>Bias, Security, and Accountability</h2>
-				<p>
-					Even a model that performs well on average may behave poorly
-					for particular groups or contexts. A responsible evaluation
-					process should examine data quality, measure relevant
-					performance differences, and investigate patterns that could
-					lead to unfair outcomes.
-				</p>
-				<p>
-					Security is equally important. Personalization datasets can
-					contain sensitive behavioral information. Strong access
-					controls, encryption, monitoring, and carefully managed
-					third-party access reduce exposure, but require ongoing
-					maintenance.
-				</p>
-				<p>
-					Accountability connects the technical work to organizational
-					decisions. I recommended documenting processing activities,
-					reviewing model and data changes, and conducting regular
-					assessments. The goal is to make it possible to explain what
-					the system does, why it does it, and who is responsible for
-					checking its effects.
-				</p>
-				<h2>Privacy-Preserving AI Is a Tool, Not a Shortcut</h2>
-				<p>
-					Several technical approaches deserve consideration.
-					Differential privacy can help limit what aggregate outputs
-					reveal about individuals when correctly designed and
-					calibrated. Federated learning can reduce the need to
-					centralize some raw training data, although model updates
-					can still present privacy risks. Explainability methods can
-					help investigate predictions and communicate limitations.
-				</p>
-				<p>
-					None of these methods guarantees GDPR compliance on its own.
-					Their usefulness depends on the data, threat model, legal
-					basis, processing purpose, and implementation details. A
-					privacy-preserving technique is part of a wider design, not
-					a substitute for it.
-				</p>
-				<h2>What I Took Away From the White Paper</h2>
-				<p>
-					The central lesson of my research is that the best moment to
-					ask privacy questions is before a system becomes dependent
-					on unnecessary data. Once a product, model, and business
-					process all assume that every interaction will be stored,
-					changing course becomes more difficult.
-				</p>
-				<p>
-					Neural-network development and responsible data governance
-					should not be treated as competing priorities. Defining a
-					clear objective, measuring whether features are genuinely
-					useful, testing model behavior, and documenting decisions
-					can improve both engineering quality and accountability.
-				</p>
-				<p>
-					This research also shaped how I think about smaller
-					machine-learning experiments. My Treasure Hunt deep
-					Q-learning project does not process the kinds of personal
-					data described in the white-paper scenario, but it
-					reinforced the same habit: inspect the inputs, understand
-					the learning objective, and be precise about what the system
-					can and cannot demonstrate.
-				</p>
-				<h2>Source and Scope</h2>
-				<p>
-					This article is adapted from my academic GDPR compliance
-					white-paper drafts, including the sections on problem
-					definition, alternative approaches, and strategic
-					recommendations. It presents a proposed design for a
-					hypothetical neural-network personalization platform, not
-					legal advice or a verified compliance assessment.
-				</p>
-				<p>
-					For the underlying neural-network mechanics, see my separate
-					article, 'Inside a Neural Network: From Predictions to
-					Responsible AI.' For the original reinforcement-learning
-					experiment, see the deep Q-learning article and Python
-					notebook.
-				</p>
-			</article>
-			<section
-				aria-label="Continue reading"
-				class="content-section article-toc">
-				<h2>Continue exploring</h2>
-				<a href="article.html">Deep Q-Learning</a>
-				<a href="article-browser.html">Browser Engineering</a>
-				<a href="articles.html">All articles</a>
-			</section>
-		</main>
-		<!-- Shared site footer -->
-		<footer data-site-footer="">
-			<!-- Shared site footer rendered by assets/js/components/site-shell.js -->
-		</footer>
-		<script
-			src="../assets/js/components/site-shell.js"
-			type="module"></script>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Alysha Pursley" name="author" />
+    <title>The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley</title>
+    <link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="../assets/css/core/tokens.css" rel="stylesheet" />
+    <link href="../assets/css/core/base.css" rel="stylesheet" />
+    <link href="../assets/css/components/header.css" rel="stylesheet" />
+    <link href="../assets/css/components/brand.css" rel="stylesheet" />
+    <link href="../assets/css/components/navigation.css" rel="stylesheet" />
+    <link href="../assets/css/components/footer.css" rel="stylesheet" />
+    <link href="../assets/css/components/content-cards.css" rel="stylesheet" />
+<meta
+      content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
+      name="description"
+    />
+    <meta content="#12141b" name="theme-color" />
+    <meta content="strict-origin-when-cross-origin" name="referrer" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley" name="twitter:title" />
+    <meta
+      content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
+      name="twitter:description"
+    />
+    <meta
+      content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+      name="twitter:image"
+    />
+    <meta content="The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley" property="og:title" />
+    <meta
+      content="A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta
+      content="https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html"
+      property="og:url"
+    />
+    <meta
+      content="https://apursley2012.github.io/treasure-hunt-game/assets/images/og-image.jpg"
+      property="og:image"
+    />
+    <link
+      href="https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html"
+      rel="canonical"
+    />
+    <link href="../manifest.webmanifest" rel="manifest" />
+    <link href="../assets/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <meta
+      content="default-src &#x27;self&#x27;; img-src &#x27;self&#x27; data:; script-src &#x27;self&#x27; &#x27;sha256-X7rqhaf5xmziPCIeO68xz5d4fAE6fwBCxNnFFvfXThk=&#x27;; style-src &#x27;self&#x27; https://fonts.googleapis.com; font-src &#x27;self&#x27; https://fonts.gstatic.com; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;none&#x27;"
+      http-equiv="Content-Security-Policy"
+    />
+    <meta content="Alysha Pursley" property="article:author" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Article","headline":"The Privacy Behind Personalization — Designing Neural Networks Responsibly | Alysha Pursley","description":"A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design.","url":"https://apursley2012.github.io/treasure-hunt-game/pages/article-privacy-ai.html","author":{"@type":"Person","name":"Alysha Pursley"},"publisher":{"@type":"Person","name":"Alysha Pursley"}}
+    </script>
+    <link href="../assets/css/articles.css" rel="stylesheet" />
+    <link href="../assets/css/site-writing.css" rel="stylesheet" />
+    <link href="../assets/css/site-information.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/display-type.css" rel="stylesheet" />
+  </head>
+  <body class="longform-body">
+    <a class="skip-link" href="#main-content">
+      Skip to main content
+    </a>
+    <header data-site-header="">
+      <!-- Shared site header rendered by assets/js/components/site-shell.js -->
+    </header>
+    <noscript>
+      <nav aria-label="Main navigation" class="no-script-nav">
+        <a href="index.html">
+          Game
+        </a>
+        <a href="info.html">
+          Info
+        </a>
+        <a href="case-study.html">
+          Case Study
+        </a>
+        <a href="articles.html">
+          Articles
+        </a>
+        <a href="reflection.html">
+          Reflection
+        </a>
+      </nav>
+    </noscript>
+<!-- Page-specific content -->
+        <main class="content-page article-page site-writing" id="main-content">
+      <header class="article-hero">
+      <p class="eyebrow">
+        Privacy, AI & Data Governance
+      </p>
+      <h1>
+        The Privacy Behind Personalization — Designing Neural Networks Responsibly
+      </h1>
+      <p class="lede">
+        A research-based look at GDPR, neural-network personalization, data minimization, transparency, and privacy-aware AI design.
+      </p>
+      <p class="article-byline">By Alysha Pursley</p>
+    </header>
+      <article class="content-section paper-article">
+        <p>
+          Neural networks can make personalization feel effortless. A platform observes patterns in what people click, read, and revisit, then uses those signals to predict what they might want to see next. The engineering challenge is compelling. The privacy challenge is just as important.
+        </p>
+        <p>
+          In my white-paper research, I considered a hypothetical social platform that relies on neural networks for recommendations and advertising. Rather than treating regulatory compliance as a final checklist, I examined how data protection requirements could influence the system's architecture, product decisions, and governance from the beginning.
+        </p>
+        <p>
+          This article adapts the problem analysis and proposed solutions from that research. It is an academic scenario, not a claim that I audited or operated a real platform.
+        </p>
+        <h2>
+          The Problem: Personalization Requires Data
+        </h2>
+        <p>
+          A recommendation model learns from examples. Those examples may include interaction histories, viewing patterns, preferences, and device information. Some signals can help a model identify useful content, but collecting more data does not automatically create better or more responsible predictions.
+        </p>
+        <p>
+          In the hypothetical platform, I identified four immediate concerns: people may not understand how their information is processed; information collected for one purpose may later be reused for another; the system may gather more data than necessary; and the organization may struggle to demonstrate that it is meeting its obligations.
+        </p>
+        <p>
+          These are not merely legal-document problems. They affect what events developers log, what features are sent to a model, how long datasets exist, and who can access them.
+        </p>
+        <h2>
+          Three Paths a Team Could Take
+        </h2>
+        <p>
+          My research compared three broad responses to those risks. The first was minimal change: keep the existing personalization approach and make limited policy updates. It would be relatively easy to implement, but it would leave many underlying risks unresolved.
+        </p>
+        <p>
+          The second was restrictive compliance: sharply reduce data collection and limit personalization. That could lower some exposure, but it might also remove useful functionality without carefully distinguishing necessary data from unnecessary data.
+        </p>
+        <p>
+          The third—and the approach I favored—was strategic compliance. It combines deliberate data minimization, clear purposes, user controls, security, documented accountability, and privacy-aware machine-learning practices. The point is not to preserve every existing feature at any cost; it is to make defensible decisions about what the product truly needs.
+        </p>
+        <h2>
+          Designing Transparency Into the Product
+        </h2>
+        <p>
+          Transparency is difficult when model behavior is complex. A privacy notice that says only 'we use AI to improve your experience' tells users very little about what information is collected or how it affects recommendations.
+        </p>
+        <p>
+          I proposed plain-language explanations that identify categories of data, the purposes of processing, and available choices. A useful interface could let people review relevant settings and understand how personalization changes when they opt out of optional processing.
+        </p>
+        <p>
+          Explainability tools may help teams understand model behavior, but a technical explanation of feature importance is not a substitute for accurate disclosures or meaningful user controls.
+        </p>
+        <h2>
+          Purpose Limitation and Data Minimization
+        </h2>
+        <p>
+          Purpose limitation asks teams to define why data is collected before reusing it for another objective. Data minimization asks whether every collected field is actually needed for that purpose.
+        </p>
+        <p>
+          Applied to a recommendation system, those principles suggest reviewing each feature rather than collecting all available behavioral and location data 'just in case.' Teams can document the purpose of each data field, limit access, and revisit whether it continues to contribute enough value to justify its use.
+        </p>
+        <p>
+          My proposal also called for retention schedules. Data should not remain indefinitely merely because it might someday be useful for training. Appropriate deletion or anonymization procedures need to be planned, implemented, and verified.
+        </p>
+        <h2>
+          Bias, Security, and Accountability
+        </h2>
+        <p>
+          Even a model that performs well on average may behave poorly for particular groups or contexts. A responsible evaluation process should examine data quality, measure relevant performance differences, and investigate patterns that could lead to unfair outcomes.
+        </p>
+        <p>
+          Security is equally important. Personalization datasets can contain sensitive behavioral information. Strong access controls, encryption, monitoring, and carefully managed third-party access reduce exposure, but require ongoing maintenance.
+        </p>
+        <p>
+          Accountability connects the technical work to organizational decisions. I recommended documenting processing activities, reviewing model and data changes, and conducting regular assessments. The goal is to make it possible to explain what the system does, why it does it, and who is responsible for checking its effects.
+        </p>
+        <h2>
+          Privacy-Preserving AI Is a Tool, Not a Shortcut
+        </h2>
+        <p>
+          Several technical approaches deserve consideration. Differential privacy can help limit what aggregate outputs reveal about individuals when correctly designed and calibrated. Federated learning can reduce the need to centralize some raw training data, although model updates can still present privacy risks. Explainability methods can help investigate predictions and communicate limitations.
+        </p>
+        <p>
+          None of these methods guarantees GDPR compliance on its own. Their usefulness depends on the data, threat model, legal basis, processing purpose, and implementation details. A privacy-preserving technique is part of a wider design, not a substitute for it.
+        </p>
+        <h2>
+          What I Took Away From the White Paper
+        </h2>
+        <p>
+          The central lesson of my research is that the best moment to ask privacy questions is before a system becomes dependent on unnecessary data. Once a product, model, and business process all assume that every interaction will be stored, changing course becomes more difficult.
+        </p>
+        <p>
+          Neural-network development and responsible data governance should not be treated as competing priorities. Defining a clear objective, measuring whether features are genuinely useful, testing model behavior, and documenting decisions can improve both engineering quality and accountability.
+        </p>
+        <p>
+          This research also shaped how I think about smaller machine-learning experiments. My Treasure Hunt deep Q-learning project does not process the kinds of personal data described in the white-paper scenario, but it reinforced the same habit: inspect the inputs, understand the learning objective, and be precise about what the system can and cannot demonstrate.
+        </p>
+        <h2>
+          Source and Scope
+        </h2>
+        <p>
+          This article is adapted from my academic GDPR compliance white-paper drafts, including the sections on problem definition, alternative approaches, and strategic recommendations. It presents a proposed design for a hypothetical neural-network personalization platform, not legal advice or a verified compliance assessment.
+        </p>
+        <p>
+          For the underlying neural-network mechanics, see my separate article, 'Inside a Neural Network: From Predictions to Responsible AI.' For the original reinforcement-learning experiment, see the deep Q-learning article and Python notebook.
+        </p>
+      </article>
+      <section aria-label="Continue reading" class="content-section article-toc">
+        <h2>
+          Continue exploring
+        </h2>
+        <a href="article.html">
+          Deep Q-Learning
+        </a>
+        <a href="article-browser.html">
+          Browser Engineering
+        </a>
+        <a href="articles.html">
+          All articles
+        </a>
+      </section>
+    </main>
+    <!-- Shared site footer -->
+    <footer data-site-footer="">
+      <!-- Shared site footer rendered by assets/js/components/site-shell.js -->
+    </footer>
+    <script src="../assets/js/components/site-shell.js" type="module">
+    </script>
+</body>
 </html>
