@@ -11,22 +11,22 @@
  */
 
 :root {
-	--bg: #050505;
-	--bg-2: #0b0f0f;
-	--panel: #101414;
-	--panel-2: #151a1a;
-	--cell-open: #f8f8f8;
-	--cell-blocked: #050505;
-	--grid-line: #111111;
-	--lime: #a7ff00;
-	--lime-soft: #a7ff0038;
-	--lime-glow: #a7ff009e;
-	--white: #ffffff;
-	--muted: #a8b3b3;
-	--red: #e03131;
-	--shadow: 0 0 34px #a7ff002e;
-	--radius-xl: 28px;
-	--radius-lg: 18px;
-	--radius-md: 12px;
-	--max: 1180px;
+  --bg: #050505;
+  --bg-2: #0b0f0f;
+  --panel: #101414;
+  --panel-2: #151a1a;
+  --cell-open: #f8f8f8;
+  --cell-blocked: #050505;
+  --grid-line: #111111;
+  --lime: #a7ff00;
+  --lime-soft: #a7ff0038;
+  --lime-glow: #a7ff009e;
+  --white: #ffffff;
+  --muted: #a8b3b3;
+  --red: #e03131;
+  --shadow: 0 0 34px #a7ff002e;
+  --radius-xl: 28px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --max: 1180px;
 }
