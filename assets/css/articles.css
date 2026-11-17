@@ -162,8 +162,8 @@ body:not(.app-body) main.content-page article p {
 body:not(.app-body)
 	main.content-page.wide-article-page
 	> article.paper-article {
-	width: min(920px, 100%);
-	max-width: 920px;
+	width: min(1200px, 100%);
+	max-width: 1200px;
 }
 
 body:not(.app-body)
@@ -182,8 +182,8 @@ body:not(.app-body)
 
 /* The article index reads like an editorial contents strip, not another card. */
 body:not(.app-body) main.content-page > section.article-toc {
-	width: min(970px, 100%);
-	max-width: 970px;
+	width: min(1200px, 100%);
+	max-width: 1200px;
 	margin: 20px auto 34px;
 	padding: 20px 24px;
 	justify-content: flex-start;
@@ -218,8 +218,8 @@ body:not(.app-body) main.content-page article.paper-article .eyebrow {
 }
 
 body:not(.app-body) main.content-page > article.paper-article {
-	width: min(970px, 100%);
-	max-width: 970px;
+	width: min(1200px, 100%);
+	max-width: 1200px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -237,7 +237,7 @@ body:not(.app-body)
 	> .article-hero {
 	position: relative;
 	isolation: isolate;
-	width: min(970px, 100%);
+	width: min(1200px, 100%);
 	margin: 0 auto 32px;
 	padding: clamp(26px, 5vw, 56px);
 	overflow: hidden;
