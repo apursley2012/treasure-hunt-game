@@ -7,7 +7,7 @@ Date: August 2026
 
 <div align="center">
 
-<img src="assets/images/treasure-hunt-logo.webp" alt="Treasure Hunt Game logo" width="65%">
+<img src="assets/images/treasure-hunt-logo.webp" alt="Treasure Hunt Game logo" width="512px" height="auto">
 
 <h1>Treasure Hunt Game 🏴‍☠️</h1>
 
